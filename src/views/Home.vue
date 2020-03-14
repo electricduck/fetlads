@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Grid />
+    <TheGrid />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Grid from '@/components/Grid.vue'
+import TheGrid from '@/components/TheGrid.vue'
 
 export default {
   name: 'home',
   components: {
-    Grid
+    TheGrid
   }
 }
 </script>

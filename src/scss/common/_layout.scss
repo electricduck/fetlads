@@ -1,0 +1,35 @@
+@import "@/scss/_variables.scss";
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+
+  background-color: var(--body-bg-color);
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    font-weight: 700;
+    transition: $transition;
+
+    color: var(--accent-color);
+
+    &:focus,
+    &:hover {
+      filter: $brighter-filter;
+      outline: 0;
+    }
+
+    &:active {
+      filter: $darker-filter;
+    }
+
+    &.no-transition {
+      transition: unset;
+    }
+  }
+}
