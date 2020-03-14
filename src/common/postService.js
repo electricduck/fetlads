@@ -1,9 +1,13 @@
 import axios from "axios"
 
 export const getPost = async (id, slug) => {
-  await getPosts().then((response) => {
+  /*await getPosts().then((response) => {
     return new Promise(resolve => {
       var posts = response.data
+
+      
+
+      
       
       var idAsInt = Number(id)
       var post = posts.find(p => p.id === idAsInt)
@@ -18,6 +22,10 @@ export const getPost = async (id, slug) => {
         throw "Not found"
       }
     })
+  })*/
+  return new Promise(resolve => {
+    console.log(id + slug)
+    resolve("hello")
   })
 }
 

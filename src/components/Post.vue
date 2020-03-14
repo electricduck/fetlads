@@ -30,9 +30,9 @@ export default {
     /*let post = await this.loadPost(self.$route.params.id, self.$route.params.slug)
     console.log(post)*/
 
-    getPost(1, 'test').then(response => {
+    getPost(1, 'test').then(posts => {
       console.log("Hello")
-      console.log(response)
+      console.log(posts)
     })
 
     /*var posts = await getPost(1, 'test')
