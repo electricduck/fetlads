@@ -15,17 +15,22 @@
         Or don't: I'm just a few lines of text, I won't call the cops.
       </p>
       <p>
-        <a class="button" v-on:click="handleDismiss">
+        <Button v-on:click="handleDismiss">
           Let Me In
-        </a>
+        </Button>
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import Button from '@/components/Button.vue'
+
 export default {
   name: "TheAdultWarning",
+  components: {
+    Button
+  },
   data: function() {
     return {
       visible: false
@@ -106,21 +111,6 @@ export default {
         font-size: 2rem;
         font-weight: 700;
       }
-    }
-
-    .button { // TODO: Move this when we want to re-use it
-      border-radius: $radius;
-      cursor: pointer;
-      display: inline-block;
-      font-weight: 700;
-      line-height: 1;
-      padding: $padding #{$padding * 2};
-      text-transform: uppercase;
-      user-select: none;
-
-      background-color: var(--accent-color);
-      box-shadow: var(--light-shadow);
-      color: var(--accent-fg-color) !important;
     }
   }
 }
