@@ -2,7 +2,13 @@
   <div class="post" :class="{ 'post--visible' : found }">
     <PostMedia class="post-content" :src="src" :type="type" />
     <div class="post-actions">
-      <a class="post-actions-item" @click="handleExitClick" :title="$t('phrases.post.exit')">
+      <a
+        class="post-actions-item"
+        v-shortkey="['esc']"
+        @shortkey="handleExitClick"
+        @click="handleExitClick"
+        :title="$t('phrases.post.exit')"
+      >
         <font-awesome-icon icon="arrow-left" />
       </a>
     </div>
@@ -56,19 +62,6 @@ export default {
         this.$router.push("/");
         throw err;
       });
-
-    this._keyListener = function(e) {
-      switch (e.keyCode) {
-        case 27:
-          this.handleExitClick();
-          break;
-      }
-    }
-
-    document.addEventListener('keydown', this._keyListener.bind(this))
-  },
-  beforeDestroy() {
-    document.removeEventListener('keydown', this._keyListener)
   }
 };
 </script>

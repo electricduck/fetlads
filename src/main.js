@@ -31,6 +31,7 @@ library.add(
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueMasonryPlugin)
+Vue.use(require('vue-shortkey'))
 
 Vue.config.productionTip = false
 

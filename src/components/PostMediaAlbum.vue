@@ -7,11 +7,13 @@
       :src="image.file"
       :data-index="image.id"
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
-      v-on:click="navigateAlbum('forward')"
+      @click="navigateAlbum('forward')"
     />
     <a
       class="post-media-album-navigation post-media-album-navigation--back"
-      v-on:click="navigateAlbum('back')"
+      v-shortkey="['arrowleft']"
+      @shortkey="navigateAlbum('back')"
+      @click="navigateAlbum('back')"
       v-if="currentIndex > 1"
       :title="$t('phrases.postMediaAlbum.back')"
     >
@@ -19,7 +21,9 @@
     </a>
     <a
       class="post-media-album-navigation post-media-album-navigation--forward"
-      v-on:click="navigateAlbum('forward')"
+      v-shortkey="['arrowright']"
+      @shortkey="navigateAlbum('forward')"
+      @click="navigateAlbum('forward')"
       v-if="currentIndex < amount"
       :title="$t('phrases.postMediaAlbum.forward')"
     >
@@ -57,23 +61,7 @@ export default {
     }
   },
   mounted() {
-    this._keyListener = function(e) {
-      switch(e.keyCode) {
-        case 37:
-          this.navigateAlbum("back")
-          break
-        case 39:
-          this.navigateAlbum("forward")
-          break
-      }
-    }
-
-    document.addEventListener('keydown', this._keyListener.bind(this))
-
     this.amount = this.$props.src.length
-  },
-  beforeDestroy() {
-    document.removeEventListener('keydown', this._keyListener)
   }
 };
 </script>
