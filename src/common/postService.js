@@ -3,6 +3,8 @@ import axios from "axios"
 export const getPost = async (id, slug) => {
   let posts = await getPosts()
 
+  console.log(posts)
+
   return new Promise((resolve, reject) => {
     var idAsInt = Number(id)
     var post = posts.find(p => p.id == idAsInt)
@@ -32,6 +34,8 @@ export const getPosts = async (page, amount, sortByDate) => {
         result = response.data.sort(function (a, b) {
           return new Date(b.date) - new Date(a.date);
         });
+      } else {
+        result = response.data
       }
 
       if (amount === 0 && page === 0) {
