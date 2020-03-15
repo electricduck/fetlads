@@ -2,20 +2,24 @@
   <div class="navbar">
     <div class="navbar-hero">
       <div class="navbar-hero-inner">
+        <div class="navbar-hero-inner-text">
+          <h1>Hello.</h1>
+          <h2>We are two kinksters from the UK.</h2>
+        </div>
         <div class="navbar-hero-inner-links">
           <a
             class="navbar-hero-inner-links-item"
             href="https://t.me/fetlads"
             title="Telegram"
           >
-            <font-awesome-icon :icon="['fab', 'telegram-plane']" />
+            <font-awesome-icon :icon="['fab', 'telegram-plane']" style="color: #00a0de;" />
           </a>
           <a
             class="navbar-hero-inner-links-item"
             href="https://twitter.com/thefetlads_"
             title="Twitter"
           >
-            <font-awesome-icon :icon="['fab', 'twitter']" />
+            <font-awesome-icon :icon="['fab', 'twitter']" style="color: #00a1ee" />
           </a>
         </div>
       </div>
@@ -66,14 +70,11 @@ export default {};
   }
 
   .navbar-hero {
-    background-image: url('http://placekitten.com/1000/500');
+    background-image: url('/data/hero.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: 0 0 $radius $radius;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr auto;
     height: $navbar-hero-height;
     margin-bottom: $navbar-spacing;
 
@@ -81,36 +82,51 @@ export default {};
     box-shadow: var(--light-shadow);
 
     .navbar-hero-inner {
-      bottom: #{-$padding};
+      box-sizing: border-box;
+      display: grid;
       grid-column: 1;
       grid-row: 2;
-      line-height: 1.3;
+      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-rows: 1fr auto auto;
+      height: 100%;
+      line-height: 1.2;
       padding: #{$padding * 2};
 
       color: var(--overlay-fg-color);
       text-shadow: var(--light-shadow);
 
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: 500;
-        margin: 0;
-      }
+      .navbar-hero-inner-text {
+        grid-column: 1;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        padding: $padding;
+        text-align: left;
 
-      h1 {
-        font-size: 1.8rem;
-        font-weight: 700;
-      }
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 500;
+          margin: 0;
+        }
 
-      h2 {
-        font-size: 1.25rem;
+        h1 {
+          font-size: 4rem;
+          font-weight: 700;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
       }
 
       .navbar-hero-inner-links {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row: 3;
         font-size: 0;
         line-height: 1;
         text-align: right;
 
         .navbar-hero-inner-links-item {
-          font-size: 1.35rem;
+          font-size: 1.4rem;
           margin-right: #{$padding * 1.5};
           
           color: var(--overlay-fg-color) !important;
@@ -120,12 +136,30 @@ export default {};
             margin-right: 0;
           }
         }
+      }
 
-        @include respond-to(mobile) {
+      @include respond-to(desktop-sm) {
+        grid-template-columns: 1fr;
+
+        .navbar-hero-inner-text {
+          grid-row-start: 1;
+          grid-row-end: 2;
+          text-align: center;
+        }
+
+        .navbar-hero-inner-text,
+        .navbar-hero-inner-links {
+          grid-column-start: 1;
+          grid-column-end: 2;
+        }
+      }
+
+      @include respond-to(mobile) {
+        .navbar-hero-inner-links {
           text-align: center;
 
           .navbar-hero-inner-links-item {
-            font-size: 1.6rem;
+            font-size: 1.9rem;
           }
         }
       }

@@ -13,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   a {
+    cursor: pointer;
     font-weight: 700;
     transition: $transition;
 

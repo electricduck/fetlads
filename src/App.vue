@@ -2,14 +2,17 @@
   <div id="app">
     <TheNavbar />
     <router-view/>
+    <TheAdultWarning />
   </div>
 </template>
 
 <script>
+import TheAdultWarning from '@/components/TheAdultWarning.vue'
 import TheNavbar from '@/components/TheNavbar.vue'
 
 export default {
   components: {
+    TheAdultWarning,
     TheNavbar
   }
 }

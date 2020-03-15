@@ -1,31 +1,40 @@
 <template>
-  <div>
+  <div class="post-media">
     <img
       v-if="type === 'image'"
-      :src="loadImage(src)"
+      :src="loadImage(src[0].file)"
       class="post-content" />
     <video
       v-if="type === 'video'"
-      :src="loadVideo(src)"
+      :src="loadVideo(src[0].file)"
       autoplay="autoplay"
       controls="controls" />
     <iframe
       v-if="type === 'embed'"
-      :src="loadEmbed(src)"
+      :src="loadEmbed(src[0].file)"
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen="allowfullscreen"
       scrollable="no"
     ></iframe>
+    <Album
+      v-if="type === 'album'"
+      :src="src"
+    />
   </div>
 </template>
 
 <script>
+import Album from "@/components/PostMediaAlbum.vue"
+
 export default {
   name: "PostMedia",
+  components: {
+    Album
+  },
   props: {
     type: String,
-    src: String
+    src: Array
   },
   methods: {
     loadEmbed(embedUrl) {
@@ -37,7 +46,7 @@ export default {
     },
     loadImage(imageUrl) {
       if(!imageUrl.includes("https://")) {
-        var prefix = "https://zyrio-scw-nl02.s3.nl-ams.scw.cloud/pub/fetlads/"
+        var prefix = "https://fs05.fetlads.xyz/"
         return prefix + imageUrl
       } else {
         return imageUrl
@@ -45,7 +54,7 @@ export default {
     },
     loadVideo(videoUrl) {
       if(!videoUrl.includes("https://")) {
-        var prefix = "https://zyrio-scw-nl02.s3.nl-ams.scw.cloud/pub/fetlads/"
+        var prefix = "https://fs05.fetlads.xyz/"
         return prefix + videoUrl
       } else {
         return videoUrl

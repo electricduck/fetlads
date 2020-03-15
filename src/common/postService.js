@@ -1,39 +1,34 @@
 import axios from "axios"
 
 export const getPost = async (id, slug) => {
-  /*await getPosts().then((response) => {
-    return new Promise(resolve => {
-      var posts = response.data
+  let posts = await getPosts()
+  
+  return new Promise((resolve, reject) => {
+    var idAsInt = Number(id)
+    var post = posts.find(p => p.id == idAsInt)
 
-      
-
-      
-      
-      var idAsInt = Number(id)
-      var post = posts.find(p => p.id === idAsInt)
-
-      if (post !== undefined) {
-        if (slug === post.slug) {
-          resolve(post)
-        } else {
-          throw "Incorrect slug"
-        }
+    if (post !== undefined) {
+      if (slug === post.slug) {
+        resolve(post)
       } else {
-        throw "Not found"
+        reject('Incorrect slug')
       }
-    })
-  })*/
-  return new Promise(resolve => {
-    console.log(id + slug)
-    resolve("hello")
+    } else {
+      reject('Not found')
+    }
   })
 }
 
-export const getPosts = async () => {
-  return axios.get("/data/posts.json")
+export const getPosts = async (amount, page) => {
+  amount = amount || 0
+  page = page || 0
+
+  return axios.get("/data/posts.min.json")
     .then((response) => {
-      return response
+      if(amount === 0 && page === 0) {
+        return response.data
+      }
     }).catch((err) => {
-      console.log(err)
+      throw err
     })
 }

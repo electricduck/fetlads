@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faArrowLeft
+  faArrowLeft,
+  faBiohazard,
+  faChevronLeft, faChevronRight,
+  faImage, faImages,
+  faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTelegramPlane, faTwitter
@@ -13,7 +17,11 @@ import { VueMasonryPlugin } from 'vue-masonry'
 
 library.add(
   faArrowLeft,
-  faTelegramPlane, faTwitter
+  faBiohazard,
+  faChevronLeft, faChevronRight,
+  faImage, faImages,
+  faTelegramPlane, faTwitter,
+  faVideo
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

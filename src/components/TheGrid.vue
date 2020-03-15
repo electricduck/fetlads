@@ -7,7 +7,12 @@
       :key="post.id"
       :to="'/' + post.id + '/' + post.slug"
     >
-      <img class="grid-item-image" src="https://placekitten.com/520/500" />
+      <img class="grid-item-image" :src="getThumbnail(post.id)" />
+      <div class="grid-item-type">
+        <font-awesome-icon icon="image" class="grid-item-type-icon" v-if="post.type === 'image'" />
+        <font-awesome-icon icon="images" class="grid-item-type-icon" v-if="post.type === 'album'" />
+        <font-awesome-icon icon="video" class="grid-item-type-icon" v-if="post.type === 'video' || post.type === 'embed'" />
+      </div>
     </router-link>
   </div>
 </template>
@@ -23,21 +28,21 @@ export default {
     };
   },
   methods: {
-    async populateGrid() {
-      getPosts().then(response => {
-        let posts = response.data;
-        let sortedPosts = posts.sort(function(a, b) {
-          return new Date(b.date) - new Date(a.date);
-        });
-        this.posts = sortedPosts;
-
-        var appEl = document.getElementById("app"); // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill.
-        appEl.classList.add("app--loaded");
-      });
+    getThumbnail(id) {
+      let thumbnailPrefix = "/data/thumb/";
+      return thumbnailPrefix + id + ".jpg";
     }
   },
   async mounted() {
-    await this.populateGrid();
+    getPosts().then(posts => {
+      let sortedPosts = posts.sort(function(a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
+      this.posts = sortedPosts;
+
+      var appEl = document.getElementById("app"); // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
+      appEl.classList.add("app--loaded");
+    });
   }
 };
 </script>
@@ -55,14 +60,39 @@ export default {
     border-radius: $radius;
     box-sizing: border-box;
     display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
     margin: #{$padding / 2};
     overflow: hidden;
+    text-decoration: none;
+    user-select: none;
     width: calc((100% / #{$grid-amount-desktop}) - #{($padding / 2) * 2});
 
     box-shadow: var(--light-shadow);
 
+    .grid-item-image,
+    .grid-item-type {
+      grid-column: 1;
+    }
+
     .grid-item-image {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      user-select: none;
       width: 100%;
+    }
+
+    .grid-item-type {
+      font-size: 1.5rem;
+      grid-row: 2;
+      padding: #{$padding * 2};
+      text-align: right;
+      user-select: none;
+
+      .grid-item-type-icon {
+        color: var(--overlay-fg-color);
+        filter: drop-shadow(var(--light-shadow));
+      }
     }
 
     @include respond-to(desktop-sm) {

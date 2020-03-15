@@ -1,6 +1,7 @@
 body {
   @media (prefers-color-scheme: dark) {
     --accent-color: #D7FF3F;
+    --accent-fg-color: black;
     --body-bg-color: #101010;
     --body-fg-color: #{invert(#101010)};
     --heavy-shadow: 0 0 40px black;
@@ -12,6 +13,7 @@ body {
 
   @media (prefers-color-scheme: light) {
     --accent-color: #E5383B;
+    --accent-fg-color: white;
     --body-bg-color: #fefefe;
     --body-fg-color: #{invert(#fefefe)};
     --footer-bg-color: #f1f1f1;
@@ -23,5 +25,5 @@ body {
   }
 
   --overlay-bg-color: rgba(0,0,0,0.9);
-  --overlay-fg-color: rgba(255,255,255,0.75);
+  --overlay-fg-color: rgba(255,255,255,0.8);
 }

@@ -22,30 +22,22 @@ export default {
   data: function() {
     return {
       found: false,
-      src: "",
+      src: [],
       type: ""
     };
   },
   async mounted() {
-    /*let post = await this.loadPost(self.$route.params.id, self.$route.params.slug)
-    console.log(post)*/
-
-    getPost(1, 'test').then(posts => {
-      console.log("Hello")
-      console.log(posts)
+    getPost(
+      this.$route.params.id,
+      this.$route.params.slug
+    ).then(post => {
+      this.found = true
+      this.src = post.src
+      this.type = post.type
+    }).catch((err) => {
+      this.$router.push('/')
+      throw err
     })
-
-    /*var posts = await getPost(1, 'test')
-
-    console.log(posts)*/
-
-    /*try {
-      self.found = true;
-      self.src = post.src;
-      self.type = post.type;
-    } catch(error) {
-      self.$router.push({path:"/"})
-    }*/
   }
 };
 </script>
@@ -55,7 +47,7 @@ export default {
 @import "@/scss/_variables.scss";
 
 .post {
-  backdrop-filter: blur(5px);
+  //backdrop-filter: blur(5px);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: 1fr auto auto 1fr;
@@ -84,7 +76,8 @@ export default {
 
     & > iframe,
     & > img,
-    & > video {
+    & > video,
+    & > .post-media-album {
       border-radius: $radius;
       box-shadow: var(--heavy-shadow);
 
@@ -93,7 +86,8 @@ export default {
       }
     }
 
-    & > iframe {
+    & > iframe,
+    & > .post-media-album {
       height: 90vh;
       width: 90vw;
     }
@@ -135,13 +129,15 @@ export default {
     .post-content {
       & > iframe,
       & > img,
-      & > video {
+      & > video,
+      & > .post-media-album {
         border-radius: unset;
         box-shadow: unset;
         height: 100vh;
         max-height: unset;
         max-width: unset;
         object-fit: contain;
+        overflow: hidden;
         width: 100vw;
       }
     }
