@@ -58,7 +58,6 @@ export default {
       });
 
     this._keyListener = function(e) {
-      console.log(e);
       switch (e.keyCode) {
         case 27:
           this.handleExitClick();

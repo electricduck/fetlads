@@ -58,7 +58,6 @@ export default {
   },
   mounted() {
     this._keyListener = function(e) {
-      console.log(e)
       switch(e.keyCode) {
         case 37:
           this.navigateAlbum("back")
