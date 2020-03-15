@@ -90,6 +90,10 @@ export default {
       background-image: url('/data/hero_mobile.jpg');
     }
 
+    @include respond-to(desktop-sm) {
+      background-image: url('/data/hero_desktop-sm.jpg');
+    }
+
     @include respond-to(desktop) {
       background-image: url('/data/hero_desktop.jpg');
     }
