@@ -1,5 +1,6 @@
 <template>
   <div class="post" :class="{ 'post--visible' : found }">
+    <div class="post-background" @click="handleExitClick"></div>
     <PostMedia class="post-content" :src="src" :type="type" />
     <div class="post-actions">
       <a
@@ -91,12 +92,21 @@ export default {
     }
   }
 
+  .post-background {
+    background-color: transparent;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    z-index: 755;
+  }
+
   .post-content {
     display: none;
     grid-column: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    z-index: 751;
+    z-index: 780;
 
     & > iframe,
     & > img,
