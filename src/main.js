@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import { i18n } from '@/common/i18n'
-import { version } from './common/version'
+//import { version } from './common/version'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowLeft,
