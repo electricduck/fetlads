@@ -86,16 +86,16 @@ export default {
     background-color: var(--navbar-fg-color);
     box-shadow: var(--light-shadow);
 
-    @include respond-to(mobile) {
-      background-image: url('/data/hero_mobile.jpg');
+    @include respond-to(desktop) {
+      background-image: url('https://fetlads.xyz/data/hero_desktop.jpg');
     }
 
     @include respond-to(desktop-sm) {
-      background-image: url('/data/hero_desktop-sm.jpg');
+      background-image: url('https://fetlads.xyz/data/hero_desktop-sm.jpg');
     }
 
-    @include respond-to(desktop) {
-      background-image: url('/data/hero_desktop.jpg');
+    @include respond-to(mobile) {
+      background-image: url('https://fetlads.xyz/data/hero_mobile.jpg');
     }
 
     .navbar-hero-inner {

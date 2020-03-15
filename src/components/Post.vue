@@ -34,6 +34,11 @@ export default {
       this.found = true
       this.src = post.src
       this.type = post.type
+
+      var parsedDate = new Date(Date.parse(post.date))
+      var formattedDate = `${parsedDate.getFullYear()}-${(parsedDate.getMonth()+1).toString().padStart(2, '0')}-${parsedDate.getDate().toString().padStart(2, '0')}`
+
+      document.title = `Fetlads • #${post.id.toString().padStart(3, '0')} (${formattedDate})`
     }).catch((err) => {
       this.$router.push('/')
       throw err

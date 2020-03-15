@@ -1,21 +1,34 @@
 <template>
   <div id="app">
     <TheNavbar />
-    <router-view/>
+    <router-view />
     <TheAdultWarning />
   </div>
 </template>
 
 <script>
-import TheAdultWarning from '@/components/TheAdultWarning.vue'
-import TheNavbar from '@/components/TheNavbar.vue'
+import TheAdultWarning from "@/components/TheAdultWarning.vue";
+import TheNavbar from "@/components/TheNavbar.vue";
 
 export default {
   components: {
     TheAdultWarning,
     TheNavbar
+  },
+  methods: {
+    setTitle(title) {
+      document.title = title || this.$route.meta.title || "Fetlads"
+    }
+  },
+  watch: {
+    $route() {
+      this.setTitle()
+    }
+  },
+  mounted () {
+    this.setTitle()
   }
-}
+};
 </script>
 
 <style lang="scss">

@@ -2,8 +2,8 @@
   @if $media == mobile {
     @media only screen and (max-width: 799px) { @content; }
   } @else if $media == desktop-sm {
-    @media only screen and (max-width: 999px) { @content; }
+    @media only screen and (max-width: 1199px) { @content; }
   } @else if $media == desktop {
-    @media only screen and (min-width: 1000px) { @content; }
+    @media only screen and (min-width: 1200px) { @content; }
   }
 }

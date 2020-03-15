@@ -8,6 +8,9 @@ const routes = [
   {
     path: '/',
     component: Home,
+    meta: {
+      title: "Fetlads"
+    },
     children: [
       {
         path: ':id/:slug',
