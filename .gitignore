@@ -1,7 +1,3 @@
-.DS_Store
-node_modules
-/dist
-
 # local env files
 .env.local
 .env.*.local
@@ -19,7 +15,13 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+*~
 
-#Misc
+# NodeJS
+.DS_Store
+node_modules
+/dist
+
+# Misc.
 public/data
 !.gitkeep

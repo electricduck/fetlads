@@ -4,33 +4,27 @@
       <p class="adult-warning-inner-icon">
         <font-awesome-icon icon="biohazard" />
       </p>
-      <p class="adult-warning-inner-title">Woah, there!</p>
+      <p class="adult-warning-inner-title">
+        {{ $t('phrases.adultWarning.title') }}
+      </p>
       <p>
         <strong>
-          This site contains sexual and adult content.
+          {{ $t('phrases.adultWarning.containsAdultContent') }}
         </strong>
       </p>
+      <p v-html="$t('phrases.adultWarning.pleaseLeaveNow')"></p>
       <p>
-        If you are under the legal age, please leave now.<br />
-        Or don't: I'm just a few lines of text, I won't call the cops.
-      </p>
-      <p>
-        <Button v-on:click="handleDismiss">
-          Let Me In
-        </Button>
+        <a class="button" v-on:click="handleDismiss">
+          {{ $t('phrases.adultWarning.letMeIn') }}
+        </a>
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import Button from '@/components/Button.vue'
-
 export default {
   name: "TheAdultWarning",
-  components: {
-    Button
-  },
   data: function() {
     return {
       visible: false

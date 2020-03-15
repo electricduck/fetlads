@@ -10,24 +10,30 @@ import ru from '@/lang/ru'
 
 Vue.use(VueI18n)
 
-const detectBrowserLanguage = () => {
-  var language = (navigator.language || navigator.userLanguage).substring(0,2)
+const setLanguage = (defaultLanguage, forceLanguage) => {
+  forceLanguage = forceLanguage || false
 
-  switch (language) {
-    case "de":
-    case "en":
-    case "es":
-    case "fr":
-    case "nl":
-    case "ru":
-      return language
-    default:
-      return "en"
+  if(!forceLanguage) {
+    var browserLanguage = (navigator.language || navigator.userLanguage).substring(0,2)
+
+    switch (browserLanguage) {
+      case "de":
+      case "en":
+      case "es":
+      case "fr":
+      case "nl":
+      case "ru":
+        return browserLanguage
+      default:
+        return defaultLanguage
+    }
+  } else {
+    return defaultLanguage
   }
 }
 
 export const i18n = new VueI18n({
-  locale: detectBrowserLanguage(),
+  locale: setLanguage('nl', true),
   fallbackLocale: 'en',
   messages: {
     de, en, es, fr, nl, ru

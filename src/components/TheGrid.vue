@@ -162,7 +162,12 @@ export default {
     }
 
     .grid-load-more-lm  {
+      box-sizing: border-box;
       padding: #{$padding * 1.5} #{$padding * 2.5} !important;
+      
+      @include respond-to(mobile) {
+        width: 100%;
+      }
     }
 
     .grid-load-more-nm {
