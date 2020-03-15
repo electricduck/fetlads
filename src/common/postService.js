@@ -39,7 +39,6 @@ export const getPosts = async (page, amount, sortByDate) => {
       } else {
         var start = 0 + (amount * page)
         var end = start + amount
-        console.log(result.slice(start, end))
         return result.slice(start, end)
       }
     }).catch((err) => {

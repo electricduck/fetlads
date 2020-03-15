@@ -57,7 +57,6 @@ export default {
     },
     handleLoadMoreClick() {
       this.page = this.page + 1;
-      console.log(this.page)
       this.loadPosts(this.page);
     },
     loadPosts(page) {
