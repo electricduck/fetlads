@@ -173,7 +173,9 @@ export default {
     .grid-load-more-nm {
       display: none;
       font-size: 1rem;
-      opacity: 0.2;
+      opacity: 0.3;
+
+      color: var(--body-fg-color);
     }
   }
 }

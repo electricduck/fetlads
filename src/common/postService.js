@@ -3,8 +3,6 @@ import axios from "axios"
 export const getPost = async (id, slug) => {
   let posts = await getPosts()
 
-  console.log(posts)
-
   return new Promise((resolve, reject) => {
     var idAsInt = Number(id)
     var post = posts.find(p => p.id == idAsInt)
