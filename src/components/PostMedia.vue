@@ -46,7 +46,7 @@ export default {
     },
     loadImage(imageUrl) {
       if(!imageUrl.includes("https://")) {
-        var prefix = "https://fs05.fetlads.xyz/"
+        var prefix = "https://fs05.fetlads.xyz/image/"
         return prefix + imageUrl
       } else {
         return imageUrl
@@ -54,7 +54,7 @@ export default {
     },
     loadVideo(videoUrl) {
       if(!videoUrl.includes("https://")) {
-        var prefix = "https://fs05.fetlads.xyz/"
+        var prefix = "https://fs05.fetlads.xyz/video/"
         return prefix + videoUrl
       } else {
         return videoUrl

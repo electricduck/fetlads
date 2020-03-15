@@ -6,7 +6,7 @@ import {
   faArrowLeft,
   faBiohazard,
   faChevronLeft, faChevronRight,
-  faImage, faImages,
+  faImage, faImages, faInfoCircle,
   faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -19,7 +19,7 @@ library.add(
   faArrowLeft,
   faBiohazard,
   faChevronLeft, faChevronRight,
-  faImage, faImages,
+  faImage, faImages, faInfoCircle,
   faTelegramPlane, faTwitter,
   faVideo
 )

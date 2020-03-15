@@ -31,12 +31,18 @@
           <span>Lads</span>
         </router-link>
       </div>
+      <div class="navbar-item">
+      </div>
+      <div class="navbar-item">
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "TheNavbar"
+};
 </script>
 
 <style lang="scss">
@@ -169,7 +175,7 @@ export default {};
   .navbar-container {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr auto auto auto 1fr;
     height: $navbar-container-height;
     width: 100%;
@@ -179,6 +185,44 @@ export default {};
         grid-column: 2;
         grid-row-start: 2;
         grid-row-end: 5;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        font-size: 1.3rem;
+        grid-row: 3;
+        line-height: 1;
+
+        .svg-inline--fa {
+          filter: drop-shadow(var(--navbar-fg-shadow));
+        }
+      }
+
+      &:nth-of-type(2) {
+        grid-column: 1;
+        padding-left: $padding;
+        text-align: left;
+      }
+
+      &:nth-of-type(3) {
+        grid-column: 3;
+        padding-right: $padding;
+        text-align: right;
+      }
+
+      @include respond-to(mobile) {
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+          font-size: 1.4rem;
+        }
+
+        &:nth-of-type(2) {
+          padding-left: #{$padding * 2};
+        }
+
+        &:nth-of-type(3) {
+          padding-right: #{$padding * 2};
+        }
       }
     }
 

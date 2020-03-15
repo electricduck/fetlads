@@ -25,7 +25,6 @@ export default {
   },
   data: function() {
     return {
-      albumHtml: "",
       amount: 0,
       currentIndex: 1
     };
