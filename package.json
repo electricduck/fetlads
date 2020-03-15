@@ -1,10 +1,10 @@
 {
   "name": "fetlads",
-  "version": "0.0.0",
+  "version": "20.0.0-beta",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "genversion --es6 src/common/version.js && vue-cli-service serve",
+    "build": "genversion --es6 src/common/version.js && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "axios": "^0.19.2",
     "core-js": "^3.4.4",
+    "genversion": "^2.2.0",
     "vue": "^2.6.10",
     "vue-i18n": "^8.15.5",
     "vue-masonry": "^0.11.8",

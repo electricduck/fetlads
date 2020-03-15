@@ -31,10 +31,11 @@
           <span>lads</span>
         </router-link>
       </div>
-      <div class="navbar-item">
+      <!--div class="navbar-item">
       </div>
-      <div class="navbar-item">
-      </div>
+      <a class="navbar-item" @click="handleInfoClick">
+        <font-awesome-icon icon="info-circle" />
+      </a-->
     </div>
   </div>
 </template>
@@ -208,14 +209,14 @@ export default {
     width: 100%;
 
     .navbar-item {
-      &:nth-of-type(1) {
+      &:nth-child(1) {
         grid-column: 2;
         grid-row-start: 2;
         grid-row-end: 5;
       }
 
-      &:nth-of-type(2),
-      &:nth-of-type(3) {
+      &:nth-child(2),
+      &:nth-child(3) {
         font-size: 1.3rem;
         grid-row: 3;
         line-height: 1;
@@ -225,29 +226,29 @@ export default {
         }
       }
 
-      &:nth-of-type(2) {
+      &:nth-child(2) {
         grid-column: 1;
         padding-left: $padding;
         text-align: left;
       }
 
-      &:nth-of-type(3) {
+      &:nth-child(3) {
         grid-column: 3;
         padding-right: $padding;
         text-align: right;
       }
 
       @include respond-to(mobile) {
-        &:nth-of-type(2),
-        &:nth-of-type(3) {
+        &:nth-child(2),
+        &:nth-child(3) {
           font-size: 1.4rem;
         }
 
-        &:nth-of-type(2) {
+        &:nth-child(2) {
           padding-left: #{$padding * 2};
         }
 
-        &:nth-of-type(3) {
+        &:nth-child(3) {
           padding-right: #{$padding * 2};
         }
       }
