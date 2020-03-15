@@ -7,6 +7,7 @@
       :src="image.file"
       :data-index="image.id"
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
+      v-on:click="navigateAlbum('forward')"
     />
     <a
       class="post-media-album-navigation post-media-album-navigation--back"
@@ -43,21 +44,43 @@ export default {
     navigateAlbum(direction) {
       switch (direction) {
         case "back":
-          this.currentIndex = this.currentIndex - 1;
-          break;
+          if(this.currentIndex > 1) {
+            this.currentIndex = this.currentIndex - 1
+          }
+          break
         case "forward":
-          this.currentIndex = this.currentIndex + 1;
-          break;
+          if(this.currentIndex < this.amount) {
+            this.currentIndex = this.currentIndex + 1
+          }
+          break
       }
     }
   },
   mounted() {
-    this.amount = this.$props.src.length;
+    this._keyListener = function(e) {
+      console.log(e)
+      switch(e.keyCode) {
+        case 37:
+          this.navigateAlbum("back")
+          break
+        case 39:
+          this.navigateAlbum("forward")
+          break
+      }
+    }
+
+    document.addEventListener('keydown', this._keyListener.bind(this))
+
+    this.amount = this.$props.src.length
+  },
+  beforeDestroy() {
+    document.removeEventListener('keydown', this._keyListener)
   }
 };
 </script>
 
 <style lang="scss">
+@import "@/scss/_mixins.scss";
 @import "@/scss/_variables.scss";
 
 .post-media-album {
@@ -91,7 +114,7 @@ export default {
     padding: 0 #{$padding * 3.5};
 
     color: var(--overlay-fg-color) !important;
-    filter: drop-shadow(var(--light-shadow));
+    filter: drop-shadow(var(--light-shadow)) !important;
 
     &.post-media-album-navigation--back {
       grid-column: 1;
@@ -99,6 +122,11 @@ export default {
 
     &.post-media-album-navigation--forward {
       grid-column: 3;
+    }
+
+    @include respond-to(mobile) {
+      opacity: 0.75;
+      padding: 0 #{$padding * 2} !important;
     }
   }
 }

@@ -2,9 +2,9 @@
   <div class="post" :class="{ 'post--visible' : found }">
     <PostMedia class="post-content" :src="src" :type="type" />
     <div class="post-actions">
-      <router-link to="/" class="post-actions-item" :title="$t('phrases.post.exit')">
+      <a class="post-actions-item" @click="handleExitClick" :title="$t('phrases.post.exit')">
         <font-awesome-icon icon="arrow-left" />
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
@@ -25,6 +25,11 @@ export default {
       src: [],
       type: ""
     };
+  },
+  methods: {
+    handleExitClick() {
+      this.$router.push("/");
+    }
   },
   async mounted() {
     getPost(this.$route.params.id, this.$route.params.slug)
@@ -51,6 +56,20 @@ export default {
         this.$router.push("/");
         throw err;
       });
+
+    this._keyListener = function(e) {
+      console.log(e);
+      switch (e.keyCode) {
+        case 27:
+          this.handleExitClick();
+          break;
+      }
+    }
+
+    document.addEventListener('keydown', this._keyListener.bind(this))
+  },
+  beforeDestroy() {
+    document.removeEventListener('keydown', this._keyListener)
   }
 };
 </script>
@@ -151,7 +170,7 @@ export default {
         max-width: unset;
         object-fit: contain;
         overflow: hidden;
-        width: 100vw;
+        width: 100%;
       }
     }
 
