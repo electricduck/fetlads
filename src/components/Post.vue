@@ -145,7 +145,7 @@ export default {
       transition: $transition;
 
       color: var(--overlay-fg-color) !important;
-      filter: drop-shadow(var(--light-shadow));
+      filter: drop-shadow(var(--light-shadow)) !important;
 
       &:hover {
         opacity: 1;

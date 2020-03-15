@@ -222,7 +222,7 @@ export default {
         line-height: 1;
 
         .svg-inline--fa {
-          filter: drop-shadow(var(--navbar-fg-shadow));
+          filter: drop-shadow(var(--navbar-fg-shadow)) !important;
         }
       }
 
