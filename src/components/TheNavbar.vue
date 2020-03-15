@@ -76,7 +76,6 @@ export default {
   }
 
   .navbar-hero {
-    background-image: url('/data/hero.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -86,6 +85,14 @@ export default {
 
     background-color: var(--navbar-fg-color);
     box-shadow: var(--light-shadow);
+
+    @include respond-to(mobile) {
+      background-image: url('/data/hero_mobile.jpg');
+    }
+
+    @include respond-to(desktop) {
+      background-image: url('/data/hero_desktop.jpg');
+    }
 
     .navbar-hero-inner {
       box-sizing: border-box;
