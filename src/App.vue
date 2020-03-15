@@ -3,16 +3,19 @@
     <TheNavbar />
     <router-view />
     <TheAdultWarning />
+    <TheFooter />
   </div>
 </template>
 
 <script>
 import TheAdultWarning from "@/components/TheAdultWarning.vue";
+import TheFooter from "@/components/TheFooter.vue";
 import TheNavbar from "@/components/TheNavbar.vue";
 
 export default {
   components: {
     TheAdultWarning,
+    TheFooter,
     TheNavbar
   },
   methods: {
