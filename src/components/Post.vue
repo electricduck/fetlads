@@ -2,7 +2,7 @@
   <div class="post" :class="{ 'post--visible' : found }">
     <PostMedia class="post-content" :src="src" :type="type" />
     <div class="post-actions">
-      <router-link to="/" class="post-actions-item">
+      <router-link to="/" class="post-actions-item" :title="$t('phrases.post.exit')">
         <font-awesome-icon icon="arrow-left" />
       </router-link>
     </div>
@@ -27,22 +27,30 @@ export default {
     };
   },
   async mounted() {
-    getPost(
-      this.$route.params.id,
-      this.$route.params.slug
-    ).then(post => {
-      this.found = true
-      this.src = post.src
-      this.type = post.type
+    getPost(this.$route.params.id, this.$route.params.slug)
+      .then(post => {
+        this.found = true;
+        this.src = post.src;
+        this.type = post.type;
 
-      var parsedDate = new Date(Date.parse(post.date))
-      var formattedDate = `${parsedDate.getFullYear()}-${(parsedDate.getMonth()+1).toString().padStart(2, '0')}-${parsedDate.getDate().toString().padStart(2, '0')}`
+        var parsedDate = new Date(Date.parse(post.date));
+        var formattedDate = `${parsedDate.getFullYear()}-${(
+          parsedDate.getMonth() + 1
+        )
+          .toString()
+          .padStart(2, "0")}-${parsedDate
+          .getDate()
+          .toString()
+          .padStart(2, "0")}`;
 
-      document.title = `Fetlads • #${post.id.toString().padStart(3, '0')} (${formattedDate})`
-    }).catch((err) => {
-      this.$router.push('/')
-      throw err
-    })
+        document.title = `Fetlads • #${post.id
+          .toString()
+          .padStart(3, "0")} (${formattedDate})`;
+      })
+      .catch(err => {
+        this.$router.push("/");
+        throw err;
+      });
   }
 };
 </script>

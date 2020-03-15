@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import { i18n } from '@/common/i18n'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowLeft,
@@ -31,6 +32,7 @@ Vue.use(VueMasonryPlugin)
 Vue.config.productionTip = false
 
 new Vue({
+  i18n,
   router,
   render: h => h(App)
 }).$mount('#app')

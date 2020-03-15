@@ -3,8 +3,8 @@
     <div class="navbar-hero">
       <div class="navbar-hero-inner">
         <div class="navbar-hero-inner-text">
-          <h1>Hello.</h1>
-          <h2>We are two kinksters from the UK.</h2>
+          <h1>{{ $t('phrases.navbar.hello') }}</h1>
+          <h2>{{ $t('phrases.navbar.weAre') }}</h2>
         </div>
         <div class="navbar-hero-inner-links">
           <a
@@ -28,7 +28,7 @@
       <div class="navbar-item">
         <router-link to="/" class="navbar-logo">
           <span>Fet</span>
-          <span>Lads</span>
+          <span>lads</span>
         </router-link>
       </div>
       <div class="navbar-item">
@@ -87,15 +87,15 @@ export default {
     box-shadow: var(--light-shadow);
 
     @include respond-to(desktop) {
-      background-image: url('https://fetlads.xyz/data/hero_desktop.jpg');
+      background-image: url('/data/hero_desktop.jpg');
     }
 
     @include respond-to(desktop-sm) {
-      background-image: url('https://fetlads.xyz/data/hero_desktop-sm.jpg');
+      background-image: url('/data/hero_desktop-sm.jpg');
     }
 
     @include respond-to(mobile) {
-      background-image: url('https://fetlads.xyz/data/hero_mobile.jpg');
+      background-image: url('/data/hero_mobile.jpg');
     }
 
     .navbar-hero-inner {
@@ -121,12 +121,12 @@ export default {
 
         h1, h2, h3, h4, h5, h6 {
           font-weight: 500;
-          line-height: 1;
+          line-height: 1.1;
           margin: 0;
         }
 
         h1 {
-          font-size: 4rem;
+          font-size: 7rem;
           font-weight: 700;
         }
 
@@ -162,25 +162,22 @@ export default {
         }
       }
 
-      @include respond-to(desktop) {
-        .navbar-hero-inner-text {
-          h1 {
-            font-size: 7rem;
-          }
-
-          h2 {
-            font-size: 2.5rem;
-          }
-        }
-      }
-
       @include respond-to(desktop-sm) {
         grid-template-columns: 1fr;
 
         .navbar-hero-inner-text {
           grid-row-start: 1;
           grid-row-end: 2;
+          padding-top: #{$padding * 4};
           text-align: center;
+
+          h1 {
+            font-size: 4rem;
+          }
+
+          h2 {
+            font-size: 1.8rem;
+          }
         }
 
         .navbar-hero-inner-text,

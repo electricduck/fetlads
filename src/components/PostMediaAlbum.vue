@@ -8,10 +8,20 @@
       :data-index="image.id"
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
     />
-    <a class="post-media-album-navigation post-media-album-navigation--back" v-on:click="navigateAlbum('back')" v-if="currentIndex > 1">
+    <a
+      class="post-media-album-navigation post-media-album-navigation--back"
+      v-on:click="navigateAlbum('back')"
+      v-if="currentIndex > 1"
+      :title="$t('phrases.postMediaAlbum.back')"
+    >
       <font-awesome-icon icon="chevron-left" />
     </a>
-    <a class="post-media-album-navigation post-media-album-navigation--forward" v-on:click="navigateAlbum('forward')" v-if="currentIndex < amount">
+    <a
+      class="post-media-album-navigation post-media-album-navigation--forward"
+      v-on:click="navigateAlbum('forward')"
+      v-if="currentIndex < amount"
+      :title="$t('phrases.postMediaAlbum.forward')"
+    >
       <font-awesome-icon icon="chevron-right" />
     </a>
   </div>
@@ -42,7 +52,7 @@ export default {
     }
   },
   mounted() {
-    this.amount = this.$props.src.length
+    this.amount = this.$props.src.length;
   }
 };
 </script>
