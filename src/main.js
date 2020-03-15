@@ -38,6 +38,6 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-console.log('%cFETLADS ', 'font-weight: 900; font-size: 50px;color: #d7ff3f; text-shadow: 3px 3px 0 #101010')
-console.log('%cVersion ' + version, 'font-weight: bold; color: #8056ff; font-size: 16px;')
-console.log('%cPowered by Vue, NodeJS, Yarn, Docker, Caddy, and many late nights.', 'color: #1fb281;')
+//console.log('%cFETLADS ', 'font-weight: 900; font-size: 50px;color: #d7ff3f; text-shadow: 3px 3px 0 #101010')
+//console.log('%cVersion ' + version, 'font-weight: bold; color: #8056ff; font-size: 16px;')
+//console.log('%cPowered by Vue, NodeJS, Yarn, Docker, Caddy, and many late nights.', 'color: #1fb281;')
