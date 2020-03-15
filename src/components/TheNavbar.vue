@@ -31,18 +31,27 @@
           <span>lads</span>
         </router-link>
       </div>
-      <!--div class="navbar-item">
+      <div class="navbar-item">
       </div>
-      <a class="navbar-item" @click="handleInfoClick">
-        <font-awesome-icon icon="info-circle" />
-      </a-->
+      <a class="navbar-item" @click="handleRandomPostClick">
+        <font-awesome-icon icon="random" />
+      </a>
     </div>
   </div>
 </template>
 
 <script>
+import { getRandomPost } from "@/common/postService";
+
 export default {
-  name: "TheNavbar"
+  name: "TheNavbar",
+  methods: {
+    handleRandomPostClick() {
+      getRandomPost().then(post => {
+        this.$router.push('/' + post.id + '/' + post.slug)
+      })
+    }
+  }
 };
 </script>
 

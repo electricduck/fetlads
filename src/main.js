@@ -9,6 +9,7 @@ import {
   faBiohazard,
   faChevronLeft, faChevronRight,
   faImage, faImages, faInfoCircle,
+  faRandom,
   faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -22,6 +23,7 @@ library.add(
   faBiohazard,
   faChevronLeft, faChevronRight,
   faImage, faImages, faInfoCircle,
+  faRandom,
   faTelegramPlane, faTwitter,
   faVideo
 )
