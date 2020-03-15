@@ -12,14 +12,14 @@
             href="https://t.me/fetlads"
             title="Telegram"
           >
-            <font-awesome-icon :icon="['fab', 'telegram-plane']" style="color: #00a0de;" />
+            <font-awesome-icon :icon="['fab', 'telegram-plane']" />
           </a>
           <a
             class="navbar-hero-inner-links-item"
             href="https://twitter.com/thefetlads_"
             title="Twitter"
           >
-            <font-awesome-icon :icon="['fab', 'twitter']" style="color: #00a1ee" />
+            <font-awesome-icon :icon="['fab', 'twitter']" />
           </a>
         </div>
       </div>
@@ -103,14 +103,14 @@ export default {
       display: grid;
       grid-column: 1;
       grid-row: 2;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 800px auto;
       grid-template-rows: 1fr auto auto;
       height: 100%;
-      line-height: 1.2;
+      opacity: 0.8;
       padding: #{$padding * 2};
 
-      color: var(--overlay-fg-color);
-      text-shadow: var(--light-shadow);
+      color: white;
+      text-shadow: 0 0 7px black;
 
       .navbar-hero-inner-text {
         grid-column: 1;
@@ -121,6 +121,7 @@ export default {
 
         h1, h2, h3, h4, h5, h6 {
           font-weight: 500;
+          line-height: 1;
           margin: 0;
         }
 
@@ -131,6 +132,12 @@ export default {
 
         h2 {
           font-size: 2rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          line-height: 1.3;
+          margin: $padding 0 0 0;
         }
       }
 
@@ -146,11 +153,23 @@ export default {
           font-size: 1.4rem;
           margin-right: #{$padding * 1.5};
           
-          color: var(--overlay-fg-color) !important;
-          filter: drop-shadow(var(--light-shadow));
+          color: white !important;
+          filter: drop-shadow(0 0 7px black) !important;
 
           &:last-of-type {
             margin-right: 0;
+          }
+        }
+      }
+
+      @include respond-to(desktop) {
+        .navbar-hero-inner-text {
+          h1 {
+            font-size: 7rem;
+          }
+
+          h2 {
+            font-size: 2.5rem;
           }
         }
       }
@@ -250,7 +269,7 @@ export default {
       user-select: none;
 
       color: var(--navbar-fg-color, var(--accent-color));
-      filter: drop-shadow(var(--navbar-fg-shadow));
+      filter: drop-shadow(var(--navbar-fg-shadow)) !important;
 
       & > span {
         border-style: solid;
