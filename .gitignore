@@ -24,4 +24,5 @@ node_modules
 
 # Misc.
 public/data
+common/version.js
 !.gitkeep
