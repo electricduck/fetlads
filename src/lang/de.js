@@ -10,8 +10,8 @@ export default {
       translationsProvidedBy: "Die Übersetzungen werden von <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a> zur Verfügung gestellt"
     },
     grid: {
-      loadMore: "Mehr laden",
-      nothingMore: "Nichts mehr zu laden"
+      loadMore: "Mehr",
+      nothingMore: "Keine weiteren Stellen"
     },
     navbar: {
       hello: "Hallo.",

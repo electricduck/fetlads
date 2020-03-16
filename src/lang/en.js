@@ -10,8 +10,8 @@ export default {
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
     grid: {
-      loadMore: "Load More",
-      nothingMore: "Nothing more to load"
+      loadMore: "More",
+      nothingMore: "No more posts :("
     },
     navbar: {
       hello: "Hello.",
