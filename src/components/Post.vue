@@ -38,15 +38,17 @@ export default {
       this.$router.push("/");
     }
   },
-  async mounted() {
+  mounted() {
     var useCache = false
 
-    if(window.isLoaded) {
+    if(window.isPostCacheUpdated) {
       useCache = true
     }
 
     getPost(this.$route.params.id, this.$route.params.slug, useCache)
       .then(post => {
+        window.isPostCacheUpdated = true
+
         this.found = true;
         this.src = post.src;
         this.type = post.type;

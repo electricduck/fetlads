@@ -1,7 +1,7 @@
 import axios from "axios"
 
-export const getPost = async (id, slug) => {
-  let posts = await getPosts()
+export const getPost = async (id, slug, useCache) => {
+  let posts = await getPosts(0, 0, !useCache)
 
   return new Promise((resolve, reject) => {
     var idAsInt = Number(id)

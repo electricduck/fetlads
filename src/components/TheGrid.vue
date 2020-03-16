@@ -62,6 +62,10 @@ export default {
     loadPosts(updateCache, page) {
       updateCache = updateCache || false
 
+      if(window.isPostCacheUpdated) {
+        updateCache = false
+      }
+
       getPosts(page, postsAmount, updateCache, true).then(posts => {
         page = page || 0;
 
@@ -75,7 +79,7 @@ export default {
         if (page === 0) {
           var appEl = document.getElementById("app") // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
           appEl.classList.add("app--loaded")
-          window.isLoaded = true
+          window.isPostCacheUpdated = true
         }
       });
     }
