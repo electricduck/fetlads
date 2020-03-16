@@ -62,7 +62,7 @@ export default {
     loadPosts(updateCache, page) {
       updateCache = updateCache || false
 
-      getPosts(page, postsAmount, true, updateCache).then(posts => {
+      getPosts(page, postsAmount, updateCache, true).then(posts => {
         page = page || 0;
 
         if(posts.length === 0) {
@@ -73,8 +73,9 @@ export default {
         }
 
         if (page === 0) {
-          var appEl = document.getElementById("app"); // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
-          appEl.classList.add("app--loaded");
+          var appEl = document.getElementById("app") // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
+          appEl.classList.add("app--loaded")
+          window.isLoaded = true
         }
       });
     }

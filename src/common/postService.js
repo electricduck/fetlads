@@ -19,7 +19,7 @@ export const getPost = async (id, slug) => {
   })
 }
 
-export const getPosts = async (page, amount, sortByDate, updateCache) => {
+export const getPosts = async (page, amount, updateCache, sortByDate) => {
   amount = amount || 0
   page = page || 0
   sortByDate = sortByDate || false

@@ -39,7 +39,13 @@ export default {
     }
   },
   async mounted() {
-    getPost(this.$route.params.id, this.$route.params.slug)
+    var useCache = false
+
+    if(window.isLoaded) {
+      useCache = true
+    }
+
+    getPost(this.$route.params.id, this.$route.params.slug, useCache)
       .then(post => {
         this.found = true;
         this.src = post.src;
