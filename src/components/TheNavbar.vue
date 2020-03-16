@@ -6,7 +6,9 @@
           <h1>{{ $t('phrases.navbar.hero.hello') }}</h1>
           <h2>{{ $t('phrases.navbar.hero.weAre') }}</h2>
           <!--div class="navbar-hero-inner-text-block">
-            <p>...</p>
+            <p>
+              Based in the <strong>North of England</strong>, together for <strong>{{ this.yearsTogether }} years</strong>, we are two kinksters that enjoy giving others a look in.
+            </p>
           </div-->
         </div>
         <div class="navbar-hero-inner-links">
@@ -55,6 +57,11 @@ import { getRandomPost } from "@/common/postService";
 
 export default {
   name: "TheNavbar",
+  data: function() {
+    return {
+      yearsTogether: 0
+    }
+  },
   methods: {
     handleRandomPostClick() {
       if (this.$route.name === "Home") {
@@ -63,6 +70,11 @@ export default {
         });
       }
     }
+  },
+  mounted() {
+    var yearSince = 2015
+    var yearUntil = (new Date()).getFullYear()
+    this.yearsTogether = yearUntil - yearSince
   }
 };
 </script>

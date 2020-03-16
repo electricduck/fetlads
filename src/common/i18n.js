@@ -5,6 +5,7 @@ import de from '@/lang/de'
 import en from '@/lang/en'
 import es from '@/lang/es'
 import fr from '@/lang/fr'
+import jp from '@/lang/jp'
 import nl from '@/lang/nl'
 import ru from '@/lang/ru'
 
@@ -21,6 +22,7 @@ const setLanguage = (defaultLanguage, forceLanguage) => {
       case "en":
       case "es":
       case "fr":
+      case "jp":
       case "nl":
       case "ru":
         return browserLanguage
@@ -36,6 +38,6 @@ export const i18n = new VueI18n({
   locale: setLanguage('en', false),
   fallbackLocale: 'en',
   messages: {
-    de, en, es, fr, nl, ru
+    de, en, es, fr, jp, nl, ru
   }
 })

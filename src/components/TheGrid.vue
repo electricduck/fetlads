@@ -8,7 +8,10 @@
         :key="post.id"
         :to="'/' + post.id + '/' + post.slug"
       >
-        <img class="grid-item-image" :src="getThumbnail(post.id)" />
+        <img class="grid-item-image" :src="'/data/thumb/' + post.id + '.jpg'" />
+        <div class="grid-item-meta">
+          {{ post.meta }}
+        </div>
         <div class="grid-item-type">
           <font-awesome-icon icon="image" class="grid-item-type-icon" v-if="post.type === 'image'" />
           <font-awesome-icon
@@ -52,10 +55,6 @@ export default {
     };
   },
   methods: {
-    getThumbnail(id) {
-      let thumbnailPrefix = "/data/thumb/";
-      return thumbnailPrefix + id + ".jpg";
-    },
     handleLoadMoreClick() {
       if (!this.noMorePosts) {
         this.page = this.page + 1;
@@ -108,7 +107,7 @@ export default {
       border-radius: $radius;
       box-sizing: border-box;
       display: grid;
-      grid-template-columns: auto;
+      grid-template-columns: 1fr auto;
       grid-template-rows: 1fr auto;
       margin: #{$padding / 2};
       overflow: hidden;
@@ -118,20 +117,32 @@ export default {
 
       box-shadow: var(--light-shadow);
 
-      .grid-item-image,
-      .grid-item-type {
-        grid-column: 1;
-      }
-
       .grid-item-image {
+        grid-column-start: 1;
+        grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 3;
         user-select: none;
         width: 100%;
       }
 
+      .grid-item-meta {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        margin-right: -7px;
+        padding: #{$padding * 2} 0;
+        text-align: right;
+
+        color: var(--overlay-fg-color);
+        text-shadow: var(--light-shadow);
+      }
+
       .grid-item-type {
         font-size: 1.5rem;
+        grid-column: 2;
         grid-row: 2;
         padding: #{$padding * 2};
         text-align: right;
