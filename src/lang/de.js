@@ -24,10 +24,14 @@ export default {
       }
     },
     post: {
-      exit: "Verlassen"
+      exit: "Verlassen",
+      fullscreen: "Vollbildschirm",
+      openExternal: "Offen auf externer Seite",
+      pictureInPicture: "Bild-in-Bild"
     },
     postMediaAlbum: {
       back: "Vorheriges Bild",
+      count: "{0} von {1}",
       forward: "Nächstes Bild",
       loading: "Beladung"
     }

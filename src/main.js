@@ -7,7 +7,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowLeft,
   faBiohazard,
-  faChevronLeft, faChevronRight,
+  faChevronLeft, faChevronRight, faCompressAlt,
+  faDownload,
+  faExpand, faExternalLinkAlt,
   faImage, faImages, faInfoCircle,
   faRandom,
   faVideo
@@ -21,7 +23,9 @@ import { VueMasonryPlugin } from 'vue-masonry'
 library.add(
   faArrowLeft,
   faBiohazard,
-  faChevronLeft, faChevronRight,
+  faChevronLeft, faChevronRight, faCompressAlt,
+  faDownload,
+  faExpand, faExternalLinkAlt,
   faImage, faImages, faInfoCircle,
   faRandom,
   faTelegramPlane, faTwitter,

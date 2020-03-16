@@ -12,7 +12,7 @@ export default {
     },
     grid: {
       loadMore: "More",
-      nothingMore: "No more posts"
+      nothingMore: "That's all, folks!"
     },
     navbar: {
       hero: {
@@ -28,10 +28,14 @@ export default {
       }
     },
     post: {
-      exit: "Exit"
+      exit: "Exit",
+      fullscreen: "Fullscreen",
+      openExternal: "Open on external site",
+      pictureInPicture: "Picture-in-Picture"
     },
     postMediaAlbum: {
       back: "Previous Image",
+      count: "{0} of {1}",
       forward: "Next Image",
       loading: "Just a sec!"
     }

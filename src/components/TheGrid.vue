@@ -24,20 +24,21 @@
         </div>
       </router-link>
     </div>
-    <div class="grid-load-more"
-      :class="{ 'grid-load-more--no-more' : noMorePosts }">
-      <a class="button grid-load-more-lm" v-on:click="handleLoadMoreClick">
-        {{ $t('phrases.grid.loadMore') }}
-      </a>
-      <span class="grid-load-more-nm">
-        {{ $t('phrases.grid.nothingMore') }}
-      </span>
+    <div class="grid-load-more" :class="{ 'grid-load-more--no-more' : noMorePosts }">
+      <a
+        class="button grid-load-more-lm"
+        v-shortkey="['space']"
+        @shortkey="handleLoadMoreClick"
+        @click="handleLoadMoreClick"
+        :title="$t('phrases.grid.loadMore') + ' (Space)'"
+      >{{ $t('phrases.grid.loadMore') }}</a>
+      <span class="grid-load-more-nm">{{ $t('phrases.grid.nothingMore') }}</span>
     </div>
   </div>
 </template>
 
 <script>
-let postsAmount = 15
+let postsAmount = 15;
 
 import { getPosts } from "@/common/postService";
 
@@ -56,30 +57,32 @@ export default {
       return thumbnailPrefix + id + ".jpg";
     },
     handleLoadMoreClick() {
-      this.page = this.page + 1;
-      this.loadPosts(false, this.page);
+      if (!this.noMorePosts) {
+        this.page = this.page + 1;
+        this.loadPosts(false, this.page);
+      }
     },
     loadPosts(updateCache, page) {
-      updateCache = updateCache || false
+      updateCache = updateCache || false;
 
-      if(window.isPostCacheUpdated) {
-        updateCache = false
+      if (window.isPostCacheUpdated) {
+        updateCache = false;
       }
 
       getPosts(page, postsAmount, updateCache, true).then(posts => {
         page = page || 0;
 
-        if(posts.length === 0) {
-          this.noMorePosts = true
+        if (posts.length === 0) {
+          this.noMorePosts = true;
         } else {
-          var postsArray = this.posts.concat(posts)
-          this.posts = postsArray
+          var postsArray = this.posts.concat(posts);
+          this.posts = postsArray;
         }
 
         if (page === 0) {
-          var appEl = document.getElementById("app") // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
-          appEl.classList.add("app--loaded")
-          window.isPostCacheUpdated = true
+          var appEl = document.getElementById("app"); // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
+          appEl.classList.add("app--loaded");
+          window.isPostCacheUpdated = true;
         }
       });
     }
@@ -168,10 +171,10 @@ export default {
       }
     }
 
-    .grid-load-more-lm  {
+    .grid-load-more-lm {
       box-sizing: border-box;
       padding: #{$padding * 1.5} #{$padding * 2.5} !important;
-      
+
       @include respond-to(mobile) {
         width: 100%;
       }

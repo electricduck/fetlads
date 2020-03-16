@@ -1,16 +1,45 @@
 <template>
   <div class="post" :class="{ 'post--visible' : found }">
     <div class="post-background" @click="handleExitClick"></div>
-    <PostMedia class="post-content" :src="src" :type="type" />
+    <PostMedia class="post-content" :src="media.src" :type="media.type" />
     <div class="post-actions">
       <a
         class="post-actions-item"
-        v-shortkey="['esc']"
+        v-shortkey="['backspace']"
         @shortkey="handleExitClick"
         @click="handleExitClick"
-        :title="$t('phrases.post.exit')"
+        :title="$t('phrases.post.exit') + ' (Backspace)'"
       >
         <font-awesome-icon icon="arrow-left" />
+      </a>  
+      <a
+        class="post-actions-item post-actions-item--right"
+        :class="{ 'post-actions-item--hidden' : this.media.type !== 'video' }"
+        :title="$t('phrases.post.pictureInPicture') + ' (p)'"
+        v-shortkey="['p']"
+        @shortkey="handlePipClick()"
+        @click="handlePipClick()"
+      >
+        <font-awesome-icon icon="compress-alt" />
+      </a>
+      <a
+        class="post-actions-item post-actions-item--right"
+        :class="{ 'post-actions-item--hidden' : this.media.type !== 'video' }"
+        :title="$t('phrases.post.fullscreen') + ' (f)'"
+        v-shortkey="['f']"
+        @shortkey="handleFullscreenClick()"
+        @click="handleFullscreenClick()"
+      >
+        <font-awesome-icon icon="expand" />
+      </a>
+      <a
+        class="post-actions-item post-actions-item--right"
+        target="_blank"
+        :class="{ 'post-actions-item--hidden' : this.media.type !== 'embed' }"
+        :href="this.externalLink"
+        :title="$t('phrases.post.openExternal')"
+      >
+        <font-awesome-icon icon="external-link-alt" />
       </a>
     </div>
   </div>
@@ -28,49 +57,83 @@ export default {
   },
   data: function() {
     return {
+      externalLink: "",
       found: false,
-      src: [],
-      type: ""
+      media: {
+        src: [],
+        type: ""
+      }
     };
   },
   methods: {
+    getMediaElement(type) {
+      switch(type) {
+        case "video":
+          return document.getElementById("post-media-video")
+      }
+    },
     handleExitClick() {
       this.$router.push("/");
+    },
+    async handleFullscreenClick() {
+      var element = this.getMediaElement(this.media.type)
+      try {
+        element.requestFullscreen()
+      } catch(err) {
+        // TODO: Handle error
+      }
+    },
+    async handlePipClick() {
+      var element = this.getMediaElement(this.media.type)
+      try {
+        if (element !== document.pictureInPictureElement) {
+          await element.requestPictureInPicture();
+        } else {
+          await document.exitPictureInPicture();
+        }
+      } catch(err) {
+        // TODO: Handle error
+      }
+    },
+    loadPost() {
+      var useCache = false;
+
+      if (window.isPostCacheUpdated) {
+        useCache = true;
+      }
+
+      getPost(this.$route.params.id, this.$route.params.slug, useCache)
+        .then(post => {
+          window.isPostCacheUpdated = true;
+
+          this.found = true;
+          this.media.src = post.src;
+          this.media.type = post.type;
+
+          var parsedDate = new Date(Date.parse(post.date));
+          var formattedDate = `${parsedDate.getFullYear()}-${(
+            parsedDate.getMonth() + 1
+          )
+            .toString()
+            .padStart(2, "0")}-${parsedDate
+            .getDate()
+            .toString()
+            .padStart(2, "0")}`;
+
+          this.externalLink = this.media.src[0].file;
+
+          document.title = `Fetlads • #${post.id
+            .toString()
+            .padStart(3, "0")} (${formattedDate})`;
+        })
+        .catch(err => {
+          this.$router.push("/");
+          throw err;
+        });
     }
   },
   mounted() {
-    var useCache = false
-
-    if(window.isPostCacheUpdated) {
-      useCache = true
-    }
-
-    getPost(this.$route.params.id, this.$route.params.slug, useCache)
-      .then(post => {
-        window.isPostCacheUpdated = true
-
-        this.found = true;
-        this.src = post.src;
-        this.type = post.type;
-
-        var parsedDate = new Date(Date.parse(post.date));
-        var formattedDate = `${parsedDate.getFullYear()}-${(
-          parsedDate.getMonth() + 1
-        )
-          .toString()
-          .padStart(2, "0")}-${parsedDate
-          .getDate()
-          .toString()
-          .padStart(2, "0")}`;
-
-        document.title = `Fetlads • #${post.id
-          .toString()
-          .padStart(3, "0")} (${formattedDate})`;
-      })
-      .catch(err => {
-        this.$router.push("/");
-        throw err;
-      });
+    this.loadPost()
   }
 };
 </script>
@@ -142,7 +205,6 @@ export default {
   }
 
   .post-actions {
-    display: none;
     font-size: 1.5rem;
     grid-column: 2;
     grid-row: 2;
@@ -152,11 +214,23 @@ export default {
     z-index: 800;
 
     .post-actions-item {
+      margin-right: #{$padding * 2};
       opacity: 0.75;
       transition: $transition;
 
       color: var(--overlay-fg-color) !important;
       filter: drop-shadow(var(--light-shadow)) !important;
+
+      &.post-actions-item--right {
+        float: right;
+        margin-left: #{$padding * 2};
+        margin-right: 0;
+        opacity: 0.5;
+      }
+
+      &.post-actions-item--hidden {
+        display: none;
+      }
 
       &:hover {
         opacity: 1;

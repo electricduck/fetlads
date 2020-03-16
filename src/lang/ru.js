@@ -28,10 +28,14 @@ export default {
       }
     },
     post: {
-      exit: "Выход"
+      exit: "Выход",
+      fullscreen: "Полный экран",
+      openExternal: "Открыт на внешнем сайте",
+      pictureInPicture: "Картинка в картинке"
     },
     postMediaAlbum: {
       back: "Предыдущее изображение",
+      count: "{0} из {1}",
       forward: "Следующее изображение",
       loading: "Загрузка"
     }

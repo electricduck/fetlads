@@ -13,13 +13,15 @@
           <a
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--telegram"
             href="https://t.me/fetlads"
+            target="_blank"
             :title="$t('phrases.navbar.social.telegram')"
           >
             <font-awesome-icon :icon="['fab', 'telegram-plane']" />
           </a>
           <a
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--twitter"
-            href="https://twitter.com/thefetlads_"
+            href="https://twitter.com/TheFetlads"
+            target="_blank"
             :title="$t('phrases.navbar.social.twitter')"
           >
             <font-awesome-icon :icon="['fab', 'twitter']" />
@@ -35,7 +37,13 @@
         </router-link>
       </div>
       <div class="navbar-item"></div>
-      <a class="navbar-item" @click="handleRandomPostClick" :title="$t('phrases.navbar.links.random')">
+      <a
+        class="navbar-item"
+        v-shortkey="['enter']"
+        @shortkey="handleRandomPostClick"
+        @click="handleRandomPostClick"
+        :title="$t('phrases.navbar.links.random') + ' (Enter)'"
+      >
         <font-awesome-icon icon="random" />
       </a>
     </div>
@@ -49,9 +57,11 @@ export default {
   name: "TheNavbar",
   methods: {
     handleRandomPostClick() {
-      getRandomPost().then(post => {
-        this.$router.push("/" + post.id + "/" + post.slug);
-      });
+      if (this.$route.name === "Home") {
+        getRandomPost().then(post => {
+          this.$router.push("/" + post.id + "/" + post.slug);
+        });
+      }
     }
   }
 };

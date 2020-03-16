@@ -8,30 +8,40 @@
       v-for="image in src"
       :key="image.id"
       :src="loadImage(image.file)"
-      :data-index="image.id"
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
       @click="navigateAlbum('forward')"
     />
     <a
       class="post-media-album-navigation post-media-album-navigation--back"
+      :class="{ 'post-media-album-navigation--visible' : currentIndex > 1 }"
       v-shortkey="['arrowleft']"
       @shortkey="navigateAlbum('back')"
       @click="navigateAlbum('back')"
-      v-if="currentIndex > 1"
-      :title="$t('phrases.postMediaAlbum.back')"
+      :title="$t('phrases.postMediaAlbum.back') + ' (←)'"
     >
       <font-awesome-icon icon="chevron-left" />
     </a>
     <a
       class="post-media-album-navigation post-media-album-navigation--forward"
+      :class="{ 'post-media-album-navigation--visible' : currentIndex < amount }"
       v-shortkey="['arrowright']"
       @shortkey="navigateAlbum('forward')"
       @click="navigateAlbum('forward')"
-      v-if="currentIndex < amount"
-      :title="$t('phrases.postMediaAlbum.forward')"
+      :title="$t('phrases.postMediaAlbum.forward') + ' (→)'"
     >
       <font-awesome-icon icon="chevron-right" />
     </a>
+    <div class="post-media-album-item-count">
+      <!--span class="post-media-album-item-count-inner">
+        <strong>{{ this.currentIndex }}</strong>
+        of
+        <strong>{{ this.amount }}</strong>
+      </span-->
+      <i18n path="phrases.postMediaAlbum.count" tag="span" class="post-media-album-item-count-inner">
+        <strong>{{ this.currentIndex }}</strong>
+        <strong>{{ this.amount }}</strong>
+      </i18n>
+    </div>
   </div>
 </template>
 
@@ -49,7 +59,7 @@ export default {
   },
   methods: {
     loadImage(imageUrl) {
-      if(!imageUrl.includes("https://")) {
+      if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
         var prefix = "https://fs05.fetlads.xyz/image/"
         return prefix + imageUrl
       } else {
@@ -114,11 +124,36 @@ export default {
     }
   }
 
+  .post-media-album-item-count {
+    display: grid;
+    grid-column: 2;
+    grid-row: 3;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr auto #{$padding * 2};
+
+    .post-media-album-item-count-inner {
+      border-radius: $radius;
+      font-size: 0.8rem;
+      font-weight: 500;
+      grid-column: 2;
+      grid-row: 2;
+      line-height: 1;
+      padding: $padding;
+
+      background-color: var(--overlay-bg-color);
+      box-shadow: var(--light-shadow);
+      color: var(--overlay-fg-color);
+    }
+  }
+
   .post-media-album-navigation {
+    cursor: pointer;
     font-size: 4rem;
     grid-row: 2;
     line-height: 1;
     padding: 0 #{$padding * 3.5};
+    transition: none !important;
+    visibility: hidden;
 
     color: var(--overlay-fg-color) !important;
     filter: drop-shadow(var(--light-shadow)) !important;
@@ -129,6 +164,10 @@ export default {
 
     &.post-media-album-navigation--forward {
       grid-column: 3;
+    }
+
+    &.post-media-album-navigation--visible {
+      visibility: visible;
     }
 
     @include respond-to(mobile) {

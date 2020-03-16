@@ -24,10 +24,14 @@ export default {
       }
     },
     post: {
-      exit: "Verlaat"
+      exit: "Verlaat",
+      fullscreen: "Volledig scherm",
+      openExternal: "Open op externe site",
+      pictureInPicture: "Beeld-in-Beeld"
     },
     postMediaAlbum: {
       back: "Vorige afbeelding",
+      count: "{0} van {1}",
       forward: "Volgende afbeelding",
       loading: "Laden"
     }
