@@ -14,15 +14,17 @@ export default {
       nothingMore: "Больше нет должностей"
     },
     navbar: {
-      hello: "Привет.",
+      hero: {
+        hello: "Привет.",
+        weAre: "Мы два кинкстера из Великобритании."
+      },
       links: {
         random: "Случайная почта"
       },
       social: {
         telegram: "Телеграмма",
         twitter: "Твиттер"
-      },
-      weAre: "Мы два кинкстера из Великобритании."
+      }
     },
     post: {
       exit: "Выход"

@@ -14,11 +14,13 @@ export default {
       nothingMore: "Geen berichten meer"
     },
     navbar: {
-      hello: "Hallo.",
+      hero: {
+        hello: "Hallo.",
+        weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
+      },
       links: {
         random: "Willekeurige post"
-      },
-      weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
+      }
     },
     post: {
       exit: "Verlaat"

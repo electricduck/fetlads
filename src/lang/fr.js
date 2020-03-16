@@ -14,11 +14,13 @@ export default {
       nothingMore: "Plus de postes"
     },
     navbar: {
-      hello: "Bonjour.",
+      hero: {
+        hello: "Bonjour.",
+        weAre: "Nous sommes deux cinglés du Royaume-Uni."
+      },
       links: {
         random: "Poste aléatoire"
-      },
-      weAre: "Nous sommes deux cinglés du Royaume-Uni."
+      }
     },
     post: {
       exit: "Sortie"

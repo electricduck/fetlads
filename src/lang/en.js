@@ -14,15 +14,17 @@ export default {
       nothingMore: "No more posts"
     },
     navbar: {
-      hello: "Hello.",
+      hero: {
+        hello: "Hello.",
+        weAre: "We are two kinksters from the UK."
+      },
       links: {
         random: "Random Post"
       },
       social: {
         telegram: "Telegram",
         twitter: "Twitter"
-      },
-      weAre: "We are two kinksters from the UK."
+      }
     },
     post: {
       exit: "Exit"

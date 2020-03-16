@@ -14,11 +14,13 @@ export default {
       nothingMore: "No más mensajes"
     },
     navbar: {
-      hello: "Hola.",
+      hero: { 
+        hello: "Hola.",
+        weAre: "Somos dos retorcidos del Reino Unido."
+      },
       links: {
         random: "Postes al azar"
-      },
-      weAre: "Somos dos retorcidos del Reino Unido."
+      }
     },
     post: {
       exit: "Salga"

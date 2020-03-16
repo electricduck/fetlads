@@ -3,8 +3,8 @@
     <div class="navbar-hero">
       <div class="navbar-hero-inner">
         <div class="navbar-hero-inner-text">
-          <h1>{{ $t('phrases.navbar.hello') }}</h1>
-          <h2>{{ $t('phrases.navbar.weAre') }}</h2>
+          <h1>{{ $t('phrases.navbar.hero.hello') }}</h1>
+          <h2>{{ $t('phrases.navbar.hero.weAre') }}</h2>
           <!--div class="navbar-hero-inner-text-block">
             <p>...</p>
           </div-->
@@ -132,6 +132,7 @@ export default {
         grid-row-end: 4;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto 1fr;
+        overflow-x: hidden;
         overflow-y: hidden;
         padding: $padding;
         text-align: left;

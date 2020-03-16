@@ -14,11 +14,13 @@ export default {
       nothingMore: "Keine weiteren Stellen"
     },
     navbar: {
-      hello: "Hallo.",
+      hero: {
+        hello: "Hallo.",
+        weAre: "Wir sind zwei Kinkster aus dem Vereinigten Königreich."
+      },
       links: {
         random: "Zufälliger Beitrag"
-      },
-      weAre: "Wir sind zwei Kinkster aus dem Vereinigten Königreich."
+      }
     },
     post: {
       exit: "Verlassen"
