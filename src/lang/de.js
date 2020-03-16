@@ -25,7 +25,9 @@ export default {
     },
     post: {
       exit: "Verlassen",
-      openExternal: "Offen auf externer Seite"
+      fullscreen: "Vollbildschirm",
+      openExternal: "Offen auf externer Seite",
+      pictureInPicture: "Bild-in-Bild"
     },
     postMediaAlbum: {
       back: "Vorheriges Bild",

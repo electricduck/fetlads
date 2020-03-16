@@ -29,7 +29,9 @@ export default {
     },
     post: {
       exit: "Exit",
-      openExternal: "Open on external site"
+      fullscreen: "Fullscreen",
+      openExternal: "Open on external site",
+      pictureInPicture: "Picture-in-Picture"
     },
     postMediaAlbum: {
       back: "Previous Image",

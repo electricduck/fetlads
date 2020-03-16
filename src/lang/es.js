@@ -25,7 +25,9 @@ export default {
     },
     post: {
       exit: "Salga", // Exit
-      openExternal: "Abrir en el sitio externo" // Open on external site
+      fullscreen: "Pantalla completa", // Fullscreen
+      openExternal: "Abrir en el sitio externo", // Open on external site
+      pictureInPicture: "Imagen-en-Imagen" // Picture-in-Picture
     },
     postMediaAlbum: {
       back: "Imagen anterior", // Previous Image
