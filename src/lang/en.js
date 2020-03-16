@@ -7,6 +7,7 @@ export default {
       title: "Whoa, there!"
     },
     footer: {
+      openSource: "This site is open-source and can be found on <a href='https://gogs.zyrio.app/ducky/fetlads' target='_blank'>Zyrio Gogs</a>",
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
     grid: {

@@ -1,7 +1,10 @@
 <template>
   <div class="footer">
     <p>&copy; {{ this.copyrightYear }} Fetlads</p>
-    <p><strong>{{ this.version.app }}</strong> (Vue {{ this.version.vue }})</p>
+    <p>
+      <strong>{{ this.version.app }}</strong> (Vue {{ this.version.vue }})<br />
+      <span v-html="$t('phrases.footer.openSource')"></span>
+    </p>
     <p v-if="$t('phrases.footer.translationsProvidedBy') !== ''" v-html="$t('phrases.footer.translationsProvidedBy')"></p>
   </div>
 </template>
@@ -29,7 +32,7 @@ export default {
 
 .footer {
   font-size: 0;
-  padding: #{$padding * 2} $padding;
+  padding: #{$padding * 2.5} $padding;
   text-align: center;
 
   background-color: var(--accent-color);
@@ -57,7 +60,7 @@ export default {
     font-size: 0.7rem;
     font-weight: 500;
     line-height: 1.3;
-    margin: 0 0 #{$padding / 3} 0;
+    margin: 0 0 #{$padding / 2.5} 0;
   }
 }
 </style>
