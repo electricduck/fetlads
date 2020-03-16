@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 
 Vue.use(VueRouter)
 
+let titleSuffix = "| Fetlads"
+
 const routes = [
   {
     path: '/',
@@ -19,6 +21,14 @@ const routes = [
         component: () => import('./components/Post.vue')
       }
     ]
+  },
+  {
+    path: '/cat',
+    name: 'Test',
+    component: () => import('./views/Test.vue'),
+    meta: {
+      title: `Meow. ${titleSuffix}`
+    }
   }
 ]
 

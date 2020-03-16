@@ -14,29 +14,22 @@
     <a
       class="post-media-album-navigation post-media-album-navigation--back"
       :class="{ 'post-media-album-navigation--visible' : currentIndex > 1 }"
-      v-shortkey="['arrowleft']"
-      @shortkey="navigateAlbum('back')"
       @click="navigateAlbum('back')"
-      :title="$t('phrases.postMediaAlbum.back') + ' (←)'"
+      :title="$t('phrases.postMediaAlbum.back')"
     >
       <font-awesome-icon icon="chevron-left" />
     </a>
     <a
       class="post-media-album-navigation post-media-album-navigation--forward"
       :class="{ 'post-media-album-navigation--visible' : currentIndex < amount }"
-      v-shortkey="['arrowright']"
+      v-shortkey="['space']"
       @shortkey="navigateAlbum('forward')"
       @click="navigateAlbum('forward')"
-      :title="$t('phrases.postMediaAlbum.forward') + ' (→)'"
+      :title="$t('phrases.postMediaAlbum.forward') + ' (Space)'"
     >
       <font-awesome-icon icon="chevron-right" />
     </a>
     <div class="post-media-album-item-count">
-      <!--span class="post-media-album-item-count-inner">
-        <strong>{{ this.currentIndex }}</strong>
-        of
-        <strong>{{ this.amount }}</strong>
-      </span-->
       <i18n path="phrases.postMediaAlbum.count" tag="span" class="post-media-album-item-count-inner">
         <strong>{{ this.currentIndex }}</strong>
         <strong>{{ this.amount }}</strong>
@@ -53,7 +46,6 @@ export default {
   },
   data: function() {
     return {
-      amount: 0,
       currentIndex: 1
     };
   },
@@ -81,8 +73,10 @@ export default {
       }
     }
   },
-  mounted() {
-    this.amount = this.$props.src.length
+  computed: {
+    amount: function() {
+      return this.$props.src.length
+    }
   }
 };
 </script>

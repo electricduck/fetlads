@@ -30,10 +30,7 @@
     <div class="grid-load-more" :class="{ 'grid-load-more--no-more' : noMorePosts }">
       <a
         class="button grid-load-more-lm"
-        v-shortkey="['space']"
-        @shortkey="handleLoadMoreClick"
         @click="handleLoadMoreClick"
-        :title="$t('phrases.grid.loadMore') + ' (Space)'"
       >{{ $t('phrases.grid.loadMore') }}</a>
       <span class="grid-load-more-nm">{{ $t('phrases.grid.nothingMore') }}</span>
     </div>
@@ -79,8 +76,6 @@ export default {
         }
 
         if (page === 0) {
-          var appEl = document.getElementById("app"); // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
-          appEl.classList.add("app--loaded");
           window.isPostCacheUpdated = true;
         }
       });
@@ -169,6 +164,7 @@ export default {
 
   .grid-load-more {
     font-size: 1.7rem;
+    line-height: 1.3;
     margin: #{$padding * 3};
     text-align: center;
 
