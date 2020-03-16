@@ -10,12 +10,21 @@ export default {
       translationsProvidedBy: "Переводы предоставлены <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
-      loadMore: "Загрузить больше",
-      nothingMore: "Больше нечего загружать"
+      loadMore: "Подробнее",
+      nothingMore: "Больше нет должностей"
     },
     navbar: {
-      hello: "Привет.",
-      weAre: "Мы два кинкстера из Великобритании."
+      hero: {
+        hello: "Привет.",
+        weAre: "Мы два кинкстера из Великобритании."
+      },
+      links: {
+        random: "Случайная почта"
+      },
+      social: {
+        telegram: "Телеграмма",
+        twitter: "Твиттер"
+      }
     },
     post: {
       exit: "Выход"

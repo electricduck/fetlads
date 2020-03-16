@@ -10,12 +10,17 @@ export default {
       translationsProvidedBy: "Vertalingen verzorgd door <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
-      loadMore: "Laad meer",
-      nothingMore: "Niets meer te laden"
+      loadMore: "Meer",
+      nothingMore: "Geen berichten meer"
     },
     navbar: {
-      hello: "Hallo.",
-      weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
+      hero: {
+        hello: "Hallo.",
+        weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
+      },
+      links: {
+        random: "Willekeurige post"
+      }
     },
     post: {
       exit: "Verlaat"

@@ -10,12 +10,17 @@ export default {
       translationsProvidedBy: "Traducciones proporcionadas por <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
-      loadMore: "Cargar más",
-      nothingMore: "No hay nada más que cargar"
+      loadMore: "Más",
+      nothingMore: "No más mensajes"
     },
     navbar: {
-      hello: "Hola.",
-      weAre: "Somos dos retorcidos del Reino Unido."
+      hero: { 
+        hello: "Hola.",
+        weAre: "Somos dos retorcidos del Reino Unido."
+      },
+      links: {
+        random: "Postes al azar"
+      }
     },
     post: {
       exit: "Salga"

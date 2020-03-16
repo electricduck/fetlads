@@ -129,7 +129,7 @@ export default {
 
         .grid-item-type-icon {
           color: var(--overlay-fg-color);
-          filter: drop-shadow(var(--light-shadow));
+          filter: drop-shadow(var(--light-shadow)) !important;
         }
       }
 

@@ -47,3 +47,9 @@ export const getPosts = async (page, amount, sortByDate) => {
       throw err
     })
 }
+
+export const getRandomPost = async () => {
+  let posts = await getPosts()
+  var randomPost = posts[Math.floor(Math.random() * posts.length)]
+  return randomPost
+}

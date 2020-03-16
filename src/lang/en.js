@@ -10,12 +10,21 @@ export default {
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
     grid: {
-      loadMore: "Load More",
-      nothingMore: "Nothing more to load"
+      loadMore: "More",
+      nothingMore: "No more posts"
     },
     navbar: {
-      hello: "Hello.",
-      weAre: "We are two kinksters from the UK."
+      hero: {
+        hello: "Hello.",
+        weAre: "We are two kinksters from the UK."
+      },
+      links: {
+        random: "Random Post"
+      },
+      social: {
+        telegram: "Telegram",
+        twitter: "Twitter"
+      }
     },
     post: {
       exit: "Exit"

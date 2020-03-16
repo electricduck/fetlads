@@ -3,21 +3,24 @@
     <div class="navbar-hero">
       <div class="navbar-hero-inner">
         <div class="navbar-hero-inner-text">
-          <h1>{{ $t('phrases.navbar.hello') }}</h1>
-          <h2>{{ $t('phrases.navbar.weAre') }}</h2>
+          <h1>{{ $t('phrases.navbar.hero.hello') }}</h1>
+          <h2>{{ $t('phrases.navbar.hero.weAre') }}</h2>
+          <!--div class="navbar-hero-inner-text-block">
+            <p>...</p>
+          </div-->
         </div>
         <div class="navbar-hero-inner-links">
           <a
-            class="navbar-hero-inner-links-item"
+            class="navbar-hero-inner-links-item navbar-hero-inner-links-item--telegram"
             href="https://t.me/fetlads"
-            title="Telegram"
+            :title="$t('phrases.navbar.social.telegram')"
           >
             <font-awesome-icon :icon="['fab', 'telegram-plane']" />
           </a>
           <a
-            class="navbar-hero-inner-links-item"
+            class="navbar-hero-inner-links-item navbar-hero-inner-links-item--twitter"
             href="https://twitter.com/thefetlads_"
-            title="Twitter"
+            :title="$t('phrases.navbar.social.twitter')"
           >
             <font-awesome-icon :icon="['fab', 'twitter']" />
           </a>
@@ -31,18 +34,26 @@
           <span>lads</span>
         </router-link>
       </div>
-      <!--div class="navbar-item">
-      </div>
-      <a class="navbar-item" @click="handleInfoClick">
-        <font-awesome-icon icon="info-circle" />
-      </a-->
+      <div class="navbar-item"></div>
+      <a class="navbar-item" @click="handleRandomPostClick" :title="$t('phrases.navbar.links.random')">
+        <font-awesome-icon icon="random" />
+      </a>
     </div>
   </div>
 </template>
 
 <script>
+import { getRandomPost } from "@/common/postService";
+
 export default {
-  name: "TheNavbar"
+  name: "TheNavbar",
+  methods: {
+    handleRandomPostClick() {
+      getRandomPost().then(post => {
+        this.$router.push("/" + post.id + "/" + post.slug);
+      });
+    }
+  }
 };
 </script>
 
@@ -53,7 +64,9 @@ export default {
 .navbar {
   $navbar-container-height: 75px;
   $navbar-spacing: #{$padding * 1.5};
-  $navbar-hero-height: calc(100vh - #{$navbar-container-height + (($padding * 1.5) * 2)});
+  $navbar-hero-height: calc(
+    100vh - #{$navbar-container-height + (($padding * 1.5) * 2)}
+  );
 
   backdrop-filter: blur(10px);
   display: block;
@@ -88,19 +101,20 @@ export default {
     box-shadow: var(--light-shadow);
 
     @include respond-to(desktop) {
-      background-image: url('/data/hero_desktop.jpg');
+      background-image: url("/data/hero_desktop.jpg");
     }
 
     @include respond-to(desktop-sm) {
-      background-image: url('/data/hero_desktop-sm.jpg');
+      background-image: url("/data/hero_desktop-sm.jpg");
     }
 
     @include respond-to(mobile) {
-      background-image: url('/data/hero_mobile.jpg');
+      background-image: url("/data/hero_mobile.jpg");
     }
 
     .navbar-hero-inner {
       box-sizing: border-box;
+      color: white;
       display: grid;
       grid-column: 1;
       grid-row: 2;
@@ -109,19 +123,22 @@ export default {
       height: 100%;
       opacity: 0.8;
       padding: #{$padding * 2};
-
-      color: white;
-      text-shadow: 0 0 7px black;
+      text-shadow: 0 0 6px black;
 
       .navbar-hero-inner-text {
+        display: grid;
         grid-column: 1;
         grid-row-start: 2;
         grid-row-end: 4;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto 1fr;
+        overflow-x: hidden;
+        overflow-y: hidden;
         padding: $padding;
         text-align: left;
 
-        h1, h2, h3, h4, h5, h6 {
-          font-weight: 500;
+        h1,
+        h2 {
           line-height: 1.1;
           margin: 0;
         }
@@ -133,12 +150,28 @@ export default {
 
         h2 {
           font-size: 2rem;
+          font-weight: 500;
         }
 
-        p {
-          font-size: 0.9rem;
-          line-height: 1.3;
-          margin: $padding 0 0 0;
+        .navbar-hero-inner-text-block {
+          margin-bottom: -6px;
+          margin-left: -6px;
+          margin-top: #{$padding * 2};
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding-bottom: 6px;
+          padding-left: 6px;
+          padding-right: 10px;
+
+          p {
+            font-size: 0.9rem;
+            line-height: 1.3;
+            margin: 0 0 $padding 0;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
         }
       }
 
@@ -148,17 +181,32 @@ export default {
         grid-row: 3;
         font-size: 0;
         line-height: 1;
+        padding-top: $padding;
         text-align: right;
 
         .navbar-hero-inner-links-item {
           font-size: 1.4rem;
-          margin-right: #{$padding * 1.5};
-          
+          margin-right: #{$padding * 2};
+
           color: white !important;
           filter: drop-shadow(0 0 7px black) !important;
 
           &:last-of-type {
             margin-right: 0;
+          }
+
+          &.navbar-hero-inner-links-item--telegram {
+            &:hover {
+              color: #009cdb !important;
+              filter: drop-shadow(0 0 7px #009cdb) !important;
+            }
+          }
+
+          &.navbar-hero-inner-links-item--twitter {
+            &:hover {
+              color: #00a1ee !important;
+              filter: drop-shadow(0 0 7px #00a1ee) !important;
+            }
           }
         }
       }
@@ -222,7 +270,7 @@ export default {
         line-height: 1;
 
         .svg-inline--fa {
-          filter: drop-shadow(var(--navbar-fg-shadow));
+          filter: drop-shadow(var(--navbar-fg-shadow)) !important;
         }
       }
 

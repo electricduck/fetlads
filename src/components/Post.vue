@@ -1,8 +1,15 @@
 <template>
   <div class="post" :class="{ 'post--visible' : found }">
+    <div class="post-background" @click="handleExitClick"></div>
     <PostMedia class="post-content" :src="src" :type="type" />
     <div class="post-actions">
-      <a class="post-actions-item" @click="handleExitClick" :title="$t('phrases.post.exit')">
+      <a
+        class="post-actions-item"
+        v-shortkey="['esc']"
+        @shortkey="handleExitClick"
+        @click="handleExitClick"
+        :title="$t('phrases.post.exit')"
+      >
         <font-awesome-icon icon="arrow-left" />
       </a>
     </div>
@@ -56,19 +63,6 @@ export default {
         this.$router.push("/");
         throw err;
       });
-
-    this._keyListener = function(e) {
-      switch (e.keyCode) {
-        case 27:
-          this.handleExitClick();
-          break;
-      }
-    }
-
-    document.addEventListener('keydown', this._keyListener.bind(this))
-  },
-  beforeDestroy() {
-    document.removeEventListener('keydown', this._keyListener)
   }
 };
 </script>
@@ -98,12 +92,21 @@ export default {
     }
   }
 
+  .post-background {
+    background-color: transparent;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    z-index: 755;
+  }
+
   .post-content {
     display: none;
     grid-column: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    z-index: 751;
+    z-index: 780;
 
     & > iframe,
     & > img,
@@ -145,7 +148,7 @@ export default {
       transition: $transition;
 
       color: var(--overlay-fg-color) !important;
-      filter: drop-shadow(var(--light-shadow));
+      filter: drop-shadow(var(--light-shadow)) !important;
 
       &:hover {
         opacity: 1;
