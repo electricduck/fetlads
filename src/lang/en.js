@@ -12,7 +12,7 @@ export default {
     },
     grid: {
       loadMore: "More",
-      nothingMore: "No more posts"
+      nothingMore: "That's all, folks!"
     },
     navbar: {
       hero: {
