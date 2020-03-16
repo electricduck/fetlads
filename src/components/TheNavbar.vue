@@ -35,7 +35,13 @@
         </router-link>
       </div>
       <div class="navbar-item"></div>
-      <a class="navbar-item" @click="handleRandomPostClick" :title="$t('phrases.navbar.links.random')">
+      <a
+        class="navbar-item"
+        v-shortkey="['enter']"
+        @shortkey="handleRandomPostClick"
+        @click="handleRandomPostClick"
+        :title="$t('phrases.navbar.links.random') + ' (Enter)'"
+      >
         <font-awesome-icon icon="random" />
       </a>
     </div>
@@ -49,9 +55,11 @@ export default {
   name: "TheNavbar",
   methods: {
     handleRandomPostClick() {
-      getRandomPost().then(post => {
-        this.$router.push("/" + post.id + "/" + post.slug);
-      });
+      if (this.$route.name === "Home") {
+        getRandomPost().then(post => {
+          this.$router.push("/" + post.id + "/" + post.slug);
+        });
+      }
     }
   }
 };

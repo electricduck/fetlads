@@ -24,10 +24,12 @@ export default {
       }
     },
     post: {
-      exit: "Verlaat"
+      exit: "Verlaat",
+      openExternal: "Open op externe site"
     },
     postMediaAlbum: {
       back: "Vorige afbeelding",
+      count: "{0} van {1}",
       forward: "Volgende afbeelding",
       loading: "Laden"
     }

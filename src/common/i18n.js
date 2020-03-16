@@ -33,7 +33,7 @@ const setLanguage = (defaultLanguage, forceLanguage) => {
 }
 
 export const i18n = new VueI18n({
-  locale: setLanguage('en', false),
+  locale: setLanguage('fr', true),
   fallbackLocale: 'en',
   messages: {
     de, en, es, fr, nl, ru

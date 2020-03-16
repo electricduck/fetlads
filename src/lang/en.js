@@ -28,10 +28,12 @@ export default {
       }
     },
     post: {
-      exit: "Exit"
+      exit: "Exit",
+      openExternal: "Open on external site"
     },
     postMediaAlbum: {
       back: "Previous Image",
+      count: "{0} of {1}",
       forward: "Next Image",
       loading: "Just a sec!"
     }

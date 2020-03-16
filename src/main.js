@@ -8,6 +8,7 @@ import {
   faArrowLeft,
   faBiohazard,
   faChevronLeft, faChevronRight,
+  faExternalLinkAlt,
   faImage, faImages, faInfoCircle,
   faRandom,
   faVideo
@@ -22,6 +23,7 @@ library.add(
   faArrowLeft,
   faBiohazard,
   faChevronLeft, faChevronRight,
+  faExternalLinkAlt,
   faImage, faImages, faInfoCircle,
   faRandom,
   faTelegramPlane, faTwitter,

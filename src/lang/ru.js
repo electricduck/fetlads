@@ -28,10 +28,12 @@ export default {
       }
     },
     post: {
-      exit: "Выход"
+      exit: "Выход",
+      openExternal: "Открыт на внешнем сайте"
     },
     postMediaAlbum: {
       back: "Предыдущее изображение",
+      count: "{0} из {1}",
       forward: "Следующее изображение",
       loading: "Загрузка"
     }

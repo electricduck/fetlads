@@ -8,9 +8,18 @@
         v-shortkey="['esc']"
         @shortkey="handleExitClick"
         @click="handleExitClick"
-        :title="$t('phrases.post.exit')"
+        :title="$t('phrases.post.exit') + ' (Esc)'"
       >
         <font-awesome-icon icon="arrow-left" />
+      </a>
+      <a
+        class="post-actions-item"
+        target="_blank"
+        :class="{ 'post-actions-item--hidden' : this.type !== 'embed' }"
+        :href="this.src[0].file"
+        :title="$t('phrases.post.openExternal')"
+      >
+        <font-awesome-icon icon="external-link-alt" />
       </a>
     </div>
   </div>
@@ -36,41 +45,44 @@ export default {
   methods: {
     handleExitClick() {
       this.$router.push("/");
+    },
+    loadPost() {
+      var useCache = false;
+
+      if (window.isPostCacheUpdated) {
+        useCache = true;
+      }
+
+      getPost(this.$route.params.id, this.$route.params.slug, useCache)
+        .then(post => {
+          window.isPostCacheUpdated = true;
+
+          this.found = true;
+          this.src = post.src;
+          this.type = post.type;
+
+          var parsedDate = new Date(Date.parse(post.date));
+          var formattedDate = `${parsedDate.getFullYear()}-${(
+            parsedDate.getMonth() + 1
+          )
+            .toString()
+            .padStart(2, "0")}-${parsedDate
+            .getDate()
+            .toString()
+            .padStart(2, "0")}`;
+
+          document.title = `Fetlads • #${post.id
+            .toString()
+            .padStart(3, "0")} (${formattedDate})`;
+        })
+        .catch(err => {
+          this.$router.push("/");
+          throw err;
+        });
     }
   },
   mounted() {
-    var useCache = false
-
-    if(window.isPostCacheUpdated) {
-      useCache = true
-    }
-
-    getPost(this.$route.params.id, this.$route.params.slug, useCache)
-      .then(post => {
-        window.isPostCacheUpdated = true
-
-        this.found = true;
-        this.src = post.src;
-        this.type = post.type;
-
-        var parsedDate = new Date(Date.parse(post.date));
-        var formattedDate = `${parsedDate.getFullYear()}-${(
-          parsedDate.getMonth() + 1
-        )
-          .toString()
-          .padStart(2, "0")}-${parsedDate
-          .getDate()
-          .toString()
-          .padStart(2, "0")}`;
-
-        document.title = `Fetlads • #${post.id
-          .toString()
-          .padStart(3, "0")} (${formattedDate})`;
-      })
-      .catch(err => {
-        this.$router.push("/");
-        throw err;
-      });
+    this.loadPost()
   }
 };
 </script>
@@ -142,7 +154,6 @@ export default {
   }
 
   .post-actions {
-    display: none;
     font-size: 1.5rem;
     grid-column: 2;
     grid-row: 2;
@@ -157,6 +168,14 @@ export default {
 
       color: var(--overlay-fg-color) !important;
       filter: drop-shadow(var(--light-shadow)) !important;
+
+      &:nth-of-type(2) {
+        float: right;
+      }
+
+      &.post-actions-item--hidden {
+        display: none;
+      }
 
       &:hover {
         opacity: 1;

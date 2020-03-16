@@ -24,10 +24,12 @@ export default {
       }
     },
     post: {
-      exit: "Sortie"
+      exit: "Sortie",
+      openExternal: "Ouvert sur un site externe"
     },
     postMediaAlbum: {
       back: "Image précédente",
+      count: "{0} sur {1}",
       forward: "Image suivante",
       loading: "Chargement"
     }
