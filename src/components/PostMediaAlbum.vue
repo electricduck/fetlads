@@ -1,5 +1,8 @@
 <template>
   <div class="post-media-album">
+    <div class="post-media-album-loader">
+      {{ $t('phrases.postMediaAlbum.loading') }}
+    </div>
     <img
       class="post-media-album-item"
       v-for="image in src"
@@ -85,6 +88,15 @@ export default {
   grid-template-rows: 1fr auto 1fr;
   overflow: hidden;
   user-select: none;
+
+  .post-media-album-loader {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    grid-column: 2;
+    grid-row: 2;
+    line-height: 4rem;
+    text-align: center;
+  }
 
   .post-media-album-item {
     display: none;

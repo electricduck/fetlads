@@ -7,7 +7,7 @@ export default {
       title: "Whoa, daar!"
     },
     footer: {
-      openSource: "Deze site is open-source en is te vinden op <a href='https://gogs.zyrio.app/ducky/fetlads' target='_blank'>Zyrio Gogs</a>",
+      openSource: "Deze site is open-source en is te vinden op <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
       translationsProvidedBy: "Vertalingen verzorgd door <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
@@ -28,7 +28,8 @@ export default {
     },
     postMediaAlbum: {
       back: "Vorige afbeelding",
-      forward: "Volgende afbeelding"
+      forward: "Volgende afbeelding",
+      loading: "Laden"
     }
   }
 }

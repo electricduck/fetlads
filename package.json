@@ -1,6 +1,6 @@
 {
   "name": "fetlads",
-  "version": "20.1.1",
+  "version": "20.2.0",
   "private": true,
   "scripts": {
     "serve": "genversion --es6 src/common/version.js && vue-cli-service serve",
@@ -31,5 +31,8 @@
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
   }
 }

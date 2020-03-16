@@ -7,7 +7,7 @@ export default {
       title: "He, da!"
     },
     footer: {
-      openSource: "Diese Seite ist Open-Source und kann auf <a href='https://gogs.zyrio.app/ducky/fetlads' target='_blank'>Zyrio Gogs</a> gefunden werden.",
+      openSource: "Diese Seite ist Open-Source und kann auf <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a> gefunden werden.",
       translationsProvidedBy: "Die Übersetzungen werden von <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a> zur Verfügung gestellt"
     },
     grid: {
@@ -28,7 +28,8 @@ export default {
     },
     postMediaAlbum: {
       back: "Vorheriges Bild",
-      forward: "Nächstes Bild"
+      forward: "Nächstes Bild",
+      loading: "Beladung"
     }
   }
 }

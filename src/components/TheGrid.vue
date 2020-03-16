@@ -57,10 +57,16 @@ export default {
     },
     handleLoadMoreClick() {
       this.page = this.page + 1;
-      this.loadPosts(this.page);
+      this.loadPosts(false, this.page);
     },
-    loadPosts(page) {
-      getPosts(page, postsAmount, true).then(posts => {
+    loadPosts(updateCache, page) {
+      updateCache = updateCache || false
+
+      if(window.isPostCacheUpdated) {
+        updateCache = false
+      }
+
+      getPosts(page, postsAmount, updateCache, true).then(posts => {
         page = page || 0;
 
         if(posts.length === 0) {
@@ -71,14 +77,15 @@ export default {
         }
 
         if (page === 0) {
-          var appEl = document.getElementById("app"); // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
-          appEl.classList.add("app--loaded");
+          var appEl = document.getElementById("app") // HACK: Breaking Vue conventions here. VueX would be appropriate, but is overkill for this.
+          appEl.classList.add("app--loaded")
+          window.isPostCacheUpdated = true
         }
       });
     }
   },
   mounted() {
-    this.loadPosts();
+    this.loadPosts(true);
   }
 };
 </script>
