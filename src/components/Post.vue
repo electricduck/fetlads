@@ -1,22 +1,42 @@
 <template>
   <div class="post" :class="{ 'post--visible' : found }">
     <div class="post-background" @click="handleExitClick"></div>
-    <PostMedia class="post-content" :src="src" :type="type" />
+    <PostMedia class="post-content" :src="media.src" :type="media.type" />
     <div class="post-actions">
       <a
         class="post-actions-item"
-        v-shortkey="['esc']"
+        v-shortkey="['backspace']"
         @shortkey="handleExitClick"
         @click="handleExitClick"
-        :title="$t('phrases.post.exit') + ' (Esc)'"
+        :title="$t('phrases.post.exit') + ' (Backspace)'"
       >
         <font-awesome-icon icon="arrow-left" />
+      </a>  
+      <a
+        class="post-actions-item post-actions-item--right"
+        :class="{ 'post-actions-item--hidden' : this.media.type !== 'video' }"
+        :title="$t('phrases.post.pictureInPicture') + ' (p)'"
+        v-shortkey="['p']"
+        @shortkey="handlePipClick()"
+        @click="handlePipClick()"
+      >
+        <font-awesome-icon icon="compress-alt" />
       </a>
       <a
-        class="post-actions-item"
+        class="post-actions-item post-actions-item--right"
+        :class="{ 'post-actions-item--hidden' : this.media.type !== 'video' }"
+        :title="$t('phrases.post.fullscreen') + ' (f)'"
+        v-shortkey="['f']"
+        @shortkey="handleFullscreenClick()"
+        @click="handleFullscreenClick()"
+      >
+        <font-awesome-icon icon="expand" />
+      </a>
+      <a
+        class="post-actions-item post-actions-item--right"
         target="_blank"
-        :class="{ 'post-actions-item--hidden' : this.type !== 'embed' }"
-        :href="this.src[0].file"
+        :class="{ 'post-actions-item--hidden' : this.media.type !== 'embed' }"
+        :href="this.media.src[0].file"
         :title="$t('phrases.post.openExternal')"
       >
         <font-awesome-icon icon="external-link-alt" />
@@ -38,13 +58,41 @@ export default {
   data: function() {
     return {
       found: false,
-      src: [],
-      type: ""
+      media: {
+        src: [],
+        type: ""
+      }
     };
   },
   methods: {
+    getMediaElement(type) {
+      switch(type) {
+        case "video":
+          return document.getElementById("post-media-video")
+      }
+    },
     handleExitClick() {
       this.$router.push("/");
+    },
+    async handleFullscreenClick() {
+      var element = this.getMediaElement(this.media.type)
+      try {
+        element.requestFullscreen()
+      } catch(err) {
+        // TODO: Handle error
+      }
+    },
+    async handlePipClick() {
+      var element = this.getMediaElement(this.media.type)
+      try {
+        if (element !== document.pictureInPictureElement) {
+          await element.requestPictureInPicture();
+        } else {
+          await document.exitPictureInPicture();
+        }
+      } catch(err) {
+        // TODO: Handle error
+      }
     },
     loadPost() {
       var useCache = false;
@@ -58,8 +106,8 @@ export default {
           window.isPostCacheUpdated = true;
 
           this.found = true;
-          this.src = post.src;
-          this.type = post.type;
+          this.media.src = post.src;
+          this.media.type = post.type;
 
           var parsedDate = new Date(Date.parse(post.date));
           var formattedDate = `${parsedDate.getFullYear()}-${(
@@ -163,14 +211,18 @@ export default {
     z-index: 800;
 
     .post-actions-item {
+      margin-right: #{$padding * 2};
       opacity: 0.75;
       transition: $transition;
 
       color: var(--overlay-fg-color) !important;
       filter: drop-shadow(var(--light-shadow)) !important;
 
-      &:nth-of-type(2) {
+      &.post-actions-item--right {
         float: right;
+        margin-left: #{$padding * 2};
+        margin-right: 0;
+        opacity: 0.5;
       }
 
       &.post-actions-item--hidden {

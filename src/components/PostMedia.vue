@@ -3,12 +3,14 @@
     <img
       v-if="type === 'image'"
       :src="loadImage(src[0].file)"
-      class="post-content" />
+      class="post-content"
+      id="post-media-image" />
     <video
       v-if="type === 'video'"
       :src="loadVideo(src[0].file)"
       autoplay="autoplay"
-      controls="controls" />
+      controls="controls"
+      id="post-media-video" />
     <iframe
       v-if="type === 'embed'"
       :src="loadEmbed(src[0].file)"
@@ -16,10 +18,12 @@
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen="allowfullscreen"
       scrollable="no"
+      id="post-media-embed"
     ></iframe>
     <Album
       v-if="type === 'album'"
       :src="src"
+      id="post-media-album"
     />
   </div>
 </template>
