@@ -13,13 +13,15 @@
           <a
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--telegram"
             href="https://t.me/fetlads"
+            target="_blank"
             :title="$t('phrases.navbar.social.telegram')"
           >
             <font-awesome-icon :icon="['fab', 'telegram-plane']" />
           </a>
           <a
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--twitter"
-            href="https://twitter.com/thefetlads_"
+            href="https://twitter.com/TheFetlads"
+            target="_blank"
             :title="$t('phrases.navbar.social.twitter')"
           >
             <font-awesome-icon :icon="['fab', 'twitter']" />
