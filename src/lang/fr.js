@@ -11,7 +11,7 @@ export default {
     },
     grid: {
       loadMore: "En savoir plus",
-      nothingMore: "Plus de postes""
+      nothingMore: "Plus de postes"
     },
     navbar: {
       hello: "Bonjour.",
