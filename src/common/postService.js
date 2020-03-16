@@ -52,42 +52,7 @@ export const getPosts = async (page, amount, updateCache, sortByDate) => {
     result = result.slice(start, end)
   }
 
-  console.log(result)
   return result
-
-  /*if(forceFetch || postsCache == null) {
-    return axios.get("/data/posts.min.json")
-      .then((response) => {
-        var result
-
-        if (sortByDate) {
-          result = response.data.sort(function (a, b) {
-            return new Date(b.date) - new Date(a.date);
-          });
-        } else {
-          result = response.data
-        }
-
-        if (amount === 0 && page === 0) {
-          // do nothing
-        } else {
-          var start = 0 + (amount * page)
-          var end = start + amount
-          result = result.slice(start, end)
-        }
-
-        console.log(result)
-
-        sessionStorage.setItem('fetlads:cache:posts', JSON.stringify(result));
-        return result
-      }).catch((err) => {
-        throw err
-      })
-  } else {
-    console.log("cache")
-    console.log(postsCache)
-    return JSON.parse(postsCache)
-  }*/
 }
 
 export const getRandomPost = async () => {
