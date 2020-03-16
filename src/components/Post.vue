@@ -36,7 +36,7 @@
         class="post-actions-item post-actions-item--right"
         target="_blank"
         :class="{ 'post-actions-item--hidden' : this.media.type !== 'embed' }"
-        :href="this.media.src[0].file"
+        :href="this.externalLink"
         :title="$t('phrases.post.openExternal')"
       >
         <font-awesome-icon icon="external-link-alt" />
@@ -57,6 +57,7 @@ export default {
   },
   data: function() {
     return {
+      externalLink: "",
       found: false,
       media: {
         src: [],
@@ -118,6 +119,8 @@ export default {
             .getDate()
             .toString()
             .padStart(2, "0")}`;
+
+          this.externalLink = this.media.src[0].file;
 
           document.title = `Fetlads • #${post.id
             .toString()

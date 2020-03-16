@@ -8,7 +8,6 @@
       v-for="image in src"
       :key="image.id"
       :src="loadImage(image.file)"
-      :data-index="image.id"
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
       @click="navigateAlbum('forward')"
     />
@@ -60,7 +59,7 @@ export default {
   },
   methods: {
     loadImage(imageUrl) {
-      if(!imageUrl.includes("https://")) {
+      if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
         var prefix = "https://fs05.fetlads.xyz/image/"
         return prefix + imageUrl
       } else {
