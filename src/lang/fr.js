@@ -15,6 +15,9 @@ export default {
     },
     navbar: {
       hello: "Bonjour.",
+      links: {
+        random: "Poste aléatoire"
+      },
       weAre: "Nous sommes deux cinglés du Royaume-Uni."
     },
     post: {

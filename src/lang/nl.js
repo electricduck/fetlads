@@ -15,6 +15,9 @@ export default {
     },
     navbar: {
       hello: "Hallo.",
+      links: {
+        random: "Willekeurige post"
+      },
       weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
     },
     post: {

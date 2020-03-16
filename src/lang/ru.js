@@ -15,6 +15,13 @@ export default {
     },
     navbar: {
       hello: "Привет.",
+      links: {
+        random: "Случайная почта"
+      },
+      social: {
+        telegram: "Телеграмма",
+        twitter: "Твиттер"
+      },
       weAre: "Мы два кинкстера из Великобритании."
     },
     post: {

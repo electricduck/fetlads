@@ -15,6 +15,9 @@ export default {
     },
     navbar: {
       hello: "Hola.",
+      links: {
+        random: "Postes al azar"
+      },
       weAre: "Somos dos retorcidos del Reino Unido."
     },
     post: {

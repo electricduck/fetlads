@@ -15,6 +15,13 @@ export default {
     },
     navbar: {
       hello: "Hello.",
+      links: {
+        random: "Random Post"
+      },
+      social: {
+        telegram: "Telegram",
+        twitter: "Twitter"
+      },
       weAre: "We are two kinksters from the UK."
     },
     post: {
