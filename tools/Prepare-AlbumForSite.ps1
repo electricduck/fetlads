@@ -3,16 +3,19 @@ param (
     [string]$Watermark = "",
     [string]$WatermarkGravity = "SouthWest",
     [bool]$DryRun = $true,
+    [bool]$Backup = $false,
     [string]$ImageQuality = "75",
     [string]$ImageWidth = "1080",
     [string]$FilePrefix = "Fetlads",
-    [string]$TemporaryWatermarkLocation = ".watermark"
+    [string]$TemporaryWatermarkLocation = ".watermark",
+    [string]$BackupLocation = "_backup",
+    [bool]$OutputJson = $true
 )
 
 
 if($DryRun -eq $true) {
-    Write-Host "If you're sure you want to proceed, set -DryRun. Original files will be destroyed." -f Red
-    Write-Host " "
+    Write-Host "If you're sure you want to proceed, set -DryRun (to `$false). Original files will be destroyed." -f Red
+    Write-Host "---" -f DarkGray
 }
 
 function Test-CommandExists([string]$Command) {
@@ -52,12 +55,19 @@ Test-CommandExists('convert')
 Test-CommandExists('composite')
 Test-CommandExists('mogrify')
 
-$Files = Get-ChildItem -Path $Path
+$BackupLocationFull
+$Files = Get-ChildItem -Path $Path | Where-Object {$_.Extension.ToLower() -in ".jpg",".jpeg",".png"}
+$JsonOutput = ""
 $MasterHash = ""
 
 foreach($File in $Files) {
     $FileHash = (Get-FileHash -Algorithm Md5 $file).Hash.ToLower()
     $MasterHash += $FileHash
+}
+
+if($Backup -eq $true) {
+    $BackupLocationFull = $Path.ToString() + "/" + $BackupLocation
+    New-Item -Type Directory -Force $BackupLocationFull | Out-Null
 }
 
 $MasterHash = Get-StringHash -String $MasterHash
@@ -66,7 +76,7 @@ $FileNamePrefix = "${FilePrefix}_${FileId}-"
 $FileIndex = 0
 
 if($Watermark -ne "") {
-    $WatermarkWidth = $ImageWidth / 4
+    $WatermarkWidth = $ImageWidth / 5
     $dummy = convert $Watermark.ToString() -resize $WatermarkWidth $TemporaryWatermarkLocation.ToString()
 }
 
@@ -77,8 +87,12 @@ foreach($File in $Files) {
     $NewFileLocation = $File.DirectoryName + "/" + $NewFileName
     
     Write-Host $File.Name -f Gray -n
-    Write-Host " ➔ " -f Cyan -n 
+    Write-Host "  ➔  " -f Cyan -n 
     Write-Host $NewFileName -f Gray -n
+
+    if($Backup) {
+        Copy-Item -Force $File $BackupLocationFull
+    }
 
     if($DryRun -eq $false) {
         Move-Item $File $NewFileLocation
@@ -93,9 +107,23 @@ foreach($File in $Files) {
         Write-Host " ✓" -f Green -n
     }
 
+    if($OutputJson) {
+        $JsonOutput += "{ `"id`": ${FileIndex}, `"file`": `"${NewFileName}`" }"
+        if($FileIndex -ne $Files.Length) {
+            $JsonOutput += ",`n"
+        }
+    }
+
     Write-Host ""
 }
 
-if($Watermark -ne "") {
-    Remove-Item -Force $TemporaryWatermarkLocation
+if(!$DryRun) {
+    if($Watermark -ne "") {
+        Remove-Item -Force $TemporaryWatermarkLocation
+    }
+}
+
+if($OutputJson) {
+    Write-Host "---" -f DarkGray
+    Write-Host $JsonOutput -f Gray
 }
