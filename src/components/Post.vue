@@ -1,5 +1,7 @@
 <template>
   <div class="post" :class="{ 'post--visible' : found }">
+    <a class="post-navigation" v-shortkey="['arrowleft']" @shortkey="navigatePost('back')"></a>
+    <a class="post-navigation" v-shortkey="['arrowright']" @shortkey="navigatePost('forward')"></a>
     <div class="post-background" @click="handleExitClick"></div>
     <PostMedia class="post-content" :src="media.src" :type="media.type" />
     <div class="post-actions">
@@ -11,7 +13,7 @@
         :title="$t('phrases.post.exit') + ' (Backspace)'"
       >
         <font-awesome-icon icon="arrow-left" />
-      </a>  
+      </a>
       <a
         class="post-actions-item post-actions-item--right"
         :class="{ 'post-actions-item--hidden' : this.media.type !== 'video' }"
@@ -67,31 +69,31 @@ export default {
   },
   methods: {
     getMediaElement(type) {
-      switch(type) {
+      switch (type) {
         case "video":
-          return document.getElementById("post-media-video")
+          return document.getElementById("post-media-video");
       }
     },
     handleExitClick() {
       this.$router.push("/");
     },
     async handleFullscreenClick() {
-      var element = this.getMediaElement(this.media.type)
+      var element = this.getMediaElement(this.media.type);
       try {
-        element.requestFullscreen()
-      } catch(err) {
+        element.requestFullscreen();
+      } catch (err) {
         // TODO: Handle error
       }
     },
     async handlePipClick() {
-      var element = this.getMediaElement(this.media.type)
+      var element = this.getMediaElement(this.media.type);
       try {
         if (element !== document.pictureInPictureElement) {
           await element.requestPictureInPicture();
         } else {
           await document.exitPictureInPicture();
         }
-      } catch(err) {
+      } catch (err) {
         // TODO: Handle error
       }
     },
@@ -102,38 +104,56 @@ export default {
         useCache = true;
       }
 
-      getPost(this.$route.params.id, this.$route.params.slug, useCache)
+      getPost(this.$route.params.id, this.$route.params.slug, useCache, true)
         .then(post => {
           window.isPostCacheUpdated = true;
 
           this.found = true;
           this.media.src = post.src;
           this.media.type = post.type;
+          this.externalLink = this.media.src[0].file;
 
-          var parsedDate = new Date(Date.parse(post.date));
-          var formattedDate = `${parsedDate.getFullYear()}-${(
+          /*var parsedDate = new Date(Date.parse(post.date));*/
+          /*var formattedDate = `${parsedDate.getFullYear()}-${(
             parsedDate.getMonth() + 1
           )
             .toString()
             .padStart(2, "0")}-${parsedDate
             .getDate()
             .toString()
-            .padStart(2, "0")}`;
+            .padStart(2, "0")}`;*/
 
-          this.externalLink = this.media.src[0].file;
-
-          document.title = `Fetlads • #${post.id
+          /*document.title = `Fetlads • #${post.id
             .toString()
-            .padStart(3, "0")} (${formattedDate})`;
+            .padStart(3, "0")} (${formattedDate})`;*/
         })
         .catch(err => {
           this.$router.push("/");
           throw err;
         });
+    },
+    navigatePost(direction) {
+      this.media.src = [],
+      this.media.type = ''
+
+      switch (direction) {
+        case "back":
+          if(window.previousPost !== null) {
+            this.$router.push(`/${window.previousPost.id}/${window.previousPost.slug}`)
+          }
+          break;
+        case "forward":
+          if(window.nextPost !== null) {
+            this.$router.push(`/${window.nextPost.id}/${window.nextPost.slug}`)
+          }
+          break;
+      }
+
+      this.loadPost();
     }
   },
   mounted() {
-    this.loadPost()
+    this.loadPost();
   }
 };
 </script>
@@ -161,6 +181,12 @@ export default {
     .post-content {
       display: block;
     }
+  }
+
+  .post-navigation {
+    display: none;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .post-background {

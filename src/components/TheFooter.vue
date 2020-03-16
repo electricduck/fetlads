@@ -32,7 +32,7 @@ export default {
 
 .footer {
   font-size: 0;
-  padding: #{$padding * 2.5} $padding;
+  padding: #{$padding * 2.5} #{$padding * 2};
   text-align: center;
 
   background-color: var(--accent-color);

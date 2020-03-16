@@ -1,12 +1,17 @@
 <template>
-  <div class="navbar">
+  <div
+    class="navbar"
+    :class="{ 'navbar--no-hero' : !(this.$route.name === 'Home' || this.$route.name === 'Home_Post') }"
+  >
     <div class="navbar-hero">
       <div class="navbar-hero-inner">
         <div class="navbar-hero-inner-text">
           <h1>{{ $t('phrases.navbar.hero.hello') }}</h1>
           <h2>{{ $t('phrases.navbar.hero.weAre') }}</h2>
           <!--div class="navbar-hero-inner-text-block">
-            <p>...</p>
+            <p>
+              Based in the <strong>North of England</strong>, together for <strong>{{ this.yearsTogether }} years</strong>, we are two kinksters that enjoy sharing with everyone.
+            </p>
           </div-->
         </div>
         <div class="navbar-hero-inner-links">
@@ -39,10 +44,11 @@
       <div class="navbar-item"></div>
       <a
         class="navbar-item"
-        v-shortkey="['enter']"
+        :class="{ 'navbar-item--hidden' : !(this.$route.name === 'Home' || this.$route.name === 'Home_Post') }"
+        v-shortkey="['space']"
         @shortkey="handleRandomPostClick"
         @click="handleRandomPostClick"
-        :title="$t('phrases.navbar.links.random') + ' (Enter)'"
+        :title="$t('phrases.navbar.links.random') + ' (Space)'"
       >
         <font-awesome-icon icon="random" />
       </a>
@@ -55,6 +61,11 @@ import { getRandomPost } from "@/common/postService";
 
 export default {
   name: "TheNavbar",
+  data: function() {
+    return {
+      yearsTogether: 0
+    };
+  },
   methods: {
     handleRandomPostClick() {
       if (this.$route.name === "Home") {
@@ -63,6 +74,11 @@ export default {
         });
       }
     }
+  },
+  mounted() {
+    var yearSince = 2015;
+    var yearUntil = new Date().getFullYear();
+    this.yearsTogether = yearUntil - yearSince;
   }
 };
 </script>
@@ -96,6 +112,15 @@ export default {
 
     .navbar-hero {
       border-radius: 0 !important;
+    }
+  }
+
+  &.navbar--no-hero {
+    padding-top: $navbar-spacing;
+    top: 0;
+
+    .navbar-hero {
+      display: none;
     }
   }
 
@@ -175,7 +200,7 @@ export default {
 
           p {
             font-size: 0.9rem;
-            line-height: 1.3;
+            line-height: 1.4;
             margin: 0 0 $padding 0;
 
             &:last-of-type {
@@ -286,14 +311,18 @@ export default {
 
       &:nth-child(2) {
         grid-column: 1;
-        padding-left: $padding;
+        padding-left: #{$padding * 2};
         text-align: left;
       }
 
       &:nth-child(3) {
         grid-column: 3;
-        padding-right: $padding;
+        padding-right: #{$padding * 2};
         text-align: right;
+      }
+
+      &.navbar-item--hidden {
+        display: none;
       }
 
       @include respond-to(mobile) {

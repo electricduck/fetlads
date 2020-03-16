@@ -39,11 +39,6 @@ export default {
 @import "@/scss/common/_layout.scss";
 
 #app {
-  opacity: 0;
-  transition: 0.5s;
 
-  &.app--loaded {
-    opacity: 1;
-  }
 }
 </style>

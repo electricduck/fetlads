@@ -1,11 +1,20 @@
 import axios from "axios"
 
-export const getPost = async (id, slug, useCache) => {
-  let posts = await getPosts(0, 0, !useCache)
+export const getPost = async (id, slug, useCache, populateNeighbourItems) => {
+  let posts = await getPosts(0, 0, !useCache, true)
 
   return new Promise((resolve, reject) => {
     var idAsInt = Number(id)
     var post = posts.find(p => p.id == idAsInt)
+
+    if (populateNeighbourItems) {
+      var currentPostIndex = posts.indexOf(post)
+      var nextPostIndex = (currentPostIndex + 1) % posts.length
+      var previousPostIndex = (currentPostIndex - 1) % posts.length
+
+      window.nextPost = (nextPostIndex !== -1) ? posts[(currentPostIndex + 1) % posts.length] : null
+      window.previousPost = (previousPostIndex !== -1) ? posts[(currentPostIndex - 1) % posts.length] : null
+    }
 
     if (post !== undefined) {
       if (slug === post.slug) {
@@ -28,7 +37,7 @@ export const getPosts = async (page, amount, updateCache, sortByDate) => {
   var postsCache = sessionStorage.getItem('fetlads:cache:posts')
   var result
 
-  if(updateCache || postsCache == null) {
+  if (updateCache || postsCache == null) {
     await axios.get("/data/posts.min.json")
       .then((response) => {
         result = response.data
@@ -40,7 +49,7 @@ export const getPosts = async (page, amount, updateCache, sortByDate) => {
     result = JSON.parse(sessionStorage.getItem('fetlads:cache:posts'))
   }
 
-  if(sortByDate) {
+  if (sortByDate) {
     result = result.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date)
     })
