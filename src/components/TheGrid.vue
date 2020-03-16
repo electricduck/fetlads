@@ -57,9 +57,11 @@ export default {
     },
     handleLoadMoreClick() {
       this.page = this.page + 1;
-      this.loadPosts(this.page, false);
+      this.loadPosts(false, this.page);
     },
-    loadPosts(page, updateCache) {
+    loadPosts(updateCache, page) {
+      updateCache = updateCache || false
+
       getPosts(page, postsAmount, true, updateCache).then(posts => {
         page = page || 0;
 
@@ -78,7 +80,7 @@ export default {
     }
   },
   mounted() {
-    this.loadPosts(0, true);
+    this.loadPosts(true);
   }
 };
 </script>
