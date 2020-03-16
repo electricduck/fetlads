@@ -11,7 +11,7 @@ export default {
     },
     grid: {
       loadMore: "More",
-      nothingMore: "No more posts :("
+      nothingMore: "No more posts"
     },
     navbar: {
       hello: "Hello.",
