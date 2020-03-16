@@ -24,6 +24,7 @@
       v-if="type === 'album'"
       :src="src"
       id="post-media-album"
+      v-on="$listeners"
     />
   </div>
 </template>

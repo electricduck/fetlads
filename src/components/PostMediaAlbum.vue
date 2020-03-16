@@ -9,23 +9,27 @@
       :key="image.id"
       :src="loadImage(image.file)"
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
+      v-shortkey="['space']"
+      @shortkey="skipAlbum()"
       @click="navigateAlbum('forward')"
     />
     <a
       class="post-media-album-navigation post-media-album-navigation--back"
       :class="{ 'post-media-album-navigation--visible' : currentIndex > 1 }"
+      v-shortkey="['arrowleft']"
+      @shortkey="navigateAlbum('back')"
       @click="navigateAlbum('back')"
-      :title="$t('phrases.postMediaAlbum.back')"
+      :title="$t('phrases.postMediaAlbum.back') + ' (←)'"
     >
       <font-awesome-icon icon="chevron-left" />
     </a>
     <a
       class="post-media-album-navigation post-media-album-navigation--forward"
       :class="{ 'post-media-album-navigation--visible' : currentIndex < amount }"
-      v-shortkey="['space']"
+      v-shortkey="['arrowright']"
       @shortkey="navigateAlbum('forward')"
       @click="navigateAlbum('forward')"
-      :title="$t('phrases.postMediaAlbum.forward') + ' (Space)'"
+      :title="$t('phrases.postMediaAlbum.forward') + ' (→)'"
     >
       <font-awesome-icon icon="chevron-right" />
     </a>
@@ -63,14 +67,21 @@ export default {
         case "back":
           if(this.currentIndex > 1) {
             this.currentIndex = this.currentIndex - 1
+          } else {
+            this.$emit('navigatePost', 'back')
           }
           break
         case "forward":
           if(this.currentIndex < this.amount) {
             this.currentIndex = this.currentIndex + 1
+          } else {
+            this.$emit('navigatePost', 'forward')
           }
           break
       }
+    },
+    skipAlbum() {
+      this.$emit('navigatePost', 'forward')
     }
   },
   computed: {

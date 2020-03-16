@@ -3,7 +3,7 @@
     <a class="post-navigation" v-shortkey="['arrowleft']" @shortkey="navigatePost('back')"></a>
     <a class="post-navigation" v-shortkey="['arrowright']" @shortkey="navigatePost('forward')"></a>
     <div class="post-background" @click="handleExitClick"></div>
-    <PostMedia class="post-content" :src="media.src" :type="media.type" />
+    <PostMedia class="post-content" :src="media.src" :type="media.type" @navigatePost="navigatePostForce" />
     <div class="post-actions">
       <a
         class="post-actions-item"
@@ -132,24 +132,39 @@ export default {
           throw err;
         });
     },
-    navigatePost(direction) {
-      this.media.src = [],
-      this.media.type = ''
+    navigatePost(direction, ignoreMediaType = false) {
+      var allowNavigation = true
 
-      switch (direction) {
-        case "back":
-          if(window.previousPost !== null) {
-            this.$router.push(`/${window.previousPost.id}/${window.previousPost.slug}`)
-          }
-          break;
-        case "forward":
-          if(window.nextPost !== null) {
-            this.$router.push(`/${window.nextPost.id}/${window.nextPost.slug}`)
-          }
-          break;
+      if(ignoreMediaType) {
+        allowNavigation = true
+      } else {
+        if(this.media.type === "album") {
+          allowNavigation = false
+        }
       }
 
-      this.loadPost();
+      if(allowNavigation) {
+        this.media.src = [],
+        this.media.type = ''
+
+        switch (direction) {
+          case "back":
+            if(window.previousPost !== null) {
+              this.$router.push(`/${window.previousPost.id}/${window.previousPost.slug}`)
+            }
+            break;
+          case "forward":
+            if(window.nextPost !== null) {
+              this.$router.push(`/${window.nextPost.id}/${window.nextPost.slug}`)
+            }
+            break;
+        }
+
+        this.loadPost();
+      }
+    },
+    navigatePostForce(direction) {
+      this.navigatePost(direction, true)
     }
   },
   mounted() {
