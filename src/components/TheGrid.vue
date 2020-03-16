@@ -57,10 +57,10 @@ export default {
     },
     handleLoadMoreClick() {
       this.page = this.page + 1;
-      this.loadPosts(this.page);
+      this.loadPosts(this.page, false);
     },
-    loadPosts(page) {
-      getPosts(page, postsAmount, true).then(posts => {
+    loadPosts(page, updateCache) {
+      getPosts(page, postsAmount, true, updateCache).then(posts => {
         page = page || 0;
 
         if(posts.length === 0) {
@@ -78,7 +78,7 @@ export default {
     }
   },
   mounted() {
-    this.loadPosts();
+    this.loadPosts(0, true);
   }
 };
 </script>
