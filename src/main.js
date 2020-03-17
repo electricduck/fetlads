@@ -55,7 +55,10 @@ Vue.config.productionTip = false
 new Vue({
   i18n,
   router,
-  render: h => h(App)
+  render: h => h(App),
+  mounted () {
+    document.dispatchEvent(new Event('render-event'))
+  }
 }).$mount('#app')
 
 //console.log('%cFETLADS ', 'font-weight: 900; font-size: 50px;color: #d7ff3f; text-shadow: 3px 3px 0 #101010')
