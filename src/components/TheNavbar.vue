@@ -135,16 +135,28 @@ export default {
     background-color: var(--navbar-fg-color);
     box-shadow: var(--light-shadow);
 
-    @include respond-to(desktop) {
-      background-image: url("/data/hero_desktop.jpg");
+    @media (prefers-color-scheme: dark) {
+      @include respond-to(desktop) {
+        background-image: url("/data/img/hero/hero-large-dark.jpg");
+      }
+      @include respond-to(desktop-sm) {
+        background-image: url("/data/img/hero/hero-small-dark.jpg");
+      }
+      @include respond-to(mobile) {
+        background-image: url("/data/img/hero/hero-mobile-dark.jpg");
+      }
     }
 
-    @include respond-to(desktop-sm) {
-      background-image: url("/data/hero_desktop-sm.jpg");
-    }
-
-    @include respond-to(mobile) {
-      background-image: url("/data/hero_mobile.jpg");
+    @media (prefers-color-scheme: light) {
+      @include respond-to(desktop) {
+        background-image: url("/data/img/hero/hero-large-light.jpg");
+      }
+      @include respond-to(desktop-sm) {
+        background-image: url("/data/img/hero/hero-small-light.jpg");
+      }
+      @include respond-to(mobile) {
+        background-image: url("/data/img/hero/hero-mobile-light.jpg");
+      }
     }
 
     .navbar-hero-inner {
