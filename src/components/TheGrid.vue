@@ -103,7 +103,7 @@ export default {
       box-sizing: border-box;
       display: grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: auto 1fr;
       margin: #{$padding / 2};
       overflow: hidden;
       text-decoration: none;
@@ -111,6 +111,17 @@ export default {
       width: calc((100% / #{$grid-amount-desktop}) - #{($padding / 2) * 2});
 
       box-shadow: var(--light-shadow);
+
+      @include respond-to(mobile) {
+        .grid-item-meta {
+          font-size: 0.8rem !important;
+        }
+
+        .grid-item-type {
+          font-size: 1.3rem !important;
+          padding-left: #{$padding * 1.5} !important;
+        }
+      }
 
       .grid-item-image {
         grid-column-start: 1;
@@ -123,7 +134,7 @@ export default {
 
       .grid-item-meta {
         grid-column: 1;
-        grid-row: 2;
+        grid-row: 1;
         font-size: 0.9rem;
         font-weight: 700;
         line-height: 1.5rem;
@@ -138,7 +149,7 @@ export default {
       .grid-item-type {
         font-size: 1.5rem;
         grid-column: 2;
-        grid-row: 2;
+        grid-row: 1;
         padding: #{$padding * 2};
         text-align: right;
         user-select: none;
