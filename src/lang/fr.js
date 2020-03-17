@@ -1,5 +1,18 @@
 export default {
   phrases: {
+    about: {
+      profile: {
+        role: {
+          dom: "Dominant",
+          sub: "Soumis"
+        },
+        sexuality: {
+          homo: "Homosexual",
+          pan: "Pansexual"
+        }
+      },
+      title: "À propos de"
+    },
     adultWarning: {
       containsAdultContent: "Ce site contient des contenus sexuels et pour adultes",
       letMeIn: "Laissez-moi entrer",

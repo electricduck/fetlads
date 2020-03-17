@@ -36,17 +36,19 @@ body {
   }
 
   .button {
+    border-bottom-width: 0 !important;
     border-radius: $radius;
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
     line-height: 1;
     padding: $padding #{$padding * 2};
+    text-decoration: none !important;
     text-transform: uppercase;
     user-select: none;
   
     background-color: var(--accent-color);
     box-shadow: var(--light-shadow);
-    color: var(--accent-fg-color) !important;
+    color: var(--accent-fg-color);
   }
 }

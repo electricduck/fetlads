@@ -1,5 +1,18 @@
 export default {
   phrases: {
+    about: {
+      profile: {
+        role: {
+          dom: "Доминирующий",
+          sub: "покорный"
+        },
+        sexuality: {
+          homo: "Гомосексуалист",
+          pan: "Pansexual"
+        }
+      },
+      title: "О сайте"
+    },
     adultWarning: {
       containsAdultContent: "Этот сайт содержит сексуальный и взрослый контент.",
       letMeIn: "Впустите меня",
@@ -21,10 +34,6 @@ export default {
       },
       links: {
         random: "Случайная почта"
-      },
-      social: {
-        telegram: "Телеграмма",
-        twitter: "Твиттер"
       }
     },
     post: {

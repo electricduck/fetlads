@@ -1,7 +1,16 @@
 export default {
   phrases: {
     about: {
-      text: "...",
+      profile: {
+        role: {
+          dom: "Dominant",
+          sub: "Submissive"
+        },
+        sexuality: {
+          homo: "Homosexual",
+          pan: "Pansexual"
+        }
+      },
       title: "About"
     },
     adultWarning: {
@@ -25,10 +34,6 @@ export default {
       },
       links: {
         random: "Random Post"
-      },
-      social: {
-        telegram: "Telegram",
-        twitter: "Twitter"
       }
     },
     post: {
