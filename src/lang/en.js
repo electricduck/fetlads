@@ -1,5 +1,9 @@
 export default {
   phrases: {
+    about: {
+      text: "...",
+      title: "About"
+    },
     adultWarning: {
       containsAdultContent: "This site contains sexual and adult content",
       letMeIn: "Let Me In",

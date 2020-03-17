@@ -5,31 +5,34 @@ import { i18n } from '@/common/i18n'
 //import { version } from './common/version'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faArrowLeft,
-  faBiohazard,
+  faArrowsAltV, faArrowLeft,
+  faBiohazard, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
   faImage, faImages, faInfoCircle,
+  faMapMarkerAlt,
   faRandom,
-  faVideo
+  faVenusMars, faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
-  faTelegramPlane, faTwitter
+  faTelegramPlane, faTwitter,
+  faVuejs
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VueMasonryPlugin } from 'vue-masonry'
 
 library.add(
-  faArrowLeft,
-  faBiohazard,
+  faArrowsAltV, faArrowLeft,
+  faBiohazard, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
   faImage, faImages, faInfoCircle,
+  faMapMarkerAlt,
   faRandom,
   faTelegramPlane, faTwitter,
-  faVideo
+  faVenusMars, faVideo, faVuejs
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

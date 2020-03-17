@@ -164,7 +164,7 @@ export default {
 
   .grid-load-more {
     font-size: 1.7rem;
-    line-height: 1.3;
+    line-height: 1.4;
     margin: #{$padding * 3};
     text-align: center;
 

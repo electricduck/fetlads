@@ -231,6 +231,7 @@ export default {
           }
 
           &.navbar-hero-inner-links-item--telegram {
+            &:focus,
             &:hover {
               color: #009cdb !important;
               filter: drop-shadow(0 0 7px #009cdb) !important;
@@ -238,6 +239,7 @@ export default {
           }
 
           &.navbar-hero-inner-links-item--twitter {
+            &:focus,
             &:hover {
               color: #00a1ee !important;
               filter: drop-shadow(0 0 7px #00a1ee) !important;

@@ -59,7 +59,7 @@ export default {
 
     font-size: 0.7rem;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: 1.4;
     margin: 0 0 #{$padding / 2.5} 0;
   }
 }
