@@ -16,8 +16,14 @@ import {
   faVenusMars, faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
+  faFacebook, faFlickr,
+  faGithub,
+  faInstagram,
+  faReddit,
+  faSnapchat,
   faTelegramPlane, faTwitter,
-  faVuejs
+  faVuejs,
+  faWhatsapp
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VueMasonryPlugin } from 'vue-masonry'
@@ -28,11 +34,15 @@ library.add(
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
-  faImage, faImages, faInfoCircle,
+  faFacebook, faFlickr,
+  faGithub,
+  faImage, faImages, faInfoCircle, faInstagram,
   faMapMarkerAlt,
-  faRandom,
+  faRandom, faReddit,
+  faSnapchat,
   faTelegramPlane, faTwitter,
-  faVenusMars, faVideo, faVuejs
+  faVenusMars, faVideo, faVuejs,
+  faWhatsapp
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

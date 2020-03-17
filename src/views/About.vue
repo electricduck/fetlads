@@ -12,9 +12,12 @@
 
     <p v-html="$t('phrases.about.text')"></p>
 
-    <AboutUser
-      class="about-page-user"
+    <AboutProfile
+      class="about-page-profile"
       user-avatar="https://avatars3.githubusercontent.com/u/3042219"
+      :user-contact="[
+        { service: 'Telegram', username: 'asstra' }
+      ]"
       user-location="Hull, GB"
       user-name="Astra"
       user-role="Dominant"
@@ -22,17 +25,13 @@
       user-year="1993"
     >
       <p>I like ...</p>
-      <p>
-        You can reach me on
-        <strong>
-          <font-awesome-icon :icon="['fab', 'telegram-plane']" />&nbsp;Telegram
-        </strong> at
-        <a href="https://t.me/astravexton" target="_blank">@astravexton</a>.
-      </p>
-    </AboutUser>
-    <AboutUser
-      class="about-page-user"
+    </AboutProfile>
+    <AboutProfile
+      class="about-page-profile"
       user-avatar="https://avatars1.githubusercontent.com/u/1594644"
+      :user-contact="[
+        { service: 'Telegram', username: 'theducky' }
+      ]"
       user-location="York, GB"
       user-name="Ducky"
       user-role="Submissive"
@@ -53,31 +52,36 @@
           target="_blank"
         >my Github</a>.
       </p>
-      <p>
-        You can reach me on
-        <strong>
+      <!--p>
+        <a href="https://t.me/theducky" class="button">
           <font-awesome-icon :icon="['fab', 'telegram-plane']" />&nbsp;Telegram
-        </strong> at
-        <a href="https://t.me/theducky" target="_blank">@theducky</a>.
-      </p>
-    </AboutUser>
+        </a>
+      </p-->
+    </AboutProfile>
   </Page>
 </template>
 
 <script>
-import AboutUser from "@/components/AboutUser.vue";
+import AboutProfile from "@/components/AboutProfile.vue";
 import Page from "@/components/Page.vue";
 
 export default {
   name: "About",
   components: {
-    AboutUser,
+    AboutProfile,
     Page
   }
 };
 </script>
 
 <style lang="scss">
+@import "@/scss/_variables.scss";
+
 .about-page {
+  .about-page-profile {
+    &:last-of-type {
+      margin-bottom: 0 !important;
+    }
+  }
 }
 </style>

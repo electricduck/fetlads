@@ -21,10 +21,6 @@ export default {
       },
       links: {
         random: "Случайная почта"
-      },
-      social: {
-        telegram: "Телеграмма",
-        twitter: "Твиттер"
       }
     },
     post: {

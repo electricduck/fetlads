@@ -25,10 +25,6 @@ export default {
       },
       links: {
         random: "Random Post"
-      },
-      social: {
-        telegram: "Telegram",
-        twitter: "Twitter"
       }
     },
     post: {

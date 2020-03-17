@@ -19,7 +19,7 @@
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--telegram"
             href="https://t.me/fetlads"
             target="_blank"
-            :title="$t('phrases.navbar.social.telegram')"
+            :title="Telegram"
           >
             <font-awesome-icon :icon="['fab', 'telegram-plane']" />
           </a>
@@ -27,7 +27,7 @@
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--twitter"
             href="https://twitter.com/TheFetlads"
             target="_blank"
-            :title="$t('phrases.navbar.social.twitter')"
+            :title="Twitter"
           >
             <font-awesome-icon :icon="['fab', 'twitter']" />
           </a>
@@ -234,7 +234,7 @@ export default {
             &:focus,
             &:hover {
               color: #009cdb !important;
-              filter: drop-shadow(0 0 7px #009cdb) !important;
+              filter: drop-shadow(0 0 7px #{$telegram-brand-color}) !important;
             }
           }
 
@@ -242,7 +242,7 @@ export default {
             &:focus,
             &:hover {
               color: #00a1ee !important;
-              filter: drop-shadow(0 0 7px #00a1ee) !important;
+              filter: drop-shadow(0 0 7px #{$twitter-brand-color}) !important;
             }
           }
         }
