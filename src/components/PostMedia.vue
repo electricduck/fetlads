@@ -44,9 +44,15 @@ export default {
   methods: {
     loadEmbed(embedUrl) {
       if(
+        embedUrl.includes("https://www.pornhub.com/")
+      ) {
+        return embedUrl.replace("view_video.php?viewkey=", "embed/")
+      } else if (
         embedUrl.includes("https://www.xtube.com/")
       ) {
         return embedUrl.replace("video-watch/", "video-watch/embedded/") + "?embedSize=big"
+      } else {
+        return embedUrl
       }
     },
     loadImage(imageUrl) {
