@@ -51,6 +51,10 @@ export default {
         embedUrl.includes("https://www.xtube.com/")
       ) {
         return embedUrl.replace("video-watch/", "video-watch/embedded/") + "?embedSize=big"
+      } else if (
+        embedUrl.includes("https://www.redtube.com/")
+      ) {
+        return embedUrl.replace("www.redtube.com/", "embed.redtube.com/?id=")
       } else {
         return embedUrl
       }
