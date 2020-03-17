@@ -5,22 +5,22 @@
     </div>
     <div class="about-profile-name">{{ userName }}</div>
     <div class="about-profile-stats">
-      <div class="about-profile-stats-item">
+      <span class="about-profile-stats-item">
         <font-awesome-icon icon="map-marker-alt" />
-        <div>{{ userLocation }}</div>
-      </div>
-      <div class="about-profile-stats-item">
+        <span>{{ userLocation }}</span>
+      </span>
+      <span class="about-profile-stats-item">
         <font-awesome-icon icon="birthday-cake" />
-        <div>{{ userYear }}</div>
-      </div>
-      <div class="about-profile-stats-item">
+        <span>{{ userYear }}</span>
+      </span>
+      <span class="about-profile-stats-item">
         <font-awesome-icon icon="venus-mars" />
-        <div>{{ userSexuality }}</div>
-      </div>
-      <div class="about-profile-stats-item">
+        <span>{{ userSexuality }}</span>
+      </span>
+      <span class="about-profile-stats-item">
         <font-awesome-icon icon="arrows-alt-v" />
-        <div>{{ userRole }}</div>
-      </div>
+        <span>{{ userRole }}</span>
+      </span>
     </div>
     <div class="about-profile-about">
       <slot></slot>
