@@ -1,31 +1,31 @@
 <template>
   <div class="about-profile">
-    <span class="about-profile-image">
+    <div class="about-profile-image">
       <img :src="userAvatar" />
-    </span>
-    <span class="about-profile-name">{{ userName }}</span>
-    <span class="about-profile-stats">
-      <span class="about-profile-stats-item">
+    </div>
+    <div class="about-profile-name">{{ userName }}</div>
+    <div class="about-profile-stats">
+      <div class="about-profile-stats-item">
         <font-awesome-icon icon="map-marker-alt" />
-        <span>{{ userLocation }}</span>
-      </span>
-      <span class="about-profile-stats-item">
+        <div>{{ userLocation }}</div>
+      </div>
+      <div class="about-profile-stats-item">
         <font-awesome-icon icon="birthday-cake" />
-        <span>{{ userYear }}</span>
-      </span>
-      <span class="about-profile-stats-item">
+        <div>{{ userYear }}</div>
+      </div>
+      <div class="about-profile-stats-item">
         <font-awesome-icon icon="venus-mars" />
-        <span>{{ userSexuality }}</span>
-      </span>
-      <span class="about-profile-stats-item">
+        <div>{{ userSexuality }}</div>
+      </div>
+      <div class="about-profile-stats-item">
         <font-awesome-icon icon="arrows-alt-v" />
-        <span>{{ userRole }}</span>
-      </span>
-    </span>
-    <span class="about-profile-about">
+        <div>{{ userRole }}</div>
+      </div>
+    </div>
+    <div class="about-profile-about">
       <slot></slot>
-    </span>
-    <span class="about-profile-contact">
+    </div>
+    <div class="about-profile-contact">
       <a
         v-for="contact in userContact"
         :key="contact.service"
@@ -37,7 +37,7 @@
         <font-awesome-icon :icon="['fab', getContactButtonIcon(contact.service)]" />
         &nbsp;{{ contact.service }}
       </a>
-    </span>
+    </div>
   </div>
 </template>
 
