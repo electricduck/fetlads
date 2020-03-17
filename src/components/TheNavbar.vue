@@ -19,7 +19,7 @@
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--telegram"
             href="https://t.me/fetlads"
             target="_blank"
-            :title="Telegram"
+            title="Telegram"
           >
             <font-awesome-icon :icon="['fab', 'telegram-plane']" />
           </a>
@@ -27,7 +27,7 @@
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--twitter"
             href="https://twitter.com/TheFetlads"
             target="_blank"
-            :title="Twitter"
+            title="Twitter"
           >
             <font-awesome-icon :icon="['fab', 'twitter']" />
           </a>
