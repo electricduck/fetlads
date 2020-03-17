@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { v } from "@/common/variable"
+
 import Album from "@/components/PostMediaAlbum.vue"
 
 export default {
@@ -44,14 +46,24 @@ export default {
   methods: {
     loadEmbed(embedUrl) {
       if(
+        embedUrl.includes("https://www.pornhub.com/")
+      ) {
+        return embedUrl.replace("view_video.php?viewkey=", "embed/")
+      } else if (
         embedUrl.includes("https://www.xtube.com/")
       ) {
         return embedUrl.replace("video-watch/", "video-watch/embedded/") + "?embedSize=big"
+      } else if (
+        embedUrl.includes("https://www.redtube.com/")
+      ) {
+        return embedUrl.replace("www.redtube.com/", "embed.redtube.com/?id=")
+      } else {
+        return embedUrl
       }
     },
     loadImage(imageUrl) {
       if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
-        var prefix = "https://fs05.fetlads.xyz/image/"
+        var prefix = v.server.file.image
         return prefix + imageUrl
       } else {
         return imageUrl
@@ -59,7 +71,7 @@ export default {
     },
     loadVideo(videoUrl) {
       if(!(videoUrl.includes("https://") || videoUrl.includes("http://"))) {
-        var prefix = "https://fs05.fetlads.xyz/video/"
+        var prefix = v.server.file.video
         return prefix + videoUrl
       } else {
         return videoUrl

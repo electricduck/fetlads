@@ -23,11 +23,11 @@ const routes = [
     ]
   },
   {
-    path: '/cat',
-    name: 'Test',
-    component: () => import('./views/Test.vue'),
+    path: '/about',
+    name: 'About',
+    component: () => import('./views/About.vue'),
     meta: {
-      title: `Meow. ${titleSuffix}`
+      title: `About ${titleSuffix}`
     }
   }
 ]

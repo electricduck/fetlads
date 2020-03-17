@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import { v } from "@/common/variable"
+
 export default {
   name: "Album",
   props: {
@@ -56,7 +58,7 @@ export default {
   methods: {
     loadImage(imageUrl) {
       if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
-        var prefix = "https://fs05.fetlads.xyz/image/"
+        var prefix = v.server.file.image
         return prefix + imageUrl
       } else {
         return imageUrl

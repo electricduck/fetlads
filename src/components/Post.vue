@@ -273,6 +273,7 @@ export default {
         display: none;
       }
 
+      &:focus,
       &:hover {
         opacity: 1;
       }
