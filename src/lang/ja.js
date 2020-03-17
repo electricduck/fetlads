@@ -1,5 +1,18 @@
 export default {
   phrases: {
+    about: {
+      profile: {
+        role: {
+          dom: "支配的",
+          sub: "従順な"
+        },
+        sexuality: {
+          homo: "同性愛者",
+          pan: "パンセクシャル"
+        }
+      },
+      title: "約"
+    },
     adultWarning: {
       containsAdultContent: "このサイトには性的およびアダルトコンテンツが含まれています",
       letMeIn: "入れてくれ",

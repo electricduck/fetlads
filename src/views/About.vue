@@ -10,7 +10,7 @@
       <img src="https://fetlads.xyz/data/hero_desktop.jpg" />
     </p>
 
-    <p v-html="$t('phrases.about.text')"></p>
+    <p>...</p>
 
     <AboutProfile
       class="about-page-profile"
@@ -20,8 +20,8 @@
       ]"
       user-location="Hull, GB"
       user-name="Astra"
-      user-role="Dominant"
-      user-sexuality="Homosexual"
+      :user-role="$t('phrases.about.profile.role.dom')"
+      :user-sexuality="$t('phrases.about.profile.sexuality.homo')"
       user-year="1993"
     >
       <p>I like ...</p>
@@ -34,8 +34,8 @@
       ]"
       user-location="York, GB"
       user-name="Ducky"
-      user-role="Submissive"
-      user-sexuality="Pansexual"
+      :user-role="$t('phrases.about.profile.role.sub')"
+      :user-sexuality="$t('phrases.about.profile.sexuality.pan')"
       user-year="1996"
     >
       <p>I like ...</p>
@@ -52,11 +52,6 @@
           target="_blank"
         >my Github</a>.
       </p>
-      <!--p>
-        <a href="https://t.me/theducky" class="button">
-          <font-awesome-icon :icon="['fab', 'telegram-plane']" />&nbsp;Telegram
-        </a>
-      </p-->
     </AboutProfile>
   </Page>
 </template>

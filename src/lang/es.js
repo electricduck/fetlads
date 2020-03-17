@@ -1,10 +1,23 @@
 export default {
   phrases: {
+    about: {
+      profile: {
+        role: {
+          dom: "Dominante", // Dominant
+          sub: "Sumiso" // Submissive
+        },
+        sexuality: {
+          homo: "Homosexual", // Homosexual
+          pan: "Pansexual" // Pansexual
+        }
+      },
+      title: "Acerca de" // About
+    },
     adultWarning: {
       containsAdultContent: "Este sitio contiene contenido sexual y para adultos", // This site contains sexual and adult content
       letMeIn: "Déjame entrar", // Let Me In
       pleaseLeaveNow: "Si eres menor de edad, por favor vete ahora.<br />O no lo hagas: Sólo son unas pocas líneas de texto, no llamaré a la policía.", // If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, I won't call the cops.
-      title: "¡Allí!" // "Whoa, there!"
+      title: "¡Allí!" // Whoa, there!
     },
     footer: {
       openSource: "Este sitio es de código abierto y se puede encontrar en <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>", // This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>

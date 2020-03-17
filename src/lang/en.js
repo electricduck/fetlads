@@ -1,7 +1,16 @@
 export default {
   phrases: {
     about: {
-      text: "...",
+      profile: {
+        role: {
+          dom: "Dominant",
+          sub: "Submissive"
+        },
+        sexuality: {
+          homo: "Homosexual",
+          pan: "Pansexual"
+        }
+      },
       title: "About"
     },
     adultWarning: {
