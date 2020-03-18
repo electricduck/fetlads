@@ -24,8 +24,16 @@ export default {
     }
   },
   watch: {
-    $route() {
-      window.scrollTo(0, 0);
+    $route(to, from) {
+      if (
+        !(
+          (from.name === "Home" && to.name === "Home_Post") ||
+          (from.name === "Home_Post" && to.name === "Home")
+        )
+      ) {
+        window.scrollTo(0, 0);
+      }
+
       this.setTitle();
     }
   },

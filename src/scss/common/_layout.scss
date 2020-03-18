@@ -22,12 +22,13 @@ body {
 
     &:focus,
     &:hover {
-      filter: $brighter-filter;
       outline: 0;
+
+      filter: var(--brighter-filter);
     }
 
     &:active {
-      filter: $darker-filter;
+      filter: var(--darker-filter);
     }
 
     &.no-transition {
@@ -42,7 +43,7 @@ body {
     display: inline-block;
     font-weight: 700;
     line-height: 1;
-    padding: $padding #{$padding * 2};
+    padding: #{$padding * 1.2} #{$padding * 2};
     text-decoration: none !important;
     text-transform: uppercase;
     user-select: none;

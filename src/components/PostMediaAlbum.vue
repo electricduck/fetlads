@@ -11,14 +11,14 @@
       :class="{ 'post-media-album-item--visible' : image.id === currentIndex }"
       v-shortkey="['space']"
       @shortkey="skipAlbum()"
-      @click="navigateAlbum('forward')"
+      @click="navigateAlbum('forward', false)"
     />
     <a
       class="post-media-album-navigation post-media-album-navigation--back"
       :class="{ 'post-media-album-navigation--visible' : currentIndex > 1 }"
       v-shortkey="['arrowleft']"
-      @shortkey="navigateAlbum('back')"
-      @click="navigateAlbum('back')"
+      @shortkey="navigateAlbum('back', true)"
+      @click="navigateAlbum('back', false)"
       :title="$t('phrases.postMediaAlbum.back') + ' (←)'"
     >
       <font-awesome-icon icon="chevron-left" />
@@ -27,8 +27,8 @@
       class="post-media-album-navigation post-media-album-navigation--forward"
       :class="{ 'post-media-album-navigation--visible' : currentIndex < amount }"
       v-shortkey="['arrowright']"
-      @shortkey="navigateAlbum('forward')"
-      @click="navigateAlbum('forward')"
+      @shortkey="navigateAlbum('forward', true)"
+      @click="navigateAlbum('forward', false)"
       :title="$t('phrases.postMediaAlbum.forward') + ' (→)'"
     >
       <font-awesome-icon icon="chevron-right" />
@@ -62,20 +62,24 @@ export default {
         return imageUrl
       }
     },
-    navigateAlbum(direction) {
+    navigateAlbum(direction, navigatePost) {
       switch (direction) {
         case "back":
           if(this.currentIndex > 1) {
             this.currentIndex = this.currentIndex - 1
           } else {
-            this.$emit('navigatePost', 'back')
+            if(navigatePost) {
+              this.$emit('navigatePost', 'back')
+            }
           }
           break
         case "forward":
           if(this.currentIndex < this.amount) {
             this.currentIndex = this.currentIndex + 1
           } else {
-            this.$emit('navigatePost', 'forward')
+            if(navigatePost) {
+              this.$emit('navigatePost', 'forward')
+            }
           }
           break
       }

@@ -9,22 +9,30 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
 `{1}[{2}]: [{3}] {4}`
 
  * `{1}` **Type**
-    * `🆕 feat`: New feature for the user
-    * `🛠 fix`: Bug or performance fix for the user
-    * `📖 docs`: Modifications to the documentation (including READMEs)
-    * `🎨 style`:
-        * Reformatting code (e.g. missing semi-colors, incorrect spacing, etc.)
-        * Modifications to content (e.g. re-wording, typo fixes, i18n, etc.)
-            * i18n changes should use the summary `translate to 🏴 <language>`, along with the scope `i18n`
-    * `🧹 refactor`: Refactoring production code
-    * `🧪 test`: Adding/modifying unit tests
-    * `🧱 build`: Adding/modifying tasks for build/release process (e.g. Dockerfile, Github Actions, etc.)
+    * `🧱 build`: Modificications to tasks for build/release process (e.g. Dockerfile, Github Actions, etc.)
     * `📝 chore`: Misc. changes (e.g. scripts, external tools, version bumps, etc.)
+    * `📖 docs`: Modifications to the documentation (including READMEs)
+    * `🆕 feat`: Adding feature, or modifying a current feature, for the user
+    * `🛠 fix`: Bug or performance fix for the user
+    * `🌍 i18n`: Translations to other languages, or corrections to all languages
+         * Translations (to other languages) should use the summary (`{4}`) `translate to 🏴 <language> (<code>)`
+            * Use this message even when fixing a translation
+            * Try to keep translations in a separate commit (i.e. don't commit changes to the "home" language and other languages together)    
+    * `👋 init`: New repo (no summary (`{4}`))
+    * `⚡ merge`: Merge branches
+         * Use the summary (`{4}`) `branch_from ➔ branch_to`
+         * Don't use a scope (`{2}`)
+    * `🧹 refactor`: Refactoring production code
     * `🗑 revert`: Reverting a previous commit
-    * `📦 various`: Various changes (no summary)
-    * `👋 init`: New repo (no summary)
+    * `🎨 style`: Modifications to code formatting (e.g. missing semi-colors, incorrect spacing, etc.)
+    * `🧪 test`: Modificications to unit tests
+    * `📦 various`: Various changes (no summary (`{4}`))
  * `{2}` **Scope** _(optional)_: Part of repository changed (e.g. feature, document name, etc.)
+    * Don't be too specific: have a look at the commit history for examples, use the class name, or folder name the function is present in.
+    * CSS (or other styling markup) changes, or HTML changes that affect the layout, should use the word `ui`
+    * Views should be suffixed with `-view` (e.g. `About.vue` would be named `about-view`, instead of `about`)
  * `{3}` **Issue** _(optional)_: Issue number surrounded by square brackets (e.g. `[#123]`)
+    * **Do not** omit this if its relevant to an issue (even if its on a branch specific to an issue): it helps with tracking.
  * `{4}` **Summary**: Summary of changes
     * Start with a verb
         * **Do not use** "change", "make", or "update" (exception being when updating libraries)
@@ -33,21 +41,23 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
 
 ##### Examples
 
-  * `🆕 feat(api): [#321] add API endpoint for getting users`
-  * `🛠 fix(util): fix text utility returning invalid characters`
-  * `🛠 fix: [#234] improve performance of database`
-  * `📖 docs(readme): modify build process outline`
-  * `🎨 style: remove extra semi-colons`
-  * `🎨 style(i18n): translate to 🇷🇺 Russian`
   * `🧱 build(ci): add Github workflow for NodeJS CI`
   * `📝 chore: bump version to 1.2.3`
   * `📝 chore(npm): update VueJS to 3.0.0`
+  * `📖 docs(readme): modify build process outline`
+  * `🛠 fix: [#234] improve performance of database`
+  * `🌍 i18n: fix incorrect spelling`
+  * `🆕 feat(api): [#321] add API endpoint for getting users`
+  * `🛠 fix(util): fix text utility returning invalid characters`
+  * `🌍 i18n: translate to 🇷🇺 Russian (ru)`
   * `🗑 revert: 81aaddb`
+  * `🎨 style: remove extra semi-colons`
   * `📦 various`
   
 ##### Misc.
 
   * On releases to the `release` branch, the message should just be the version (e.g. `20.1.2`, `0.0.1`, `1.2.3`, `9.4.0-beta`)
+  * If you absolutely must, you can omit the emoji
   
 ##### References
 

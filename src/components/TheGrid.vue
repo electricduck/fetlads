@@ -9,9 +9,7 @@
         :to="'/' + post.id + '/' + post.slug"
       >
         <img class="grid-item-image" :src="'/data/thumb/' + post.id + '.jpg'" />
-        <div class="grid-item-meta">
-          {{ post.meta }}
-        </div>
+        <div class="grid-item-meta">{{ post.meta }}</div>
         <div class="grid-item-type">
           <font-awesome-icon icon="image" class="grid-item-type-icon" v-if="post.type === 'image'" />
           <font-awesome-icon
@@ -58,6 +56,22 @@ export default {
         this.loadPosts(false, this.page);
       }
     },
+    handleScrollToBottom() {
+      window.onscroll = () => {
+        let bottomOfWindow =
+          Math.max(
+            window.pageYOffset,
+            document.documentElement.scrollTop,
+            document.body.scrollTop
+          ) +
+            window.innerHeight ===
+          document.documentElement.offsetHeight;
+
+        if (bottomOfWindow) {
+          this.handleLoadMoreClick();
+        }
+      };
+    },
     loadPosts(updateCache, page) {
       updateCache = updateCache || false;
 
@@ -83,6 +97,7 @@ export default {
   },
   mounted() {
     this.loadPosts(true);
+    this.handleScrollToBottom();
   }
 };
 </script>
@@ -192,7 +207,7 @@ export default {
 
     .grid-load-more-lm {
       box-sizing: border-box;
-      padding: #{$padding * 1.5} #{$padding * 2.5} !important;
+      padding: #{$padding * 1.7} #{$padding * 3} !important;
 
       @include respond-to(mobile) {
         width: 100%;
