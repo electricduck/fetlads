@@ -41,7 +41,7 @@ export default {
       },
       quote: "Sex without kinks is like food without taste.",
       text: {
-        par1: "Having known each other for over {0} years, the two of us have been looking for more ways to explore each other (and others), never ceasing to amaze each other how far things can be taken. To us, sexual energy is the most important thing in our relationship: how good we can make it gauges how happy we'll both be. Having first met on IRC — of all places — we quickly began to realise all the kinks we had in common, and since meeting, that list has only grown (and will continue to grow). Our top kinks are gear, bondage, pup-play, pain, and outdoors.",
+        par1: "Having known each other for over {0} years, the two of us have been looking for more ways to explore one another (and others), never ceasing to amaze each other how far things can be taken. To us, sexual energy is the most important thing in our relationship: how good we can make it gauges how happy we'll both be. Having first met on IRC — of all places — we quickly began to realise all the kinks we had in common, and since meeting, that list has only grown (and will continue to grow). Our top kinks are gear, bondage, pup-play, pain, and outdoors.",
         par2: "Over the years, we have amassed a massive collection of images and videos of our sessions, and we enjoy sharing as much as we can with the world. We also enjoy inviting others into our sessions, as well as attending kink events."
       },
       title: "About"
