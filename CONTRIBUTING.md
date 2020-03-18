@@ -2,7 +2,7 @@
 
 ## Commit messages
 
-Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455fdda457715cfe4b46c95cf4c9), this repo is now using so-called "[semnatic commit messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)". Commit messages are **required** to follow the format outlined below.
+Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455fdda457715cfe4b46c95cf4c9), this repo is now using so-called "semantic commit messages". Commit messages are **required** to follow the format outlined below.
 
 ##### Message fomat
 
@@ -39,6 +39,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
   * `📖 docs(readme): modify build process outline`
   * `🎨 style: remove extra semi-colons`
   * `🎨 style(i18n): translate to 🇷🇺 Russian`
+  * `🧱 build(ci): add Github workflow for NodeJS CI`
   * `📝 chore: bump version to 1.2.3`
   * `📝 chore(npm): update VueJS to 3.0.0`
   * `🗑 revert: 81aaddb`
@@ -47,3 +48,10 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
 ##### Misc.
 
   * On releases to the `release` branch, the message should just be the version (e.g. `20.1.2`, `0.0.1`, `1.2.3`, `9.4.0-beta`)
+  
+##### References
+
+  * https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+  * https://www.conventionalcommits.org/
+  * https://seesparkbox.com/foundry/semantic_commit_messages
+  *  http://karma-runner.github.io/1.0/dev/git-commit-msg.html
