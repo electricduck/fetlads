@@ -3,7 +3,7 @@ export default {
     about: {
       contactUs: "Si vous souhaitez nous contacter, envoyez un message à l'un d'entre nous en utilisant les liens ci-dessous, ou envoyez un courriel à {0}.",
       englishOnly: "Veuillez noter que nous ne parlons que l'anglais.",
-      languageProblem: "Une mauvaise traduction ? Envoyez-nous un message: nous cherchons toujours à améliorer ce site.<br />Sinon, si vous savez ce que vous faites, <a href='https://github.com/electricduck/fetlads/blob/develop/src/lang/fr.js' target='_blank'>soumettez une demande d'extraction sur Github</a>.",
+      languageProblem: "Une mauvaise traduction? Envoyez-nous un message: nous cherchons toujours à améliorer ce site.<br />Sinon, si vous savez ce que vous faites, <a href='https://github.com/electricduck/fetlads/blob/develop/src/lang/fr.js' target='_blank'>soumettez une demande d'extraction sur Github</a>.",
       moreAboutUsBelow: "Vous pouvez en savoir plus sur nous individuellement ci-dessous.",
       profile: {
         role: {
