@@ -61,7 +61,7 @@ export default {
     },
     loadImage(imageUrl) {
       if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
-        var prefix = this.$v.file.media.image
+        var prefix = this.$var.file.media.image
         return prefix + imageUrl
       } else {
         return imageUrl
@@ -69,7 +69,7 @@ export default {
     },
     loadVideo(videoUrl) {
       if(!(videoUrl.includes("https://") || videoUrl.includes("http://"))) {
-        var prefix = this.$v.file.media.video
+        var prefix = this.$var.file.media.video
         return prefix + videoUrl
       } else {
         return videoUrl
