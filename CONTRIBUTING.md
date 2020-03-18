@@ -15,15 +15,18 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
     * `🆕 feat`: Adding feature, or modifying a current feature, for the user
     * `🛠 fix`: Bug or performance fix for the user
     * `🌍 i18n`: Translations to other languages, or corrections to all languages
-         * Translations (to other languages) should use the summary  `translate to 🏴 <language> (<code>)`
+         * Translations (to other languages) should use the summary (`{4}`) `translate to 🏴 <language> (<code>)`
             * Use this message even when fixing a translation
             * Try to keep translations in a separate commit (i.e. don't commit changes to the "home" language and other languages together)    
-    * `👋 init`: New repo (no summary)
+    * `👋 init`: New repo (no summary (`{4}`))
+    * `⚡ merge`: Merge branches
+         * Use the summary (`{4}`) `branch_from ➔ branch_to`
+         * Don't use a scope (`{2}`)
     * `🧹 refactor`: Refactoring production code
     * `🗑 revert`: Reverting a previous commit
     * `🎨 style`: Modifications to code formatting (e.g. missing semi-colors, incorrect spacing, etc.)
     * `🧪 test`: Modificications to unit tests
-    * `📦 various`: Various changes (no summary)
+    * `📦 various`: Various changes (no summary (`{4}`))
  * `{2}` **Scope** _(optional)_: Part of repository changed (e.g. feature, document name, etc.)
     * Don't be too specific: have a look at the commit history for examples, use the class name, or folder name the function is present in.
     * CSS (or other styling markup) changes, or HTML changes that affect the layout, should use the word `ui`
@@ -38,17 +41,17 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
 
 ##### Examples
 
-  * `🆕 feat(api): [#321] add API endpoint for getting users`
-  * `🛠 fix(util): fix text utility returning invalid characters`
-  * `🛠 fix: [#234] improve performance of database`
-  * `📖 docs(readme): modify build process outline`
-  * `🎨 style: remove extra semi-colons`
-  * `🌍 i18n: fix incorrect spelling`
-  * `🌍 i18n: translate to 🇷🇺 Russian (ru)`
   * `🧱 build(ci): add Github workflow for NodeJS CI`
   * `📝 chore: bump version to 1.2.3`
   * `📝 chore(npm): update VueJS to 3.0.0`
+  * `📖 docs(readme): modify build process outline`
+  * `🛠 fix: [#234] improve performance of database`
+  * `🌍 i18n: fix incorrect spelling`
+  * `🆕 feat(api): [#321] add API endpoint for getting users`
+  * `🛠 fix(util): fix text utility returning invalid characters`
+  * `🌍 i18n: translate to 🇷🇺 Russian (ru)`
   * `🗑 revert: 81aaddb`
+  * `🎨 style: remove extra semi-colons`
   * `📦 various`
   
 ##### Misc.
