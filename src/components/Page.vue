@@ -25,7 +25,7 @@ export default {
 
   .page-inner {
     font-size: 0;
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0 auto;
     max-width: 900px;
     min-height: 100vh;
@@ -107,8 +107,8 @@ export default {
     p {
       font-size: 1rem;
 
-      &.lowlight {
-        filter: brightness(0.6);
+      &.sml {
+        font-size: 0.8rem;
       }
 
       img {
@@ -139,6 +139,12 @@ export default {
       &:focus,
       &:hover {
         border-bottom-style: solid;
+      }
+    }
+
+    * {
+      &.lowlight {
+        filter: brightness(0.6);
       }
     }
   }

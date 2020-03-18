@@ -30,8 +30,6 @@
 </template>
 
 <script>
-import { v } from "@/common/variable"
-
 import Album from "@/components/PostMediaAlbum.vue"
 
 export default {
@@ -63,7 +61,7 @@ export default {
     },
     loadImage(imageUrl) {
       if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
-        var prefix = v.server.file.image
+        var prefix = this.$v.file.media.image
         return prefix + imageUrl
       } else {
         return imageUrl
@@ -71,7 +69,7 @@ export default {
     },
     loadVideo(videoUrl) {
       if(!(videoUrl.includes("https://") || videoUrl.includes("http://"))) {
-        var prefix = v.server.file.video
+        var prefix = this.$v.file.media.video
         return prefix + videoUrl
       } else {
         return videoUrl

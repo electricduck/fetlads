@@ -1,20 +1,27 @@
 <template>
   <Page class="about-page">
     <h1 class="title">
-      <router-link to="/" class="title-back">
-        <font-awesome-icon icon="arrow-left" />
-      </router-link>
       <span class="title-text">{{ $t('phrases.about.title') }}</span>
     </h1>
     <p>
-      <img src="https://fetlads.xyz/data/hero_desktop.jpg" />
+      <img :src="$var.asset.hero.about" />
     </p>
 
-    <p>...</p>
+    <h3>
+      {{ $t('phrases.about.quote') }}
+    </h3>
+    <i18n path="phrases.about.text.par1" tag="p">
+      <span>{{ this.yearsTogether }}</span>
+    </i18n>
+    <i18n path="phrases.about.text.par2" tag="p" />
+    <i18n path="phrases.about.contactUs" tag="p">
+      <a href="mailto:fetlads@pm.me">fetlads@pm.me</a>.
+    </i18n>
+    <p class="lowlight sml no-margin">{{ $t('phrases.about.englishOnly') }}</p>
+    <p class="lowlight">{{ $t('phrases.about.moreAboutUsBelow') }}</p>
 
     <AboutProfile
       class="about-page-profile"
-      user-avatar="https://avatars3.githubusercontent.com/u/3042219"
       :user-contact="[
         { service: 'Telegram', username: 'asstra' }
       ]"
@@ -28,7 +35,6 @@
     </AboutProfile>
     <AboutProfile
       class="about-page-profile"
-      user-avatar="https://avatars1.githubusercontent.com/u/1594644"
       :user-contact="[
         { service: 'Telegram', username: 'theducky' },
         { service: 'Twitter', username: 'theducky_' },
@@ -42,6 +48,8 @@
     >
       <div v-html="$t('phrases.about.profile.about.ducky')"></div>
     </AboutProfile>
+
+    <p v-if="$t('phrases.about.languageProblem.par1') !== ''" v-html="$t('phrases.about.languageProblem')" class="lowlight sml"></p>
   </Page>
 </template>
 
@@ -54,18 +62,16 @@ export default {
   components: {
     AboutProfile,
     Page
+  },
+  data: function() {
+    return {
+      yearsTogether: 0
+    }
+  },
+  mounted() {
+    var yearSince = 2015;
+    var yearUntil = new Date().getFullYear();
+    this.yearsTogether = yearUntil - yearSince;
   }
 };
 </script>
-
-<style lang="scss">
-@import "@/scss/_variables.scss";
-
-.about-page {
-  .about-page-profile {
-    &:last-of-type {
-      margin-bottom: 0 !important;
-    }
-  }
-}
-</style>
