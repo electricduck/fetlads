@@ -86,7 +86,7 @@ export default {
 
     p {
       font-size: 0.9rem;
-      line-height: 1.4;
+      line-height: 1.5;
       margin: 0 0 $padding 0;
 
       &:last-child {
