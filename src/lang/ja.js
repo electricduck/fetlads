@@ -4,7 +4,8 @@ export default {
       profile: {
         role: {
           dom: "支配的",
-          sub: "従順な"
+          sub: "従順な",
+          switch: "スイッチ"
         },
         sexuality: {
           homo: "同性愛者",

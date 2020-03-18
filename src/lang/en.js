@@ -7,7 +7,7 @@ export default {
             <em>(To do)</em>
           </p>`,
           ducky: `<p>
-            I am into &mdash; but not limited to &mdash; <strong>bondage</strong> <em>(the heavier, the better)</em>, <strong>breathplay</strong>, <strong>encasement</strong>, <strong>exhibitionism</strong>, <strong>helmets/hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>humiliation</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong>, <strong>penetration</strong> <em>(anal and oral)</em>, <strong>poppers</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>sensory deprivation</strong>, <strong>socks</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>tickling</strong>, <strong>trackies</strong>, <strong>watersports</strong>, and <strong>worshipping</strong>.
+            I am into &mdash; but not limited to &mdash; <strong>bondage</strong> <em>(the heavier, the better)</em>, <strong>breathplay</strong>, <strong>encasement</strong>, <strong>exhibitionism</strong>, <strong>helmets/hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>humiliation</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>objectification</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong>, <strong>penetration</strong> <em>(anal and oral)</em>, <strong>poppers</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>SCBA</strong>, <strong>sensory deprivation</strong>, <strong>socks</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>tickling</strong>, <strong>trackies</strong>, <strong>underwear</strong>/<strong>swimwear</strong>, <strong>watersports</strong>, and <strong>worshipping</strong>.
           </p>
           <p class="lowlight">
             I am not into <strong>blood</strong>/<strong>gore</strong>, <strong>feet</strong>, <strong>scat</strong>, <strong>sounding</strong>, and <strong>vomit</strong>.
@@ -21,7 +21,8 @@ export default {
         },
         role: {
           dom: "Dominant",
-          sub: "Submissive"
+          sub: "Submissive",
+          switch: "Switch"
         },
         sexuality: {
           homo: "Homosexual",

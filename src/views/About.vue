@@ -20,7 +20,7 @@
       ]"
       user-location="Hull, GB"
       user-name="Astra"
-      :user-role="$t('phrases.about.profile.role.dom')"
+      :user-role="$t('phrases.about.profile.role.switch')"
       :user-sexuality="$t('phrases.about.profile.sexuality.homo')"
       user-year="1993"
     >
@@ -30,7 +30,9 @@
       class="about-page-profile"
       user-avatar="https://avatars1.githubusercontent.com/u/1594644"
       :user-contact="[
-        { service: 'Telegram', username: 'theducky' }
+        { service: 'Telegram', username: 'theducky' },
+        { service: 'Twitter', username: 'theducky_' },
+        { service: 'Github', username: 'electricduck' }
       ]"
       user-location="York, GB"
       user-name="Ducky"

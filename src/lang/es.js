@@ -4,7 +4,8 @@ export default {
       profile: {
         role: {
           dom: "Dominante", // Dominant
-          sub: "Sumiso" // Submissive
+          sub: "Sumiso", // Submissive
+          switch: "Cambiar" // Switch
         },
         sexuality: {
           homo: "Homosexual", // Homosexual
