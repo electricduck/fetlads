@@ -56,7 +56,7 @@ export default {
   methods: {
     loadImage(imageUrl) {
       if(!(imageUrl.includes("https://") || imageUrl.includes("http://"))) {
-        var prefix = this.$v.file.media.image
+        var prefix = this.$var.file.media.image
         return prefix + imageUrl
       } else {
         return imageUrl
