@@ -9,7 +9,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
 `{1}[{2}]: [{3}] {4}`
 
  * `{1}` **Type**
-    * `🆕 feat`: New feature for the user
+    * `🆕 feat`: Adding feature, or modifying a current feature, for the user
     * `🛠 fix`: Bug or performance fix for the user
     * `📖 docs`: Modifications to the documentation (including READMEs)
     * `🎨 style`:
@@ -17,8 +17,8 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
         * Modifications to content (e.g. re-wording, typo fixes, i18n, etc.)
             * i18n changes should use the summary `translate to 🏴 <language>`, along with the scope `i18n`
     * `🧹 refactor`: Refactoring production code
-    * `🧪 test`: Adding/modifying unit tests
-    * `🧱 build`: Adding/modifying tasks for build/release process (e.g. Dockerfile, Github Actions, etc.)
+    * `🧪 test`: Modificications to unit tests
+    * `🧱 build`: Modificications to tasks for build/release process (e.g. Dockerfile, Github Actions, etc.)
     * `📝 chore`: Misc. changes (e.g. scripts, external tools, version bumps, etc.)
     * `🗑 revert`: Reverting a previous commit
     * `📦 various`: Various changes (no summary)
