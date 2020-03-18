@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended'
   ],
   rules: {
+    'no-console': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
   parserOptions: {
