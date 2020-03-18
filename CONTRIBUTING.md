@@ -16,6 +16,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
     * `🛠 fix`: Bug or performance fix for the user
     * `🌍 i18n`: Translations to other languages, or corrections to all languages
         * Translations (to other languages) should use the summary  `translate to 🏴 <language>`
+            * Use this message even when fixing a translation
             * Try to keep translations in a separate commit (i.e. don't commit changes to the "home" language and other languages together)    
     * `👋 init`: New repo (no summary)
     * `🧹 refactor`: Refactoring production code
