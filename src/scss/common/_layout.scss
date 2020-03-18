@@ -22,12 +22,13 @@ body {
 
     &:focus,
     &:hover {
-      filter: $brighter-filter;
       outline: 0;
+
+      filter: var(--brighter-filter);
     }
 
     &:active {
-      filter: $darker-filter;
+      filter: var(--darker-filter);
     }
 
     &.no-transition {

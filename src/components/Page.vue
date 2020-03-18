@@ -144,7 +144,7 @@ export default {
 
     * {
       &.lowlight {
-        filter: brightness(0.6);
+        filter: var(--lowlight-filter);
       }
     }
   }
