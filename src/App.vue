@@ -20,16 +20,17 @@ export default {
   },
   methods: {
     setTitle(title) {
-      document.title = title || this.$route.meta.title || "Fetlads"
+      document.title = title || this.$route.meta.title || "Fetlads";
     }
   },
   watch: {
     $route() {
-      this.setTitle()
+      window.scrollTo(0, 0);
+      this.setTitle();
     }
   },
-  mounted () {
-    this.setTitle()
+  mounted() {
+    this.setTitle();
   }
 };
 </script>
@@ -39,6 +40,5 @@ export default {
 @import "@/scss/common/_layout.scss";
 
 #app {
-
 }
 </style>
