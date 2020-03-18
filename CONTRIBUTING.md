@@ -30,7 +30,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
  * `{2}` **Scope** _(optional)_: Part of repository changed (e.g. feature, document name, etc.)
     * Don't be too specific: have a look at the commit history for examples, use the class name, or folder name the function is present in.
     * CSS (or other styling markup) changes, or HTML changes that affect the layout, should use the word `ui`
-    * Variable items, like pages, should use a generic word (e.g. when changing `About.vue`, use the scope `view` rather than `about`)
+    * Views should be suffixed with `-view` (e.g. `About.vue` would be named `about-view`, instead of `about`)
  * `{3}` **Issue** _(optional)_: Issue number surrounded by square brackets (e.g. `[#123]`)
     * **Do not** omit this if its relevant to an issue (even if its on a branch specific to an issue): it helps with tracking.
  * `{4}` **Summary**: Summary of changes
