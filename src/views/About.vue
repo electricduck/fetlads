@@ -1,36 +1,44 @@
 <template>
   <Page class="about-page">
     <h1 class="title">
-      <router-link to="/" class="title-back">
-        <font-awesome-icon icon="arrow-left" />
-      </router-link>
       <span class="title-text">{{ $t('phrases.about.title') }}</span>
     </h1>
     <p>
-      <img src="https://fetlads.xyz/data/hero_desktop.jpg" />
+      <img :src="$var.asset.hero.about" />
     </p>
 
-    <p>...</p>
+    <h3>
+      {{ $t('phrases.about.quote') }}
+    </h3>
+    <i18n path="phrases.about.text.par1" tag="p">
+      <span>{{ this.yearsTogether }}</span>
+    </i18n>
+    <i18n path="phrases.about.text.par2" tag="p" />
+    <i18n path="phrases.about.contactUs" tag="p">
+      <a href="mailto:fetlads@pm.me">fetlads@pm.me</a>.
+    </i18n>
+    <p class="lowlight sml no-margin">{{ $t('phrases.about.englishOnly') }}</p>
+    <p class="lowlight">{{ $t('phrases.about.moreAboutUsBelow') }}</p>
 
     <AboutProfile
       class="about-page-profile"
-      user-avatar="https://avatars3.githubusercontent.com/u/3042219"
       :user-contact="[
         { service: 'Telegram', username: 'asstra' }
       ]"
       user-location="Hull, GB"
       user-name="Astra"
-      :user-role="$t('phrases.about.profile.role.dom')"
+      :user-role="$t('phrases.about.profile.role.switch')"
       :user-sexuality="$t('phrases.about.profile.sexuality.homo')"
       user-year="1993"
     >
-      <p>I like ...</p>
+      <div v-html="$t('phrases.about.profile.about.astra')"></div>
     </AboutProfile>
     <AboutProfile
       class="about-page-profile"
-      user-avatar="https://avatars1.githubusercontent.com/u/1594644"
       :user-contact="[
-        { service: 'Telegram', username: 'theducky' }
+        { service: 'Telegram', username: 'theducky' },
+        { service: 'Twitter', username: 'theducky_' },
+        { service: 'Github', username: 'electricduck' }
       ]"
       user-location="York, GB"
       user-name="Ducky"
@@ -38,21 +46,10 @@
       :user-sexuality="$t('phrases.about.profile.sexuality.pan')"
       user-year="1996"
     >
-      <p>I like ...</p>
-      <p>
-        When I'm not face down on a bed, handcuffed to a radiator, or have my head in someone's crotch, you'll usually find me under the bonnet of a car, or tapping away on the nearest keyboard.
-      </p>
-      <p>
-        I build and maintain this site, lovingly crafted in
-        <strong>
-          <font-awesome-icon :icon="['fab', 'vuejs']" />&nbsp;Vue
-        </strong>. The code is freely available on
-        <a
-          href="https://github.com/electricduck/fetlads"
-          target="_blank"
-        >my Github</a>.
-      </p>
+      <div v-html="$t('phrases.about.profile.about.ducky')"></div>
     </AboutProfile>
+
+    <p v-if="$t('phrases.about.languageProblem.par1') !== ''" v-html="$t('phrases.about.languageProblem')" class="lowlight sml"></p>
   </Page>
 </template>
 
@@ -65,18 +62,16 @@ export default {
   components: {
     AboutProfile,
     Page
+  },
+  data: function() {
+    return {
+      yearsTogether: 0
+    }
+  },
+  mounted() {
+    var yearSince = 2015;
+    var yearUntil = new Date().getFullYear();
+    this.yearsTogether = yearUntil - yearSince;
   }
 };
 </script>
-
-<style lang="scss">
-@import "@/scss/_variables.scss";
-
-.about-page {
-  .about-page-profile {
-    &:last-of-type {
-      margin-bottom: 0 !important;
-    }
-  }
-}
-</style>

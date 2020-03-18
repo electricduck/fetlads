@@ -10,7 +10,7 @@
           <h2>{{ $t('phrases.navbar.hero.weAre') }}</h2>
           <!--div class="navbar-hero-inner-text-block">
             <p>
-              Based in the <strong>North of England</strong>, together for <strong>{{ this.yearsTogether }} years</strong>, we are two kinksters that enjoy sharing with everyone.
+              
             </p>
           </div-->
         </div>
@@ -41,7 +41,15 @@
           <span>lads</span>
         </router-link>
       </div>
-      <div class="navbar-item"></div>
+      <router-link
+        :to="(this.$route.name === 'Home' || this.$route.name === 'Home_Post') ? '/about' : '/'"
+        class="navbar-item"
+        :title="(this.$route.name === 'Home' || this.$route.name === 'Home_Post') ? $t('phrases.navbar.links.about') : $t('phrases.navbar.links.home')"
+      >
+        <font-awesome-icon 
+        :icon="(this.$route.name === 'Home' || this.$route.name === 'Home_Post') ? 'info-circle' : 'arrow-left'"
+        />
+      </router-link>
       <a
         class="navbar-item"
         :class="{ 'navbar-item--hidden' : !(this.$route.name === 'Home' || this.$route.name === 'Home_Post') }"
@@ -74,11 +82,6 @@ export default {
         });
       }
     }
-  },
-  mounted() {
-    var yearSince = 2015;
-    var yearUntil = new Date().getFullYear();
-    this.yearsTogether = yearUntil - yearSince;
   }
 };
 </script>
@@ -212,7 +215,7 @@ export default {
 
           p {
             font-size: 0.9rem;
-            line-height: 1.4;
+            line-height: 1.5;
             margin: 0 0 $padding 0;
 
             &:last-of-type {

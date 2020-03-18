@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import { v } from '@/common/variable'
 import { i18n } from '@/common/i18n'
 //import { version } from './common/version'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faArrowsAltV, faArrowLeft,
+  faArrowsAltV, faArrowLeft, faAt,
   faBiohazard, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
+  faHome,
   faImage, faImages, faInfoCircle,
   faMapMarkerAlt,
   faRandom,
@@ -29,13 +31,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VueMasonryPlugin } from 'vue-masonry'
 
 library.add(
-  faArrowsAltV, faArrowLeft,
+  faArrowsAltV, faArrowLeft, faAt,
   faBiohazard, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
   faFacebook, faFlickr,
   faGithub,
+  faHome,
   faImage, faImages, faInfoCircle, faInstagram,
   faMapMarkerAlt,
   faRandom, faReddit,
@@ -51,6 +54,8 @@ Vue.use(VueMasonryPlugin)
 Vue.use(require('vue-shortkey'))
 
 Vue.config.productionTip = false
+
+Vue.prototype.$var = v
 
 new Vue({
   i18n,

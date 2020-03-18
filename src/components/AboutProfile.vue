@@ -1,7 +1,7 @@
 <template>
   <div class="about-profile">
     <div class="about-profile-image">
-      <img :src="userAvatar" />
+      <img :src="getAvatar(userAvatar)" />
     </div>
     <div class="about-profile-name">{{ userName }}</div>
     <div class="about-profile-stats">
@@ -34,7 +34,7 @@
         :class="'about-profile-contact-button--' + contact.service.toLowerCase()"
         target="_blank"
       >
-        <font-awesome-icon :icon="['fab', getContactButtonIcon(contact.service)]" />
+        <font-awesome-icon :icon="getContactButtonIcon(contact.service)" />
         &nbsp;{{ contact.service }}
       </a>
     </div>
@@ -54,17 +54,30 @@ export default {
     userYear: String
   },
   methods: {
+    getAvatar(overrideAvatar) {
+      if(overrideAvatar) {
+        return overrideAvatar
+      } else {
+        return this.$var.file.avatar + this.userName.toLowerCase() + ".jpg"
+      }
+      //alert(overrideAvatar)
+    },
     getContactButtonIcon(service) {
       switch (service.toLowerCase()) {
+        case "email":
+          return ['fas', 'at'];
         case "telegram":
-          return "telegram-plane";
+          return ['fab', 'telegram-plane'];
         default:
-          return service.toLowerCase();
+          return ['fab', service.toLowerCase()];
       }
     },
     getContactButtonLink(service, username) {
       var link;
       switch (service.toLowerCase()) {
+        case "email":
+          link = "mailto:";
+          break;
         case "facebook":
           link = "https://www.facebook.com/";
           break;
@@ -172,7 +185,7 @@ export default {
       grid-column: 1;
       grid-row-start: 1;
       grid-row-end: 4;
-      padding-top: #{($padding * 1.5) + $image-width};
+      padding-top: #{($padding * 2) + $image-width};
 
       .about-profile-stats-item {
         border-right-width: 0 !important;
@@ -191,6 +204,7 @@ export default {
       border-right-style: solid;
       border-right-width: 1px;
       margin-right: $padding;
+      opacity: 0.7;
       padding-right: $padding;
 
       border-right-color: var(--separator-color);
