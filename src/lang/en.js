@@ -2,6 +2,23 @@ export default {
   phrases: {
     about: {
       profile: {
+        about: {
+          astra: `<p class="lowlight">
+            <em>(To do)</em>
+          </p>`,
+          ducky: `<p>
+            I am into &mdash; but not limited to &mdash; <strong>bondage</strong> <em>(the heavier, the better)</em>, <strong>breathplay</strong>, <strong>encasement</strong>, <strong>exhibitionism</strong>, <strong>helmets/hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>humiliation</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong>, <strong>penetration</strong> <em>(anal and oral)</em>, <strong>poppers</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>sensory deprivation</strong>, <strong>socks</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>tickling</strong>, <strong>trackies</strong>, <strong>watersports</strong>, and <strong>worshipping</strong>.
+          </p>
+          <p class="lowlight">
+            I am not into <strong>blood</strong>/<strong>gore</strong>, <strong>feet</strong>, <strong>scat</strong>, <strong>sounding</strong>, and <strong>vomit</strong>.
+          </p>
+          <p>
+            When I'm not face down on a bed, handcuffed to a radiator, or have my head in someone's crotch, you'll usually find me under the bonnet of a car, or tapping away on the nearest keyboard <em>making shit happen</em>.
+          </p>
+          <p>
+            This site was built by me, lovingly hand-crafted in <a href="https://vuejs.org/" target="_blank" style="color: #40b880; border-bottom-color: #40b880;">Vue</a>. The code is freely available on <a href="https://github.com/electricduck/fetlads" target="_blank">my Github</a>.
+          </p>`
+        },
         role: {
           dom: "Dominant",
           sub: "Submissive"

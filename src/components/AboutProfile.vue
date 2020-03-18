@@ -172,7 +172,7 @@ export default {
       grid-column: 1;
       grid-row-start: 1;
       grid-row-end: 4;
-      padding-top: #{($padding * 1.5) + $image-width};
+      padding-top: #{($padding * 2) + $image-width};
 
       .about-profile-stats-item {
         border-right-width: 0 !important;
@@ -191,6 +191,7 @@ export default {
       border-right-style: solid;
       border-right-width: 1px;
       margin-right: $padding;
+      opacity: 0.7;
       padding-right: $padding;
 
       border-right-color: var(--separator-color);

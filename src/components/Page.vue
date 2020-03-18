@@ -107,6 +107,10 @@ export default {
     p {
       font-size: 1rem;
 
+      &.lowlight {
+        filter: brightness(0.6);
+      }
+
       img {
         max-width: 100%;
       }

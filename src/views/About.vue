@@ -24,7 +24,7 @@
       :user-sexuality="$t('phrases.about.profile.sexuality.homo')"
       user-year="1993"
     >
-      <p>I like ...</p>
+      <div v-html="$t('phrases.about.profile.about.astra')"></div>
     </AboutProfile>
     <AboutProfile
       class="about-page-profile"
@@ -38,20 +38,7 @@
       :user-sexuality="$t('phrases.about.profile.sexuality.pan')"
       user-year="1996"
     >
-      <p>I like ...</p>
-      <p>
-        When I'm not face down on a bed, handcuffed to a radiator, or have my head in someone's crotch, you'll usually find me under the bonnet of a car, or tapping away on the nearest keyboard.
-      </p>
-      <p>
-        I build and maintain this site, lovingly crafted in
-        <strong>
-          <font-awesome-icon :icon="['fab', 'vuejs']" />&nbsp;Vue
-        </strong>. The code is freely available on
-        <a
-          href="https://github.com/electricduck/fetlads"
-          target="_blank"
-        >my Github</a>.
-      </p>
+      <div v-html="$t('phrases.about.profile.about.ducky')"></div>
     </AboutProfile>
   </Page>
 </template>
