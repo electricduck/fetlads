@@ -42,7 +42,7 @@ body {
     display: inline-block;
     font-weight: 700;
     line-height: 1;
-    padding: $padding #{$padding * 2};
+    padding: #{$padding * 1.2} #{$padding * 2};
     text-decoration: none !important;
     text-transform: uppercase;
     user-select: none;
