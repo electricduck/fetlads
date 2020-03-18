@@ -67,7 +67,7 @@ export default {
       },
       links: {
         about: "About",
-        homw: "Home",
+        home: "Home",
         random: "Random Post"
       }
     },
