@@ -15,7 +15,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
     * `🆕 feat`: Adding feature, or modifying a current feature, for the user
     * `🛠 fix`: Bug or performance fix for the user
     * `🌍 i18n`: Translations to other languages, or corrections to all languages
-        * Translations (to other languages) should use the summary  `translate to 🏴 <language>`
+         * Translations (to other languages) should use the summary  `translate to 🏴 <language> (<code>)`
             * Use this message even when fixing a translation
             * Try to keep translations in a separate commit (i.e. don't commit changes to the "home" language and other languages together)    
     * `👋 init`: New repo (no summary)
@@ -44,7 +44,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
   * `📖 docs(readme): modify build process outline`
   * `🎨 style: remove extra semi-colons`
   * `🌍 i18n: fix incorrect spelling`
-  * `🌍 i18n: translate to 🇷🇺 Russian`
+  * `🌍 i18n: translate to 🇷🇺 Russian (ru)`
   * `🧱 build(ci): add Github workflow for NodeJS CI`
   * `📝 chore: bump version to 1.2.3`
   * `📝 chore(npm): update VueJS to 3.0.0`
