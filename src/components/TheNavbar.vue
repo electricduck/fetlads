@@ -239,7 +239,7 @@ export default {
 
         .navbar-hero-inner-links-item {
           font-size: 1.4rem;
-          margin-right: #{$padding * 2};
+          margin-right: #{$padding * 1.5};
 
           color: white !important;
           filter: drop-shadow(0 0 7px black) !important;
