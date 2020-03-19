@@ -49,7 +49,7 @@
       <div v-html="$t('phrases.about.profile.about.ducky')"></div>
     </AboutProfile>
 
-    <p v-if="$t('phrases.about.languageProblem.par1') !== ''" v-html="$t('phrases.about.languageProblem')" class="lowlight sml"></p>
+    <p v-if="$t('phrases.about.languageProblem') !== ''" v-html="$t('phrases.about.languageProblem')" class="lowlight sml"></p>
   </Page>
 </template>
 
