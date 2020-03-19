@@ -293,8 +293,12 @@ export default {
 
       @include respond-to(mobile) {
         .navbar-hero-inner-links {
-          font-size: 1.9rem;
           text-align: center;
+
+          .navbar-hero-inner-links-item {
+            font-size: 2rem;
+            margin-right: #{$padding * 2};
+          }
         }
       }
     }
