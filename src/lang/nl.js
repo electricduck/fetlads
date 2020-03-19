@@ -34,6 +34,7 @@ export default {
       translationsProvidedBy: "Vertalingen verzorgd door <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
+      infinite: "Oneindig veel scrollen",
       loadMore: "Meer",
       nothingMore: "Geen berichten meer"
     },
@@ -43,9 +44,15 @@ export default {
         weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
       },
       links: {
-        about: "Over",
-        home: "Home",
+        back: "Terug naar",
+        menu: "Menu",
         random: "Willekeurige post"
+      }
+    },
+    navmenu: {
+      links: {
+        about: "Over",
+        home: "Home"
       }
     },
     post: {
@@ -59,6 +66,9 @@ export default {
       count: "{0} van {1}",
       forward: "Volgende afbeelding",
       loading: "Laden"
+    },
+    slidebar: {
+      exit: "Verlaat"
     }
   }
 }
