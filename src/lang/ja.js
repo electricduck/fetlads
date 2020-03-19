@@ -34,6 +34,7 @@ export default {
       translationsProvidedBy: "<a href='https://translate.google.com' target='_blank'>Google Translate</a>が提供する翻訳"
     },
     grid: {
+      infinite: "無限スクロール",
       loadMore: "もっと",
       nothingMore: "これ以上の投稿はありません"
     },
@@ -43,9 +44,15 @@ export default {
         weAre: "私たちは英国出身の2人のキンクスターです"
       },
       links: {
-        about: "約",
-        home: "宅",
+        back: "バック",
+        menu: "メニュー",
         random: "ランダム投稿"
+      }
+    },
+    navmenu: {
+      links: {
+        about: "約",
+        home: "宅"
       }
     },
     post: {
@@ -59,6 +66,9 @@ export default {
       count: "{0}/{1}",
       forward: "次の画像",
       loading: "読み込み中"
+    },
+    slidebar: {
+      exit: "出口"
     }
   }
 }
