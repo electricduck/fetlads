@@ -30,6 +30,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VueMasonryPlugin } from 'vue-masonry'
+import InfiniteLoading from 'vue-infinite-loading';
 
 library.add(
   faArrowsAltV, faArrowLeft, faAt,
@@ -53,6 +54,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueMasonryPlugin)
 Vue.use(require('vue-shortkey'))
+Vue.use(InfiniteLoading);
 
 Vue.config.productionTip = false
 

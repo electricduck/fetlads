@@ -34,7 +34,6 @@ export default {
       translationsProvidedBy: "Traductions fournies par <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
-      infinite: "Défilement infini",
       loadMore: "En savoir plus",
       nothingMore: "Plus de postes"
     },
