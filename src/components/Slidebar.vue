@@ -144,7 +144,7 @@ export default {
       padding: #{$padding * 4.5};
 
       @include respond-to(mobile) {
-        padding: #{$padding * 2.5} #{$padding * 2};
+        padding: #{$padding * 3};
       }
     }
   }

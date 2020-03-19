@@ -57,7 +57,6 @@ export default {
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
     grid: {
-      infinite: "Infinite Scrolling",
       loadMore: "More",
       nothingMore: "That's all, folks!"
     },

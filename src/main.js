@@ -11,9 +11,11 @@ import {
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
+  faGlobe,
   faHome,
   faImage, faImages, faInfoCircle,
   faMapMarkerAlt,
+  faPaintBrush,
   faRandom,
   faTimes, faToggleOn,
   faVenusMars, faVideo
@@ -30,6 +32,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VueMasonryPlugin } from 'vue-masonry'
+import InfiniteLoading from 'vue-infinite-loading';
 
 library.add(
   faArrowsAltV, faArrowLeft, faAt,
@@ -38,10 +41,11 @@ library.add(
   faDownload,
   faExpand, faExternalLinkAlt,
   faFacebook, faFlickr,
-  faGithub,
+  faGithub, faGlobe,
   faHome,
   faImage, faImages, faInfoCircle, faInstagram,
   faMapMarkerAlt,
+  faPaintBrush,
   faRandom, faReddit,
   faSnapchat,
   faTelegramPlane, faTimes, faToggleOn, faTwitter,
@@ -53,6 +57,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueMasonryPlugin)
 Vue.use(require('vue-shortkey'))
+Vue.use(InfiniteLoading);
 
 Vue.config.productionTip = false
 

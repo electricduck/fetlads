@@ -31,15 +31,8 @@
         @click="handleLoadMoreClick"
       >{{ $t('phrases.grid.loadMore') }}</a>
       <span class="grid-load-more-nm">{{ $t('phrases.grid.nothingMore') }}</span>
-      <br />
-      <label class="form-item form-item--checkbox grid-load-more-if">
-        <input type="checkbox" v-model="infiniteScrolling" />
-        <span class="form-item--checkbox-toggle">
-          <font-awesome-icon icon="toggle-on" />
-        </span>
-        <span class="form-item--checkbox-text">{{ $t('phrases.grid.infinite') }}</span>
-      </label>
     </div>
+    <infinite-loading @infinite="handleScrollToBottom" class="grid-infinite"></infinite-loading>
   </div>
 </template>
 
@@ -52,7 +45,6 @@ export default {
   name: "TheGrid",
   data: function() {
     return {
-      infiniteScrolling: false,
       noMorePosts: false,
       page: 0,
       posts: []
@@ -66,22 +58,9 @@ export default {
       }
     },
     handleScrollToBottom() {
-      window.onscroll = () => {
-        if (this.infiniteScrolling) {
-          let bottomOfWindow =
-            Math.max(
-              window.pageYOffset,
-              document.documentElement.scrollTop,
-              document.body.scrollTop
-            ) +
-              window.innerHeight ===
-            document.documentElement.offsetHeight;
-
-          if (bottomOfWindow) {
-            this.handleLoadMoreClick();
-          }
-        }
-      };
+      if (window.isPostCacheUpdated) {
+        this.handleLoadMoreClick();
+      }
     },
     loadPosts(updateCache, page) {
       updateCache = updateCache || false;
@@ -102,19 +81,8 @@ export default {
 
         if (page === 0) {
           window.isPostCacheUpdated = true;
-          this.handleScrollToBottom();
         }
       });
-    }
-  },
-  watch: {
-    infiniteScrolling: function(value) {
-      localStorage.setItem("fetlads:settings:infinite", value);
-    }
-  },
-  beforeMount() {
-    if (localStorage.getItem("fetlads:settings:infinite") === "true") {
-      this.infiniteScrolling = true;
     }
   },
   mounted() {
@@ -212,7 +180,7 @@ export default {
   .grid-load-more {
     box-sizing: border-box;
     font-size: 0;
-    height: 110px;
+    height: 70px;
     line-height: 1.5;
     margin: #{$padding * 3};
     text-align: center;
@@ -224,10 +192,6 @@ export default {
 
       .grid-load-more-nm {
         display: block;
-      }
-
-      .grid-load-more-if {
-        display: none;
       }
     }
 
@@ -248,17 +212,14 @@ export default {
       color: var(--body-fg-color);
       filter: var(--lowlight-filter);
     }
+  }
 
-    .grid-load-more-if {
-      margin-top: #{$padding * 1.5};
+  .grid-infinite {
+    .infinite-status-prompt {
+      display: none;
 
-      .form-item--checkbox-toggle {
-        font-size: calc(0.5rem + #{$padding * 3});
-      }
-
-      .form-item--checkbox-text {
-        font-size: 0.85rem;
-        opacity: 0.7;
+      & > i {
+        animation: unset !important;
       }
     }
   }

@@ -34,7 +34,6 @@ export default {
       translationsProvidedBy: "<a href='https://translate.google.com' target='_blank'>Google Translate</a>が提供する翻訳"
     },
     grid: {
-      infinite: "無限スクロール",
       loadMore: "もっと",
       nothingMore: "これ以上の投稿はありません"
     },

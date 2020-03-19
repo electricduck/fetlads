@@ -14,7 +14,7 @@ import Vue from 'vue'
 import { version } from '@/common/version'
 
 export default {
-  name: "TheFooter",
+  name: "Footer",
   data: function() {
     return {
       copyrightYear: (new Date()).getFullYear(),
@@ -31,6 +31,10 @@ export default {
 @import "@/scss/_variables.scss";
 
 .footer {
+  &.footer--hidden {
+    display: none;
+  }
+
   font-size: 0;
   padding: #{$padding * 2.5} #{$padding * 2};
   text-align: center;
