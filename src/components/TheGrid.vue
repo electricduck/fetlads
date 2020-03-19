@@ -104,6 +104,7 @@ export default {
 
         if (page === 0) {
           window.isPostCacheUpdated = true;
+          this.handleScrollToBottom();
         }
       });
     }
@@ -120,7 +121,6 @@ export default {
   },
   mounted() {
     this.loadPosts(true);
-    this.handleScrollToBottom();
   }
 };
 </script>
