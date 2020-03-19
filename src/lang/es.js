@@ -34,6 +34,7 @@ export default {
       translationsProvidedBy: "Traducciones proporcionadas por <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>" // Translations provided by <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>
     },
     grid: {
+      infinite: "Desplazamiento infinito", // Infinite Scrolling
       loadMore: "Más", // More
       nothingMore: "No más mensajes" // No more posts
     },
@@ -43,9 +44,15 @@ export default {
         weAre: "Somos dos retorcidos del Reino Unido." // We are two kinksters from the UK.
       },
       links: {
-        about: "Acerca de", // About
-        home: "Inicio", // Home
+        back: "Volver", // Back
+        menu: "Menú", // Menu
         random: "Postes al azar" // Random Post
+      }
+    },
+    navmenu: {
+      links: {
+        about: "Acerca de", // About
+        home: "Inicio" // Home
       }
     },
     post: {
@@ -59,6 +66,9 @@ export default {
       count: "{0} de {1}", // {0} of {1}
       forward: "Próxima imagen", // Next Image
       loading: "Cargando" // Loading
+    },
+    slidebar: {
+      exit: "Salga" // Exit
     }
   }
 }
