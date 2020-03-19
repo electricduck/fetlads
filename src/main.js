@@ -15,6 +15,7 @@ import {
   faImage, faImages, faInfoCircle,
   faMapMarkerAlt,
   faRandom,
+  faToggleOn,
   faVenusMars, faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -43,7 +44,7 @@ library.add(
   faMapMarkerAlt,
   faRandom, faReddit,
   faSnapchat,
-  faTelegramPlane, faTwitter,
+  faTelegramPlane, faToggleOn, faTwitter,
   faVenusMars, faVideo, faVuejs,
   faWhatsapp
 )
