@@ -243,7 +243,7 @@ export default {
 
           color: white !important;
           filter: drop-shadow(0 0 7px black) !important;
-
+          
           &:last-of-type {
             margin-right: 0;
           }
@@ -293,6 +293,7 @@ export default {
 
       @include respond-to(mobile) {
         .navbar-hero-inner-links {
+          font-size: 1.9rem;
           text-align: center;
         }
       }
