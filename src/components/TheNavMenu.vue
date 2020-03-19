@@ -49,7 +49,7 @@
         </div>
       </div>
     </div-->
-    <Footer class="nav-menu-footer" :class="{ 'footer--hidden' : !(this.$route.name === 'Home' || this.$route.name === 'Home_Post') }" />
+    <Footer class="nav-menu-footer" />
     <div class="nav-menu-social">
       <a
         class="nav-menu-social-item nav-menu-social-item--telegram"
@@ -261,10 +261,6 @@ export default {
     .nav-menu-social {
       font-size: 1.5rem;
       line-height: 1.5;
-
-      @include respond-to(mobile) {
-        text-align: center;
-      }
 
       .nav-menu-social-item {
         margin-right: #{$padding * 1.5};
