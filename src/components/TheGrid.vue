@@ -32,14 +32,12 @@
       >{{ $t('phrases.grid.loadMore') }}</a>
       <span class="grid-load-more-nm">{{ $t('phrases.grid.nothingMore') }}</span>
       <br />
-      <label
-        class="form-item form-item--checkbox grid-load-more-if"
-      >
+      <label class="form-item form-item--checkbox grid-load-more-if">
         <input type="checkbox" v-model="infiniteScrolling" />
         <span class="form-item--checkbox-toggle">
           <font-awesome-icon icon="toggle-on" />
         </span>
-        <span class="form-item--checkbox-text">Infinite Scrolling</span>
+        <span class="form-item--checkbox-text">{{ $t('phrases.grid.infinite') }}</span>
       </label>
     </div>
   </div>
@@ -115,7 +113,7 @@ export default {
     }
   },
   beforeMount() {
-    if(localStorage.getItem("fetlads:settings:infinite") === "true") {
+    if (localStorage.getItem("fetlads:settings:infinite") === "true") {
       this.infiniteScrolling = true;
     }
   },
