@@ -17,7 +17,7 @@
         <div class="navbar-hero-inner-links">
           <a
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--telegram"
-            href="https://t.me/fetlads"
+            :href="$var.social.telegram"
             target="_blank"
             title="Telegram"
           >
@@ -25,7 +25,7 @@
           </a>
           <a
             class="navbar-hero-inner-links-item navbar-hero-inner-links-item--twitter"
-            href="https://twitter.com/TheFetlads"
+            :href="$var.social.twitter"
             target="_blank"
             title="Twitter"
           >
@@ -41,24 +41,30 @@
           <span>lads</span>
         </router-link>
       </div>
-      <router-link
-        :to="(this.$route.name === 'Home' || this.$route.name === 'Home_Post') ? '/about' : '/'"
-        class="navbar-item"
-        :title="(this.$route.name === 'Home' || this.$route.name === 'Home_Post') ? $t('phrases.navbar.links.about') : $t('phrases.navbar.links.home')"
-      >
-        <font-awesome-icon 
-        :icon="(this.$route.name === 'Home' || this.$route.name === 'Home_Post') ? 'info-circle' : 'arrow-left'"
-        />
-      </router-link>
       <a
         class="navbar-item"
-        :class="{ 'navbar-item--hidden' : !(this.$route.name === 'Home' || this.$route.name === 'Home_Post') }"
         v-shortkey="['space']"
         @shortkey="handleRandomPostClick"
         @click="handleRandomPostClick"
         :title="$t('phrases.navbar.links.random') + ' (Space)'"
+        v-if="(this.$route.name === 'Home' || this.$route.name === 'Home_Post')"
       >
         <font-awesome-icon icon="random" />
+      </a>
+      <router-link
+        class="navbar-item"
+        :title="$t('phrases.navbar.links.back')"
+        v-if="!(this.$route.name === 'Home' || this.$route.name === 'Home_Post')"
+        to="/"
+      >
+        <font-awesome-icon icon="arrow-left" />
+      </router-link>
+      <a
+        class="navbar-item"
+        @click="handleMenuClick"
+        :title="$t('phrases.navbar.links.menu')"
+      >
+        <font-awesome-icon icon="bars" />
       </a>
     </div>
   </div>
@@ -75,6 +81,9 @@ export default {
     };
   },
   methods: {
+    handleMenuClick() {
+      this.$emit('toggleMenu')
+    },
     handleRandomPostClick() {
       if (this.$route.name === "Home") {
         getRandomPost().then(post => {
@@ -91,12 +100,6 @@ export default {
 @import "@/scss/_variables.scss";
 
 .navbar {
-  $navbar-container-height: 75px;
-  $navbar-spacing: #{$padding * 1.5};
-  $navbar-hero-height: calc(
-    100vh - #{$navbar-container-height + (($padding * 1.5) * 2)}
-  );
-
   backdrop-filter: blur(10px);
   display: block;
   left: 0;
@@ -291,10 +294,6 @@ export default {
       @include respond-to(mobile) {
         .navbar-hero-inner-links {
           text-align: center;
-
-          .navbar-hero-inner-links-item {
-            font-size: 1.9rem;
-          }
         }
       }
     }
@@ -317,7 +316,7 @@ export default {
 
       &:nth-child(2),
       &:nth-child(3) {
-        font-size: 1.3rem;
+        font-size: $navbar-item-font-size;
         grid-row: 3;
         line-height: 1;
 
@@ -345,7 +344,7 @@ export default {
       @include respond-to(mobile) {
         &:nth-child(2),
         &:nth-child(3) {
-          font-size: 1.4rem;
+          font-size: $navbar-item-font-size-mobile;
         }
 
         &:nth-child(2) {

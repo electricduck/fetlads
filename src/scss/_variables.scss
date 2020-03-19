@@ -1,10 +1,15 @@
-$grid-amount-desktop: 5;
-$grid-amount-desktop-sm: 3;
-$grid-amount-mobile: 2;
 $padding: 10px;
 $padding-mini: 5px;
 $radius: 7px;
 $transition: 0.25s;
+$grid-amount-desktop: 5;
+$grid-amount-desktop-sm: 3;
+$grid-amount-mobile: 2;
+$navbar-container-height: 75px;
+$navbar-item-font-size: 1.3rem;
+$navbar-item-font-size-mobile: 1.4rem;
+$navbar-spacing: #{$padding * 1.5};
+$navbar-hero-height: calc(100vh - #{$navbar-container-height + (($padding * 1.5) * 2)});
 
 $facebook-brand-color: #0078ef;
 $flickr-brand-color: #ff0585;

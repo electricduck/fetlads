@@ -34,6 +34,7 @@ export default {
       translationsProvidedBy: "Die Übersetzungen werden von <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a> zur Verfügung gestellt"
     },
     grid: {
+      infinite: "Unendliches Scrollen",
       loadMore: "Mehr",
       nothingMore: "Keine weiteren Stellen"
     },
@@ -43,9 +44,15 @@ export default {
         weAre: "Wir sind zwei Kinkster aus dem Vereinigten Königreich."
       },
       links: {
-        about: "Über",
-        home: "Startseite",
+        back: "Zurück",
+        menu: "Menü",
         random: "Zufälliger Beitrag"
+      }
+    },
+    navmenu: {
+      links: {
+        about: "Über",
+        home: "Startseite"
       }
     },
     post: {
@@ -59,6 +66,9 @@ export default {
       count: "{0} von {1}",
       forward: "Nächstes Bild",
       loading: "Beladung"
+    },
+    slidebar: {
+      exit: "Verlassen"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "fetlads",
-  "version": "20.7.0",
+  "version": "20.8.0",
   "private": true,
   "scripts": {
     "serve": "genversion --es6 src/common/version.js && vue-cli-service serve",

@@ -57,6 +57,7 @@ export default {
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
     grid: {
+      infinite: "Infinite Scrolling",
       loadMore: "More",
       nothingMore: "That's all, folks!"
     },
@@ -66,9 +67,15 @@ export default {
         weAre: "We are two kinksters from the UK."
       },
       links: {
-        about: "About",
-        home: "Home",
+        back: "Back",
+        menu: "Menu",
         random: "Random Post"
+      }
+    },
+    navmenu: {
+      links: {
+        about: "About",
+        home: "Home"
       }
     },
     post: {
@@ -82,6 +89,9 @@ export default {
       count: "{0} of {1}",
       forward: "Next Image",
       loading: "Just a sec!"
+    },
+    slidebar: {
+      exit: "Exit"
     }
   }
 }

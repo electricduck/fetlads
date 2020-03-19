@@ -34,6 +34,7 @@ export default {
       translationsProvidedBy: "Traductions fournies par <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
     grid: {
+      infinite: "Défilement infini",
       loadMore: "En savoir plus",
       nothingMore: "Plus de postes"
     },
@@ -43,9 +44,15 @@ export default {
         weAre: "Nous sommes deux cinglés du Royaume-Uni."
       },
       links: {
-        about: "À propos de",
-        home: "Accueil",
+        back: "Retour",
+        menu: "Menu",
         random: "Poste aléatoire"
+      }
+    },
+    navmenu: {
+      links: {
+        about: "À propos de",
+        home: "Accueil"
       }
     },
     post: {
@@ -59,6 +66,9 @@ export default {
       count: "{0} sur {1}",
       forward: "Image suivante",
       loading: "Chargement"
+    },
+    slidebar: {
+      exit: "Sortie"
     }
   }
 }

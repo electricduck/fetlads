@@ -7,7 +7,7 @@ import { version } from './common/version'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowsAltV, faArrowLeft, faAt,
-  faBiohazard, faBirthdayCake,
+  faBars, faBiohazard, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
@@ -15,6 +15,7 @@ import {
   faImage, faImages, faInfoCircle,
   faMapMarkerAlt,
   faRandom,
+  faTimes, faToggleOn,
   faVenusMars, faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -32,7 +33,7 @@ import { VueMasonryPlugin } from 'vue-masonry'
 
 library.add(
   faArrowsAltV, faArrowLeft, faAt,
-  faBiohazard, faBirthdayCake,
+  faBars, faBiohazard, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExpand, faExternalLinkAlt,
@@ -43,7 +44,7 @@ library.add(
   faMapMarkerAlt,
   faRandom, faReddit,
   faSnapchat,
-  faTelegramPlane, faTwitter,
+  faTelegramPlane, faTimes, faToggleOn, faTwitter,
   faVenusMars, faVideo, faVuejs,
   faWhatsapp
 )

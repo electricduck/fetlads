@@ -72,7 +72,7 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 1500;
 
   background-color: var(--body-bg-color);
   color: var(--body-fg-color);
