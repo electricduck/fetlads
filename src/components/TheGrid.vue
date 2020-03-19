@@ -52,7 +52,7 @@ export default {
   name: "TheGrid",
   data: function() {
     return {
-      infiniteScrolling: false,
+      infiniteScrolling: true,
       noMorePosts: false,
       page: 0,
       posts: []
@@ -115,6 +115,8 @@ export default {
   beforeMount() {
     if (localStorage.getItem("fetlads:settings:infinite") === "true") {
       this.infiniteScrolling = true;
+    } else {
+      this.infiniteScrolling = false;
     }
   },
   mounted() {
