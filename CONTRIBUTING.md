@@ -10,7 +10,7 @@ Since [#81aaddb](https://github.com/electricduck/fetlads/commit/81aaddbde518455f
 
  * `{1}` **Type**
     * `🧱 build`: Modificications to tasks for build/release process (e.g. Dockerfile, Github Actions, etc.)
-    * `📝 chore`: Misc. changes (e.g. scripts, external tools, version bumps, etc.)
+    * `📝 chore`: Misc. changes (e.g. scripts, external tools, version bumps, background changes not for the user, etc.)
     * `📖 docs`: Modifications to the documentation (including READMEs)
     * `🆕 feat`: Adding feature, or modifying a current feature, for the user
     * `🛠 fix`: Bug or performance fix for the user

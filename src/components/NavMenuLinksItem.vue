@@ -14,7 +14,7 @@
 export default {
   name: "NavMenuLinksItem",
   props: {
-    active: Object,
+    active: Boolean,
     route: String
   },
   methods: {
