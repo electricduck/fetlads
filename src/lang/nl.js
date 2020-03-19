@@ -44,7 +44,7 @@ export default {
         weAre: "We zijn twee kinksters uit het Verenigd Koninkrijk."
       },
       links: {
-        back: "Terug naar",
+        back: "Terug",
         menu: "Menu",
         random: "Willekeurige post"
       }
