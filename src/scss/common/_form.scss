@@ -1,6 +1,8 @@
 @import "@/scss/_variables.scss";
 
 .form-item {
+  color: var(--body-fg-color);
+
   &.form-item--checkbox {
     display: inline-grid;
     font-size: 1rem;
