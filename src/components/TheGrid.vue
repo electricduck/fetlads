@@ -102,6 +102,10 @@ export default {
     line-height: 0;
     margin: $padding;
 
+    @include respond-to(mobile) {
+      margin: 0;
+    }
+
     .grid-item {
       border-radius: $radius;
       box-sizing: border-box;
@@ -116,6 +120,12 @@ export default {
 
       box-shadow: var(--light-shadow);
 
+      @include respond-to(desktop-sm) {
+        width: calc(
+          (100% / #{$grid-amount-desktop-sm}) - #{($padding / 2) * 2}
+        );
+      }
+
       @include respond-to(mobile) {
         .grid-item-meta {
           font-size: 0.8rem !important;
@@ -125,6 +135,13 @@ export default {
           font-size: 1.3rem !important;
           padding-left: #{$padding * 1.5} !important;
         }
+
+        border-radius: 0;
+        box-shadow: unset;
+        margin: 0;
+        width: calc(100% / 2);
+        //margin: #{$padding / 2};
+        //width: calc((100% / #{$grid-amount-mobile}) - #{($padding / 2) * 2});
       }
 
       .grid-item-image {
@@ -162,17 +179,6 @@ export default {
           color: var(--overlay-fg-color);
           filter: drop-shadow(var(--light-shadow)) !important;
         }
-      }
-
-      @include respond-to(desktop-sm) {
-        width: calc(
-          (100% / #{$grid-amount-desktop-sm}) - #{($padding / 2) * 2}
-        );
-      }
-
-      @include respond-to(mobile) {
-        margin: #{$padding / 2};
-        width: calc((100% / #{$grid-amount-mobile}) - #{($padding / 2) * 2});
       }
     }
   }
