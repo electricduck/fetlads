@@ -2,7 +2,7 @@
   <div class="adult-warning" v-if="visible">
     <div class="adult-warning-inner">
       <p class="adult-warning-inner-icon">
-        <font-awesome-icon icon="biohazard" />
+        <font-awesome-icon icon="exclamation-triangle" />
       </p>
       <p class="adult-warning-inner-title">
         {{ $t('phrases.adultWarning.title') }}
