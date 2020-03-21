@@ -9,7 +9,8 @@ export const v = {
     media: {
       image: "https://fs05.fetlads.xyz/image/",
       video: "https://fs05.fetlads.xyz/video/"
-    }
+    },
+    thumb: "/data/thumb/"
   },
   social: {
     telegram: "https://t.me/fetlads",

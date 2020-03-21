@@ -8,7 +8,7 @@
         :key="post.id"
         :to="'/' + post.id + '/' + post.slug"
       >
-        <img class="grid-item-image" :src="'/data/thumb/' + post.id + '.jpg'" />
+        <img class="grid-item-image" :src="$var.file.thumb + post.id + '.jpg'" />
         <div class="grid-item-meta">{{ post.meta }}</div>
         <div class="grid-item-type">
           <font-awesome-icon icon="image" class="grid-item-type-icon" v-if="post.type === 'image'" />
