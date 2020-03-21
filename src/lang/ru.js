@@ -13,7 +13,7 @@ export default {
         },
         sexuality: {
           homo: "Гомосексуалист",
-          pan: "Pansexual"
+          pan: "пансексуальнос"
         }
       },
       quote: "Секс без перегибов - это как еда без вкуса.",
