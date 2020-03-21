@@ -7,10 +7,10 @@ import { version } from './common/version'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowsAltV, faArrowLeft, faAt,
-  faBars, faBiohazard, faBirthdayCake,
+  faBars, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
-  faExpand, faExternalLinkAlt,
+  faExclamationTriangle, faExpand, faExternalLinkAlt,
   faGlobe,
   faHome,
   faImage, faImages, faInfoCircle,
@@ -36,10 +36,10 @@ import InfiniteLoading from 'vue-infinite-loading';
 
 library.add(
   faArrowsAltV, faArrowLeft, faAt,
-  faBars, faBiohazard, faBirthdayCake,
+  faBars, faBirthdayCake,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
-  faExpand, faExternalLinkAlt,
+  faExclamationTriangle, faExpand, faExternalLinkAlt,
   faFacebook, faFlickr,
   faGithub, faGlobe,
   faHome,

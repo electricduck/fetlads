@@ -142,10 +142,11 @@ export default {
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 5;
-    padding-right: #{$padding * 1.5};
+    padding-right: #{$padding * 2.5};
 
     @include respond-to(mobile) {
       grid-row-end: 4;
+      padding-right: #{$padding * 2};
     }
 
     img {
@@ -240,6 +241,10 @@ export default {
 
       &:last-of-type {
         margin-bottom: 0 !important;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 0.8rem !important;
       }
     }
   }
