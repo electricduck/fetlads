@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
+import NotFound from './views/NotFound.vue'
 
 Vue.use(VueRouter)
 
 let titleSuffix = "| Fetlads"
 
 const routes = [
+  {
+    path: '*',
+    component: NotFound
+  },
   {
     path: '/',
     name: 'Home',
