@@ -28,7 +28,6 @@ export default {
     line-height: 1.5;
     margin: 0 auto;
     max-width: 900px;
-    min-height: 100vh;
 
     h1, h2, h3, p, ul {
       margin: 0 0 #{$padding * 2} 0;

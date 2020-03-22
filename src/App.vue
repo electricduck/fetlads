@@ -3,7 +3,6 @@
     <TheNavbar @toggleMenu="toggleMenu" />
     <router-view />
     <TheAdultWarning />
-    <Footer />
     <Slidebar :visible="isMenuVisible" :right="true" @closeMenu="toggleMenu">
       <TheNavMenu @closeMenu="toggleMenu" />
     </Slidebar>
@@ -13,7 +12,6 @@
 <script>
 import Slidebar from "@/components/Slidebar.vue";
 import TheAdultWarning from "@/components/TheAdultWarning.vue";
-import Footer from "@/components/Footer.vue";
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheNavMenu from "@/components/TheNavMenu.vue";
 
@@ -21,7 +19,6 @@ export default {
   components: {
     Slidebar,
     TheAdultWarning,
-    Footer,
     TheNavbar,
     TheNavMenu
   },
