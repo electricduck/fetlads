@@ -54,6 +54,10 @@ export default {
         home: "Inicio" // Home
       }
     },
+    notFound: {
+      message: "Lo que estabas buscando ya no está aquí o nunca existió.", // Whatever you were looking for is no longer here or never existed.
+      title: "No Se Encuentra" // Not Found
+    },
     post: {
       exit: "Salga", // Exit
       fullscreen: "Pantalla completa", // Fullscreen
