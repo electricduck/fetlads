@@ -37,8 +37,8 @@
       class="about-page-profile"
       :user-contact="[
         { service: 'Telegram', username: 'theducky' },
-        { service: 'Twitter', username: 'theducky_' },
-        { service: 'Github', username: 'electricduck' }
+        { service: 'Telescope', username: 'justduckythings' },
+        { service: 'Twitter', username: 'justduckythings' }
       ]"
       user-location="York, GB"
       user-name="Ducky"
