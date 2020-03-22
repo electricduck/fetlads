@@ -5,7 +5,7 @@ import InfiniteLoading from 'vue-infinite-loading';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowsAltV, faArrowLeft, faAt,
-  faBars, faBirthdayCake,
+  faBars, faBirthdayCake, faBullseye,
   faChevronLeft, faChevronRight, faCompressAlt,
   faDownload,
   faExclamationTriangle, faExpand, faExternalLinkAlt,
@@ -33,7 +33,7 @@ const thirdParty = {
   init() {
     library.add(
       faArrowsAltV, faArrowLeft, faAt,
-      faBars, faBirthdayCake,
+      faBars, faBirthdayCake, faBullseye,
       faChevronLeft, faChevronRight, faCompressAlt,
       faDownload,
       faExclamationTriangle, faExpand, faExternalLinkAlt,

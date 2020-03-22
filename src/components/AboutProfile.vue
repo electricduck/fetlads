@@ -68,6 +68,8 @@ export default {
           return ['fas', 'at'];
         case "telegram":
           return ['fab', 'telegram-plane'];
+        case "telescope":
+          return ['fas', 'bullseye'];
         default:
           return ['fab', service.toLowerCase()];
       }
@@ -98,6 +100,9 @@ export default {
           break;
         case "telegram":
           link = "https://t.me/";
+          break;
+        case "telescope":
+          link = "https://telesco.pe/";
           break;
         case "twitter":
           link = "https://twitter.com/";
@@ -309,6 +314,11 @@ export default {
       &.about-profile-contact-button--telegram {
         background-color: $telegram-brand-color !important;
         color: $telegram-brand-fg-color !important;
+      }
+
+      &.about-profile-contact-button--telescope {
+        background-color: $telescope-brand-color !important;
+        color: $telescope-brand-fg-color !important;
       }
 
       &.about-profile-contact-button--twitter {
