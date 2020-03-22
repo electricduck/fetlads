@@ -77,6 +77,10 @@ export default {
         home: "Home"
       }
     },
+    notFound: {
+      message: "Whatever you were looking for is no longer here or never existed.",
+      title: "Not Found"
+    },
     post: {
       exit: "Exit",
       fullscreen: "Fullscreen",

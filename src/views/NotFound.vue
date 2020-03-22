@@ -3,8 +3,12 @@
     <p class="notfound-page-icon">
       <font-awesome-icon icon="exclamation-triangle" />
     </p>
-    <h1>Not Found</h1>
-    <p class="no-margin">Whatever you were looking for is no longer here or never existed.</p>
+    <h1>
+      {{ $t('phrases.notFound.title') }}
+    </h1>
+    <p class="no-margin">
+      {{ $t('phrases.notFound.message') }}
+    </p>
   </Page>
 </template>
 
