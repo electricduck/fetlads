@@ -54,6 +54,10 @@ export default {
         home: "Startseite"
       }
     },
+    notFound: {
+      message: "Was immer Sie gesucht haben, ist nicht mehr da oder hat nie existiert.",
+      title: "Nicht Gefunden"
+    },
     post: {
       exit: "Verlassen",
       fullscreen: "Vollbildschirm",

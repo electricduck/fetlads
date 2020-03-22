@@ -54,6 +54,10 @@ export default {
         home: "Home"
       }
     },
+    notFound: {
+      message: "Wat je ook zocht is niet meer hier of heeft nooit bestaan.",
+      title: "Niet Gevonden"
+    },
     post: {
       exit: "Verlaat",
       fullscreen: "Volledig scherm",

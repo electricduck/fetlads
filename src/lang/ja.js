@@ -54,6 +54,10 @@ export default {
         home: "宅"
       }
     },
+    notFound: {
+      message: "あなたが探していたものは、もうここにはないし、存在しなかった。",
+      title: "見つかりません"
+    },
     post: {
       exit: "出口",
       fullscreen: "全画面表示",
