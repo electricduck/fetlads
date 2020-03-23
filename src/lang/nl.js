@@ -26,7 +26,7 @@ export default {
     adultWarning: {
       containsAdultContent: "Deze site bevat seksuele en volwassen inhoud",
       letMeIn: "Laat me binnen",
-      pleaseLeaveNow: "Als je onder de wettelijke leeftijd bent, ga dan nu weg.<br />Of niet: Ik ben maar een paar regels tekst, ik zal de politie niet bellen.",
+      pleaseLeaveNow: "Als je onder de wettelijke leeftijd bent, ga dan nu weg.<br />Of niet: Ik ben maar een paar regels tekst, niet de politie.",
       title: "Whoa, daar!"
     },
     footer: {

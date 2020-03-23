@@ -26,7 +26,7 @@ export default {
     adultWarning: {
       containsAdultContent: "このサイトには性的およびアダルトコンテンツが含まれています",
       letMeIn: "入れてくれ",
-      pleaseLeaveNow: "あなたが法定年齢未満の場合は、すぐに退出してください。<br />またはしないでください：私はほんの数行のテキストです、私は警官を呼び出しません。",
+      pleaseLeaveNow: "あなたが法定年齢未満の場合は、すぐに退出してください。<br />または、しない：私は数行の文章だけで、警察ではありません。",
       title: "おっ、そこに！"
     },
     footer: {
