@@ -49,7 +49,7 @@ export default {
     adultWarning: {
       containsAdultContent: "This site contains sexual and adult content",
       letMeIn: "Let Me In",
-      pleaseLeaveNow: "If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, I won't call the cops.",
+      pleaseLeaveNow: "If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, not the police.",
       title: "Whoa, there!"
     },
     footer: {
