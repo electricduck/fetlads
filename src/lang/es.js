@@ -26,7 +26,7 @@ export default {
     adultWarning: {
       containsAdultContent: "Este sitio contiene contenido sexual y para adultos", // This site contains sexual and adult content
       letMeIn: "Déjame entrar", // Let Me In
-      pleaseLeaveNow: "Si eres menor de edad, por favor vete ahora.<br />O no lo hagas: Sólo son unas pocas líneas de texto, no llamaré a la policía.", // If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, I won't call the cops.
+      pleaseLeaveNow: "Si eres menor de edad, por favor vete ahora.<br />O no lo haga: Soy sólo unas pocas líneas de texto, no la policía.", // If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, not the police.
       title: "¡Allí!" // Whoa, there!
     },
     footer: {

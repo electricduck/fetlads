@@ -26,7 +26,7 @@ export default {
     adultWarning: {
       containsAdultContent: "Diese Website enthält sexuelle und erwachsene Inhalte",
       letMeIn: "Lassen Sie mich rein",
-      pleaseLeaveNow: "Wenn Sie noch nicht volljährig sind, gehen Sie bitte jetzt.<br/>Oder auch nicht: Ich bin nur ein paar Zeilen Text, ich werde nicht die Polizei rufen.",
+      pleaseLeaveNow: "Wenn Sie noch nicht volljährig sind, gehen Sie bitte jetzt.<br/>Oder auch nicht: Ich bin nur ein paar Zeilen Text, nicht die Polizei.",
       title: "He, da!"
     },
     footer: {
