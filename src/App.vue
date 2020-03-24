@@ -62,6 +62,7 @@ export default {
 <style lang="scss">
 @import "@/scss/common/_theme.scss";
 @import "@/scss/common/_layout.scss";
+@import "@/scss/common/_button.scss";
 @import "@/scss/common/_form.scss";
 
 #app {

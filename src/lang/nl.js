@@ -33,6 +33,9 @@ export default {
       openSource: "Deze site is open-source en is te vinden op <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
       translationsProvidedBy: "Vertalingen verzorgd door <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
     },
+    gif: {
+      random: "Willekeurig"
+    },
     grid: {
       loadMore: "Meer",
       nothingMore: "Geen berichten meer"
@@ -51,6 +54,7 @@ export default {
     navmenu: {
       links: {
         about: "Over",
+        gif: "GIFs",
         home: "Home"
       }
     },

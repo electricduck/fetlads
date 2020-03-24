@@ -7,6 +7,7 @@ export const v = {
   file: {
     avatar: "/data/img/avatar/",
     media: {
+      gif: "https://fs05.fetlads.xyz/short/",
       image: "https://fs05.fetlads.xyz/image/",
       video: "https://fs05.fetlads.xyz/video/"
     },

@@ -69,7 +69,7 @@ export default {
         updateCache = false;
       }
 
-      getPosts('posts', page, postsAmount, updateCache, true).then(posts => {
+      getPosts('posts', updateCache, page, postsAmount, true).then(posts => {
         page = page || 0;
 
         if (posts.length === 0) {
@@ -202,7 +202,6 @@ export default {
     }
 
     .grid-load-more-lm {
-      box-sizing: border-box;
       font-size: 1.7rem;
       padding: #{$padding * 1.7} #{$padding * 3} !important;
 

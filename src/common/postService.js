@@ -1,7 +1,8 @@
 import axios from "axios"
+import { random } from "@/common/utilities"
 
 export const getPost = async (id, slug, useCache, populateNeighbourItems) => {
-  let posts = await getPosts('posts', 0, 0, !useCache, true)
+  let posts = await getPosts('posts', !useCache, 0, 0, true)
 
   return new Promise((resolve, reject) => {
     var idAsInt = Number(id)
@@ -28,7 +29,7 @@ export const getPost = async (id, slug, useCache, populateNeighbourItems) => {
   })
 }
 
-export const getPosts = async (key, page, amount, updateCache, sortByDate) => {
+export const getPosts = async (key, updateCache, page, amount, sortByDate) => {
   amount = amount || 0
   page = page || 0
   sortByDate = sortByDate || false
@@ -66,6 +67,10 @@ export const getPosts = async (key, page, amount, updateCache, sortByDate) => {
 
 export const getRandomPost = async () => {
   let posts = await getPosts('posts')
-  var randomPost = posts[Math.floor(Math.random() * posts.length)]
+  var randomPost = random(posts)
   return randomPost
+}
+
+export const resetPosts = (key) => {
+  sessionStorage.removeItem(`fetlads:cache:${key}`)
 }

@@ -56,6 +56,9 @@ export default {
       openSource: "This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
+    gif: {
+      random: "Random"
+    },
     grid: {
       loadMore: "More",
       nothingMore: "That's all, folks!"
@@ -74,6 +77,7 @@ export default {
     navmenu: {
       links: {
         about: "About",
+        gif: "GIFs",
         home: "Home"
       }
     },
