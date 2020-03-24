@@ -34,6 +34,14 @@ const routes = [
     meta: {
       title: `About ${titleSuffix}`
     }
+  },
+  {
+    path: '/gif',
+    name: 'Gif',
+    component: () => import('./views/Gif.vue'),
+    meta: {
+      title: `GIFs ${titleSuffix}`
+    }
   }
 ]
 

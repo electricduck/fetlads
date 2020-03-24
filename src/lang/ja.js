@@ -33,6 +33,9 @@ export default {
       openSource: "このサイトはオープンソースであり、<a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>で見つけることができます",
       translationsProvidedBy: "<a href='https://translate.google.com' target='_blank'>Google Translate</a>が提供する翻訳"
     },
+    gif: {
+      random: "ランダム"
+    },
     grid: {
       loadMore: "もっと",
       nothingMore: "これ以上の投稿はありません"
@@ -51,6 +54,7 @@ export default {
     navmenu: {
       links: {
         about: "約",
+        gif: "GIFs",
         home: "宅"
       }
     },

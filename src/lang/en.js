@@ -8,7 +8,7 @@ export default {
       profile: {
         about: {
           astra: `<p>
-            I am into &mdash; but not limited to &mdash; <strong>bondage</strong>, <strong>breathplay</strong>, <strong>clothed</strong>/<strong>geared sex</strong>, <strong>exhibitionism</strong>, <strong>gas masks</strong>, <strong>helmets</strong>/<strong>hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>lycra</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>orgasm control</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong> (giving), <strong>penetration</strong> (anal/oral), <strong>powerbottoming</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>SCBA</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>trackies</strong>/<strong>scally-wear</strong>, <strong>underwear</strong>/<strong>swimwear</strong>, <strong>worshipping</strong>
+            I am into &mdash; but not limited to &mdash; <strong>bondage</strong>, <strong>breathplay</strong>, <strong>clothed</strong>/<strong>geared sex</strong>, <strong>exhibitionism</strong>, <strong>gas masks</strong>, <strong>helmets</strong>/<strong>hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>lycra</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>orgasm control</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong> (giving), <strong>penetration</strong> (anal/oral), <strong>powerbottoming</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>SCBA</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>trackies</strong>/<strong>scally-wear</strong>, <strong>underwear</strong>/<strong>swimwear</strong>, and <strong>worshipping</strong>
           </p>
           <p class="lowlight">
             I am not into <strong>blood</strong>/<strong>gore</strong>, <strong>diapers</strong>, <strong>feet</strong>, <strong>musk</strong> (heavy), <strong>scat</strong>, <strong>sounding</strong>, and <strong>vomit</strong>.
@@ -17,7 +17,7 @@ export default {
             When I'm not groping someone in gear, imposing harsh pain on a willing voluneer, or laying down with my legs in the air, you'll find me crafting awesome things in whatever programming language takes my fancy, or taking photos of anything and everything.
           </p>`,
           ducky: `<p>
-            I am into &mdash; but not limited to &mdash; <strong>bondage</strong> <em>(the heavier, the better)</em>, <strong>breathplay</strong>, <strong>clothed</strong>/<strong>geared sex</strong>, <strong>encasement</strong>, <strong>exhibitionism</strong>, <strong>gas masks</strong>, <strong>helmets/hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>humiliation</strong>, <strong>lycra</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>objectification</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong>, <strong>penetration</strong> (anal/oral)sc, <strong>poppers</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>SCBA</strong>, <strong>sensory deprivation</strong>, <strong>smoking</strong>/<strong>vaping</strong>, <strong>socks</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>tickling</strong>, <strong>trackies</strong>/<strong>scally-wear</strong>, <strong>underwear</strong>/<strong>swimwear</strong>, <strong>watersports</strong>, and <strong>worshipping</strong>.
+            I am into &mdash; but not limited to &mdash; <strong>bondage</strong> <em>(the heavier, the better)</em>, <strong>breathplay</strong>, <strong>clothed</strong>/<strong>geared sex</strong>, <strong>encasement</strong>, <strong>exhibitionism</strong>, <strong>gas masks</strong>, <strong>helmets/hoods</strong>, <strong>hi-vis</strong>/<strong>workie gear</strong>, <strong>humiliation</strong>, <strong>lycra</strong>, <strong>military gear</strong>, <strong>motocross gear</strong>, <strong>objectification</strong>, <strong>outdoor</strong>/<strong>risky</strong>, <strong>pain</strong>, <strong>penetration</strong> (anal/oral), <strong>poppers</strong>, <strong>pup-play</strong>, <strong>rubber</strong>, <strong>SCBA</strong>, <strong>sensory deprivation</strong>, <strong>smoking</strong>/<strong>vaping</strong>, <strong>socks</strong>, <strong>sports kits</strong>, <strong>SWAT gear</strong>, <strong>tickling</strong>, <strong>trackies</strong>/<strong>scally-wear</strong>, <strong>underwear</strong>/<strong>swimwear</strong>, <strong>watersports</strong>, and <strong>worshipping</strong>.
           </p>
           <p class="lowlight">
             I am not into <strong>blood</strong>/<strong>gore</strong>, <strong>diapers</strong>, <strong>feet</strong>, <strong>musk</strong> (heavy), <strong>scat</strong>, <strong>sounding</strong>, and <strong>vomit</strong>.
@@ -56,6 +56,9 @@ export default {
       openSource: "This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
       translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
     },
+    gif: {
+      random: "Random"
+    },
     grid: {
       loadMore: "More",
       nothingMore: "That's all, folks!"
@@ -74,6 +77,7 @@ export default {
     navmenu: {
       links: {
         about: "About",
+        gif: "GIFs",
         home: "Home"
       }
     },

@@ -11,6 +11,11 @@
         :active="this.$route.name === 'About'"
         v-on="$listeners"
       >{{ $t('phrases.navmenu.links.about') }}</NavItem>
+      <NavItem
+        route="/gif"
+        :active="this.$route.name === 'Gif'"
+        v-on="$listeners"
+      >{{ $t('phrases.navmenu.links.gif') }}</NavItem>
     </div>
     <!--div class="nav-menu-settings">
       <div class="nav-menu-settings-item">

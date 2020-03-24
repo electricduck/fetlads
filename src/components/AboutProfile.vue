@@ -35,7 +35,7 @@
         target="_blank"
       >
         <font-awesome-icon :icon="getContactButtonIcon(contact.service)" />
-        &nbsp;{{ contact.service }}
+        <span>{{ contact.service }}</span>
       </a>
     </div>
   </div>

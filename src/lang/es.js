@@ -33,6 +33,9 @@ export default {
       openSource: "Este sitio es de código abierto y se puede encontrar en <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>", // This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>
       translationsProvidedBy: "Traducciones proporcionadas por <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>" // Translations provided by <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>
     },
+    gif: {
+      random: "Aleatoria" // Random
+    },
     grid: {
       loadMore: "Más", // More
       nothingMore: "No más mensajes" // No more posts
@@ -51,6 +54,7 @@ export default {
     navmenu: {
       links: {
         about: "Acerca de", // About
+        gif: "GIFs", // GIFs
         home: "Inicio" // Home
       }
     },
