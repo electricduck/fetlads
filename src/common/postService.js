@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const getPost = async (id, slug, useCache, populateNeighbourItems) => {
-  let posts = await getPosts(0, 0, !useCache, true)
+  let posts = await getPosts('posts', 0, 0, !useCache, true)
 
   return new Promise((resolve, reject) => {
     var idAsInt = Number(id)
@@ -28,25 +28,25 @@ export const getPost = async (id, slug, useCache, populateNeighbourItems) => {
   })
 }
 
-export const getPosts = async (page, amount, updateCache, sortByDate) => {
+export const getPosts = async (key, page, amount, updateCache, sortByDate) => {
   amount = amount || 0
   page = page || 0
   sortByDate = sortByDate || false
   updateCache = updateCache || false
 
-  var postsCache = sessionStorage.getItem('fetlads:cache:posts')
+  var postsCache = sessionStorage.getItem(`fetlads:cache:${key}`)
   var result
 
   if (updateCache || postsCache == null) {
-    await axios.get("/data/posts.min.json")
+    await axios.get(`/data/${key}.min.json`)
       .then((response) => {
         result = response.data
-        sessionStorage.setItem('fetlads:cache:posts', JSON.stringify(result))
+        sessionStorage.setItem(`fetlads:cache:${key}`, JSON.stringify(result))
       }).catch((err) => {
         throw err
       })
   } else {
-    result = JSON.parse(sessionStorage.getItem('fetlads:cache:posts'))
+    result = JSON.parse(sessionStorage.getItem(`fetlads:cache:${key}`))
   }
 
   if (sortByDate) {
@@ -65,7 +65,7 @@ export const getPosts = async (page, amount, updateCache, sortByDate) => {
 }
 
 export const getRandomPost = async () => {
-  let posts = await getPosts()
+  let posts = await getPosts('posts')
   var randomPost = posts[Math.floor(Math.random() * posts.length)]
   return randomPost
 }

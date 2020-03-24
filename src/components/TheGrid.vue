@@ -69,7 +69,7 @@ export default {
         updateCache = false;
       }
 
-      getPosts(page, postsAmount, updateCache, true).then(posts => {
+      getPosts('posts', page, postsAmount, updateCache, true).then(posts => {
         page = page || 0;
 
         if (posts.length === 0) {
