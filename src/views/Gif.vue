@@ -9,7 +9,9 @@
         autoplay="autoplay"
         muted="muted"
         loop="loop"
-        :title="$t('phrases.gif.random')"
+        v-shortkey="['space']"
+        @shortkey="loadRandomGif"
+        :title="$t('phrases.gif.random') + ' (Space)'"
       ></video>
       <div class="gif-actions">
         <div class="gif-actions-random">
@@ -140,6 +142,7 @@ export default {
           )
       );
       max-width: 100%;
+      min-height: 250px;
 
       box-shadow: var(--heavy-shadow);
     }

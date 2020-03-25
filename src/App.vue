@@ -15,6 +15,8 @@ import TheAdultWarning from "@/components/TheAdultWarning.vue";
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheNavMenu from "@/components/TheNavMenu.vue";
 
+import { getThemeSetting, setThemeSetting } from "@/common/settingsService.js";
+
 export default {
   components: {
     Slidebar,
@@ -37,6 +39,18 @@ export default {
     },
     setTitle(title) {
       document.title = title || this.$route.meta.title || "Fetlads";
+    },
+    loadTheme() {
+      var themeFromSetting = getThemeSetting()
+
+      if(
+        themeFromSetting === "" ||
+        themeFromSetting === null
+      ) {
+        setThemeSetting("auto")
+      } else {
+        setThemeSetting(themeFromSetting)
+      }
     }
   },
   watch: {
@@ -54,6 +68,7 @@ export default {
     }
   },
   mounted() {
+    this.loadTheme();
     this.setTitle();
   }
 };

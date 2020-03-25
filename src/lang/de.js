@@ -30,8 +30,7 @@ export default {
       title: "He, da!"
     },
     footer: {
-      openSource: "Diese Seite ist Open-Source und kann auf <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a> gefunden werden.",
-      translationsProvidedBy: "Die Übersetzungen werden von <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a> zur Verfügung gestellt"
+      openSource: "Diese Seite ist Open-Source und kann auf <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a> gefunden werden."
     },
     gif: {
       random: "Zufällig"
@@ -56,6 +55,18 @@ export default {
         about: "Über",
         gif: "GIFs",
         home: "Startseite"
+      },
+      settings: {
+        language: "Sprache",
+        languages: {
+          auto: "Automatisch"
+        },
+        theme: "Thema",
+        themes: {
+          auto: "Automatisch",
+          dark: "Dunkelheit",
+          light: "Licht"
+        }
       }
     },
     notFound: {

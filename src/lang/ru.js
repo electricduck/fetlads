@@ -30,8 +30,7 @@ export default {
       title: "Эй, там!"
     },
     footer: {
-      openSource: "Этот сайт с открытым исходным кодом и может быть найден на <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
-      translationsProvidedBy: "Переводы предоставлены <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
+      openSource: "Этот сайт с открытым исходным кодом и может быть найден на <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>"
     },
     gif: {
       random: "Случайный"
@@ -56,6 +55,18 @@ export default {
         about: "Около",
         gif: "GIFs",
         home: "Дом"
+      },
+      settings: {
+        language: "Язык",
+        languages: {
+          auto: "Автоматический"
+        },
+        theme: "Тема",
+        themes: {
+          auto: "Автоматический",
+          dark: "Темно",
+          light: "Светлый"
+        }
       }
     },
     notFound: {

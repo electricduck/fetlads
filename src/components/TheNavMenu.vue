@@ -17,43 +17,47 @@
         v-on="$listeners"
       >{{ $t('phrases.navmenu.links.gif') }}</NavItem>
     </div>
-    <!--div class="nav-menu-settings">
+    <div class="nav-menu-settings">
       <div class="nav-menu-settings-item">
         <div class="nav-menu-settings-item-icon">
           <font-awesome-icon icon="globe" class="fa-fw" />
         </div>
         <div class="nav-menu-settings-item-input">
-          <select class="form-input form-input--select">
-            <option>Automatic</option>
-            <option>🇳🇱 Dutch</option>
-            <option>🇬🇧 English</option>
-            <option>🇫🇷 French</option>
-            <option>🇩🇪 German</option>
-            <option>🇯🇵 Japanese</option>
-            <option>🇷🇺 Russian</option>
-            <option>🇪🇸 Spanish</option>
+          <select
+            class="form-input form-input--select"
+            @change="handleLanguageChange"
+            v-model="settings.language"
+          >
+            <option value="auto" :selected="settings.language === 'auto'">{{ $t('phrases.navmenu.settings.languages.auto') }}</option>
+            <option value="de" :selected="settings.language === 'de'">🇩🇪 Deutsch</option>
+            <option value="en" :selected="settings.language === 'en'">🇬🇧 English</option>
+            <option value="es" :selected="settings.language === 'es'">🇪🇸 Español</option>
+            <option value="fr" :selected="settings.language === 'fr'">🇫🇷 Français</option>
+            <option value="ja" :selected="settings.language === 'ja'">🇯🇵 にほんご</option>
+            <option value="nl" :selected="settings.language === 'nl'">🇳🇱 Nederlands</option>
+            <option value="ru" :selected="settings.language === 'ru'">🇷🇺 русский</option>
           </select>
         </div>
-        <div class="nav-menu-settings-item-label">
-          Language
-        </div>
+        <div class="nav-menu-settings-item-label">{{ $t('phrases.navmenu.settings.language') }}</div>
       </div>
       <div class="nav-menu-settings-item">
         <div class="nav-menu-settings-item-icon">
           <font-awesome-icon icon="paint-brush" class="fa-fw" />
         </div>
         <div class="nav-menu-settings-item-input">
-          <select class="form-input form-input--select">
-            <option>Automatic</option>
-            <option>Dark</option>
-            <option>Light</option>
+          <select
+            class="form-input form-input--select"
+            @change="handleThemeChange"
+            v-model="settings.theme"
+          >
+            <option value="auto" :selected="settings.theme === 'auto'">{{ $t('phrases.navmenu.settings.themes.auto') }}</option>
+            <option value="dark" :selected="settings.theme === 'dark'">🌙 {{ $t('phrases.navmenu.settings.themes.dark') }}</option>
+            <option value="light" :selected="settings.theme === 'light'">☀️ {{ $t('phrases.navmenu.settings.themes.light') }}</option>
           </select>
         </div>
-        <div class="nav-menu-settings-item-label">
-          Theme
-        </div>
+        <div class="nav-menu-settings-item-label">{{ $t('phrases.navmenu.settings.theme') }}</div>
       </div>
-    </div-->
+    </div>
     <Footer class="nav-menu-footer" />
     <div class="nav-menu-social">
       <a
@@ -80,11 +84,38 @@
 import Footer from "@/components/Footer.vue";
 import NavItem from "@/components/NavMenuLinksItem.vue";
 
+import {
+  getLanguageSetting,
+  getThemeSetting,
+  setLanguageSetting,
+  setThemeSetting
+} from "@/common/settingsService";
+
 export default {
   name: "TheNavMenu",
   components: {
     Footer,
     NavItem
+  },
+  data: function() {
+    return {
+      settings: {
+        language: "",
+        theme: ""
+      }
+    };
+  },
+  methods: {
+    handleLanguageChange(event) {
+      setLanguageSetting(event.target.value);
+    },
+    handleThemeChange(event) {
+      setThemeSetting(event.target.value);
+    }
+  },
+  beforeMount() {
+    this.settings.language = getLanguageSetting();
+    this.settings.theme = getThemeSetting();
   }
 };
 </script>
@@ -171,10 +202,11 @@ export default {
       border-style: solid;
       border-width: 1px;
       font-size: 0;
-      margin-top: #{$padding * 2.5};
+      margin-bottom: #{$padding * 2.5};
       padding: #{$padding * 2};
 
       border-color: var(--separator-color);
+      box-shadow: var(--light-shadow);
       color: var(--body-fg-color);
 
       .nav-menu-settings-item {

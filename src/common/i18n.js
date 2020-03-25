@@ -14,20 +14,25 @@ Vue.use(VueI18n)
 const setLanguage = (defaultLanguage, forceLanguage) => {
   forceLanguage = forceLanguage || false
 
-  if(!forceLanguage) {
-    var browserLanguage = (navigator.language || navigator.userLanguage).substring(0,2)
+  if (!forceLanguage) {
+    var browserLanguage = (navigator.language || navigator.userLanguage).substring(0, 2)
+    var userLanguage = localStorage.getItem("fetlads:settings:language")
 
-    switch (browserLanguage) {
-      case "de":
-      case "en":
-      case "es":
-      case "fr":
-      case "ja":
-      case "nl":
-      case "ru":
-        return browserLanguage
-      default:
-        return defaultLanguage
+    if((userLanguage === null || userLanguage === "auto")) {
+      switch (browserLanguage) {
+        case "de":
+        case "en":
+        case "es":
+        case "fr":
+        case "ja":
+        case "nl":
+        case "ru":
+          return browserLanguage
+        default:
+          return defaultLanguage
+      }
+    } else {
+      return userLanguage
     }
   } else {
     return defaultLanguage

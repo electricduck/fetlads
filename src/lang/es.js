@@ -30,8 +30,7 @@ export default {
       title: "¡Allí!" // Whoa, there!
     },
     footer: {
-      openSource: "Este sitio es de código abierto y se puede encontrar en <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>", // This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>
-      translationsProvidedBy: "Traducciones proporcionadas por <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>" // Translations provided by <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>
+      openSource: "Este sitio es de código abierto y se puede encontrar en <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>" // This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>
     },
     gif: {
       random: "Aleatoria" // Random
@@ -56,6 +55,18 @@ export default {
         about: "Acerca de", // About
         gif: "GIFs", // GIFs
         home: "Inicio" // Home
+      },
+      settings: {
+        language: "Idioma", // Language
+        languages: {
+          auto: "Automático" // Automatic
+        },
+        theme: "Tema", // Theme
+        themes: {
+          auto: "Automático", // Automatic
+          dark: "Dark", // Dark
+          light: "Luz" // Light
+        }
       }
     },
     notFound: {

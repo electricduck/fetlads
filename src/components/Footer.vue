@@ -5,7 +5,6 @@
       <strong>{{ this.version.app }}</strong> (Vue {{ this.version.vue }})<br />
       <span v-html="$t('phrases.footer.openSource')"></span>
     </p>
-    <p v-if="$t('phrases.footer.translationsProvidedBy') !== ''" v-html="$t('phrases.footer.translationsProvidedBy')"></p>
   </div>
 </template>
 

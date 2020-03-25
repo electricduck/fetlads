@@ -30,8 +30,7 @@ export default {
       title: "Whoa, daar!"
     },
     footer: {
-      openSource: "Deze site is open-source en is te vinden op <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
-      translationsProvidedBy: "Vertalingen verzorgd door <a href='https://www.deepl.com/translator' target='_blank'>DeepL Translator</a>"
+      openSource: "Deze site is open-source en is te vinden op <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>"
     },
     gif: {
       random: "Willekeurig"
@@ -56,6 +55,18 @@ export default {
         about: "Over",
         gif: "GIFs",
         home: "Home"
+      },
+      settings: {
+        language: "Taal",
+        languages: {
+          auto: "Automatisch"
+        },
+        theme: "Thema",
+        themes: {
+          auto: "Automatisch",
+          dark: "Donker",
+          light: "Licht"
+        }
       }
     },
     notFound: {
