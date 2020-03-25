@@ -9,7 +9,9 @@
         autoplay="autoplay"
         muted="muted"
         loop="loop"
-        :title="$t('phrases.gif.random')"
+        v-shortkey="['space']"
+        @shortkey="loadRandomGif"
+        :title="$t('phrases.gif.random') + ' (Space)'"
       ></video>
       <div class="gif-actions">
         <div class="gif-actions-random">
@@ -95,20 +97,6 @@ export default {
 @import "@/scss/_variables.scss";
 
 .gif-page {
-  @include respond-to(desktop-sm) {
-    .gif {
-      .gif-view {
-        max-height: calc(
-          100vh -
-            (
-              #{$navbar-container-height} + (#{$navbar-spacing} * 2) + #{$padding *
-                6}
-            )
-        ) !important;
-      }
-    }
-  }
-
   @include respond-to(mobile) {
     padding: 0;
 
@@ -124,6 +112,14 @@ export default {
         width: 100%;
       }
     }
+  }
+
+  @include respond-to(desktop) {
+    padding: #{$padding * 3} #{$padding * 2} !important;
+  }
+
+  .page-inner {
+    max-width: 1200px;
   }
 
   .gif {
@@ -142,10 +138,11 @@ export default {
         100vh -
           (
             #{$navbar-container-height} + (#{$navbar-spacing} * 2) + #{$padding *
-              12}
+              6}
           )
       );
       max-width: 100%;
+      min-height: 250px;
 
       box-shadow: var(--heavy-shadow);
     }

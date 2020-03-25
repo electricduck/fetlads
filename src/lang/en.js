@@ -53,8 +53,7 @@ export default {
       title: "Whoa, there!"
     },
     footer: {
-      openSource: "This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>",
-      translationsProvidedBy: "" // NOTE: Keep this empty so the "Translations provided by" message doesn't show up
+      openSource: "This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>"
     },
     gif: {
       random: "Random"
@@ -79,6 +78,18 @@ export default {
         about: "About",
         gif: "GIFs",
         home: "Home"
+      },
+      settings: {
+        language: "Language",
+        languages: {
+          auto: "Automatic"
+        },
+        theme: "Theme",
+        themes: {
+          auto: "Automatic",
+          dark: "Dark",
+          light: "Light"
+        }
       }
     },
     notFound: {

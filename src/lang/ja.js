@@ -30,8 +30,7 @@ export default {
       title: "おっ、そこに！"
     },
     footer: {
-      openSource: "このサイトはオープンソースであり、<a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>で見つけることができます",
-      translationsProvidedBy: "<a href='https://translate.google.com' target='_blank'>Google Translate</a>が提供する翻訳"
+      openSource: "このサイトはオープンソースであり、<a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>で見つけることができます"
     },
     gif: {
       random: "ランダム"
@@ -56,6 +55,18 @@ export default {
         about: "約",
         gif: "GIFs",
         home: "宅"
+      },
+      settings: {
+        language: "言語",
+        languages: {
+          auto: "自動"
+        },
+        theme: "テーマ",
+        themes: {
+          auto: "自動",
+          dark: "暗い",
+          light: "灯り"
+        }
       }
     },
     notFound: {

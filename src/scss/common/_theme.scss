@@ -1,5 +1,15 @@
-body {
+html {
   @media (prefers-color-scheme: dark) {
+    content: "dark";
+  }
+
+  @media (prefers-color-scheme: light) {
+    content: "light";
+  }
+}
+
+body {
+  &.dark-theme {
     --accent-color: #D7FF3F;
     --accent-fg-color: black;
     --body-bg-color: #101010;
@@ -11,25 +21,25 @@ body {
     --lowlight-filter: brightness(0.4);
     --navbar-bg-color: rgba(24, 24, 25, 0.6);
     --navbar-fg-color: #D7FF3F;
-    --navbar-fg-shadow: 0 0 5px rgba(0,0,0,0.9);
-    --separator-color: rgba(255,255,255,0.1);
+    --navbar-fg-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    --separator-color: rgba(255, 255, 255, 0.1);
   }
 
-  @media (prefers-color-scheme: light) {
+  &.light-theme {
     --accent-color: #E5383B;
     --accent-fg-color: white;
     --body-bg-color: #fefefe;
     --body-fg-color: #666666;
     --brighter-filter: brightness(1.25);
     --darker-filter: brightness(0.75);
-    --heavy-shadow: 0 0 40px rgba(0,0,0,0.5);
+    --heavy-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     --lowlight-filter: brightness(1.5);
-    --light-shadow: 0 0 10px rgba(0,0,0,0.3);
+    --light-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     --navbar-bg-color: rgba(255, 255, 255, 0.8);
-    --navbar-fg-shadow: 0 0 20px rgba(0,0,0,0.4);
-    --separator-color: rgba(0,0,0,0.25);
+    --navbar-fg-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    --separator-color: rgba(0, 0, 0, 0.25);
   }
 
-  --overlay-bg-color: rgba(0,0,0,0.9);
-  --overlay-fg-color: rgba(255,255,255,0.8);
+  --overlay-bg-color: rgba(0, 0, 0, 0.9);
+  --overlay-fg-color: rgba(255, 255, 255, 0.8);
 }
