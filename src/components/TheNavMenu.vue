@@ -114,8 +114,8 @@ export default {
     }
   },
   beforeMount() {
-    this.settings.language = getLanguageSetting();
-    this.settings.theme = getThemeSetting();
+    this.settings.language = getLanguageSetting() || "auto";
+    this.settings.theme = getThemeSetting() || "auto";
   }
 };
 </script>

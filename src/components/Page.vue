@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="page-inner">
+    <div class="page-inner" :class="{ 'page-inner--fluid' : fluid }">
       <slot></slot>
     </div>
   </div>
@@ -8,7 +8,10 @@
 
 <script>
 export default {
-  name: "Page"
+  name: "Page",
+  props: {
+    fluid: Boolean
+  }
 }
 </script>
 
@@ -28,6 +31,10 @@ export default {
     line-height: 1.5;
     margin: 0 auto;
     max-width: 900px;
+
+    &.page-inner--fluid {
+      max-width: unset;
+    }
 
     h1, h2, h3, p, ul {
       margin: 0 0 #{$padding * 2} 0;

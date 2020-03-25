@@ -234,14 +234,14 @@ export default {
 
     & > iframe,
     & > .post-media-album {
-      height: 90vh;
-      width: 90vw;
+      height: 96vh;
+      width: 96vw;
     }
 
     & > img,
     & > video {
-      max-height: 90vh;
-      max-width: 90vw;
+      max-height: 96vh;
+      max-width: 96vw;
     }
   }
 
