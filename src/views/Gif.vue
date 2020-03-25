@@ -1,5 +1,5 @@
 <template>
-  <Page class="gif-page">
+  <Page class="gif-page" :fluid="true">
     <div class="gif">
       <video
         @click="loadRandomGif"
@@ -97,30 +97,7 @@ export default {
 @import "@/scss/_variables.scss";
 
 .gif-page {
-  @include respond-to(mobile) {
-    padding: 0;
-
-    .gif {
-      .gif-view {
-        border-radius: 0 !important;
-        height: calc(
-          100vh - (#{$navbar-container-height} + (#{$navbar-spacing} * 2))
-        );
-        max-height: unset !important;
-        max-width: unset !important;
-        object-fit: contain;
-        width: 100%;
-      }
-    }
-  }
-
-  @include respond-to(desktop) {
-    padding: #{$padding * 3} #{$padding * 2} !important;
-  }
-
-  .page-inner {
-    max-width: 1200px;
-  }
+  padding: 0;
 
   .gif {
     position: relative;
@@ -128,21 +105,17 @@ export default {
 
     .gif-view {
       background-color: black;
-      border-radius: $radius;
       box-sizing: border-box;
       cursor: pointer;
       display: block;
+      height: calc(
+          100vh - (#{$navbar-container-height} + (#{$navbar-spacing} * 2))
+        );
       margin-left: auto;
       margin-right: auto;
-      max-height: calc(
-        100vh -
-          (
-            #{$navbar-container-height} + (#{$navbar-spacing} * 2) + #{$padding *
-              6}
-          )
-      );
-      max-width: 100%;
       min-height: 250px;
+      object-fit: contain;
+      width: 100%;
 
       box-shadow: var(--heavy-shadow);
     }
