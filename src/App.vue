@@ -67,7 +67,7 @@ export default {
       this.setTitle();
     }
   },
-  mounted() {
+  beforeMount() {
     this.loadTheme();
     this.setTitle();
   }
