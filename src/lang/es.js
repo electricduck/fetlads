@@ -29,6 +29,11 @@ export default {
       pleaseLeaveNow: "Si eres menor de edad, por favor vete ahora.<br />O no lo haga: Soy sólo unas pocas líneas de texto, no la policía.", // If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, not the police.
       title: "¡Allí!" // Whoa, there!
     },
+    error: {
+      checkConsole: "Si sabes lo que estás haciendo, comprueba la consola para ver los detalles", // If you know what you're doing, check the console for details
+      reload: "Recarga", // Reload
+      title: "Algo salió mal" // Something went wrong
+    },
     footer: {
       openSource: "Este sitio es de código abierto y se puede encontrar en <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>" // This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>
     },
