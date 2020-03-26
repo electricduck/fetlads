@@ -29,6 +29,11 @@ export default {
       pleaseLeaveNow: "あなたが法定年齢未満の場合は、すぐに退出してください。<br />または、しない：私は数行の文章だけで、警察ではありません。",
       title: "おっ、そこに！"
     },
+    error: {
+      checkConsole: "何をしているかわかっている場合は、コンソールで詳細を確認してください",
+      reload: "リロード",
+      title: "何かあったのか"
+    },
     footer: {
       openSource: "このサイトはオープンソースであり、<a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>で見つけることができます"
     },

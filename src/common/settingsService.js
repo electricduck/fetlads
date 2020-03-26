@@ -12,7 +12,11 @@ export const setLanguageSetting = (language) => {
 }
 
 export const setThemeSetting = (theme) => {
-  var osColorScheme = getComputedStyle(document.documentElement).getPropertyValue('content')
+  var osColorScheme = getComputedStyle(document.documentElement).getPropertyValue('content') // NOTE: Browsers differ in how they reply to this,
+                                                                                             //       hence the replace method below.
+                                                                                             //        - Blink (Chrome/Edge/Vivaldi): "light"
+                                                                                             //        - WebKit (Safari/iOSfi/Epiphany): light
+                                                                                             //        - Gecko (Firefox): "light"
   let defaultTheme = 'auto'
   let validThemes = [
     'auto',   // Automatic
@@ -20,14 +24,16 @@ export const setThemeSetting = (theme) => {
     'light'   // Light
   ]
 
+  osColorScheme = osColorScheme.replace(/['"]+/g, '')
+
   if(!validThemes.includes(theme)) {
     theme = defaultTheme
   }
 
   if(theme === 'auto') {
-    if (osColorScheme === '"light"') {
+    if (osColorScheme === "light") {
       document.body.className = 'light-theme'
-    } else if (osColorScheme === '"dark"') {
+    } else if (osColorScheme === "dark") {
       document.body.className = 'dark-theme'
     }
   } else {

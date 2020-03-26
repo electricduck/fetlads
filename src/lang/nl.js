@@ -29,6 +29,11 @@ export default {
       pleaseLeaveNow: "Als je onder de wettelijke leeftijd bent, ga dan nu weg.<br />Of niet: Ik ben maar een paar regels tekst, niet de politie.",
       title: "Whoa, daar!"
     },
+    error: {
+      checkConsole: "Als je weet wat je doet, controleer dan de console voor details",
+      reload: "Herladen",
+      title: "Er is iets misgegaan"
+    },
     footer: {
       openSource: "Deze site is open-source en is te vinden op <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>"
     },

@@ -29,6 +29,11 @@ export default {
       pleaseLeaveNow: "Si vous n'avez pas l'âge légal, veuillez partir maintenant.<br />Ou pas: je ne suis que quelques lignes de texte, pas la police.",
       title: "Woah, là!"
     },
+    error: {
+      checkConsole: "Si vous savez ce que vous faites, consultez la console pour plus de détails",
+      reload: "Recharger",
+      title: "Quelque chose a mal tourné"
+    },
     footer: {
       openSource: "Ce site est open-source et peut être trouvé sur <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>"
     },

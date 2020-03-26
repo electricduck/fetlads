@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <TheAdultWarning />
+    <TheError v-if="error.isVisible" :message="error.message" />
     <TheNavbar @toggleMenu="toggleMenu" />
     <router-view />
-    <TheAdultWarning />
     <Slidebar :visible="isMenuVisible" :right="true" @closeMenu="toggleMenu">
       <TheNavMenu @closeMenu="toggleMenu" />
     </Slidebar>
@@ -12,26 +13,33 @@
 <script>
 import Slidebar from "@/components/Slidebar.vue";
 import TheAdultWarning from "@/components/TheAdultWarning.vue";
+import TheError from "@/components/TheError.vue";
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheNavMenu from "@/components/TheNavMenu.vue";
 
+import Vue from "vue";
 import { getThemeSetting, setThemeSetting } from "@/common/settingsService.js";
 
 export default {
   components: {
     Slidebar,
     TheAdultWarning,
+    TheError,
     TheNavbar,
     TheNavMenu
   },
   data: function() {
     return {
+      error: {
+        isVisible: false,
+        message: ""
+      },
       isMenuVisible: false
-    }
+    };
   },
   methods: {
     toggleMenu(state) {
-      if(state !== null) {
+      if (state !== null) {
         this.isMenuVisible = !this.isMenuVisible;
       } else {
         this.isMenuVisible = state;
@@ -41,16 +49,17 @@ export default {
       document.title = title || this.$route.meta.title || "Fetlads";
     },
     loadTheme() {
-      var themeFromSetting = getThemeSetting()
+      var themeFromSetting = getThemeSetting();
 
-      if(
-        themeFromSetting === "" ||
-        themeFromSetting === null
-      ) {
-        setThemeSetting("auto")
+      if (themeFromSetting === "" || themeFromSetting === null) {
+        setThemeSetting("auto");
       } else {
-        setThemeSetting(themeFromSetting)
+        setThemeSetting(themeFromSetting);
       }
+    },
+    handleAppFailure(message) {
+      this.error.message = message;
+      this.error.isVisible = true;
     }
   },
   watch: {
@@ -67,7 +76,11 @@ export default {
       this.setTitle();
     }
   },
-  mounted() {
+  beforeMount() {
+    Vue.config.errorHandler = err => {
+      this.handleAppFailure(err.toString());
+    };
+
     this.loadTheme();
     this.setTitle();
   }

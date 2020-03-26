@@ -11,28 +11,28 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  a {
-    cursor: pointer;
-    font-weight: 700;
-    text-decoration: none;
-    transition: $transition;
+a {
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  transition: $transition;
 
-    color: var(--accent-color);
+  color: var(--accent-color);
 
-    &:focus,
-    &:hover {
-      outline: 0;
+  &:focus,
+  &:hover {
+    outline: 0;
 
-      filter: var(--brighter-filter);
-    }
+    filter: var(--brighter-filter);
+  }
 
-    &:active {
-      filter: var(--darker-filter);
-    }
+  &:active {
+    filter: var(--darker-filter);
+  }
 
-    &.no-transition {
-      transition: unset;
-    }
+  &.no-transition {
+    transition: unset;
   }
 }

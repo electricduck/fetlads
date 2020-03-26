@@ -30,7 +30,7 @@ export default {
     font-size: 0;
     line-height: 1.5;
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1100px;
 
     &.page-inner--fluid {
       max-width: unset;

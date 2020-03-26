@@ -52,6 +52,11 @@ export default {
       pleaseLeaveNow: "If you are under the legal age, please leave now.<br />Or don't: I'm just a few lines of text, not the police.",
       title: "Whoa, there!"
     },
+    error: {
+      checkConsole: "If you know what you're doing, check the console for details",
+      reload: "Reload",
+      title: "Something went wrong"
+    },
     footer: {
       openSource: "This site is open-source and can be found on <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a>"
     },

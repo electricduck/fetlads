@@ -29,6 +29,11 @@ export default {
       pleaseLeaveNow: "Wenn Sie noch nicht volljährig sind, gehen Sie bitte jetzt.<br/>Oder auch nicht: Ich bin nur ein paar Zeilen Text, nicht die Polizei.",
       title: "He, da!"
     },
+    error: {
+      checkConsole: "Wenn Sie wissen, was Sie tun, sehen Sie in der Konsole nach",
+      reload: "Neu laden",
+      title: "Etwas ging schief"
+    },
     footer: {
       openSource: "Diese Seite ist Open-Source und kann auf <a href='https://github.com/electricduck/fetlads' target='_blank'>Github</a> gefunden werden."
     },
