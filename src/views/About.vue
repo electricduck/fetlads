@@ -4,7 +4,7 @@
       <span class="title-text">{{ $t('phrases.about.title') }}</span>
     </h1>
     <p>
-      <img :src="$var.asset.hero.about" />
+      <img :src="$var.asset.hero.about" class="about-hero" />
     </p>
 
     <h3>
@@ -75,3 +75,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+  .about-page {
+    .about-hero {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
