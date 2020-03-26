@@ -240,6 +240,7 @@ export default {
 
     & > img,
     & > video {
+      background-color: black;
       max-height: 96vh;
       max-width: 96vw;
     }
