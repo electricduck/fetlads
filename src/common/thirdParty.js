@@ -28,6 +28,10 @@ import {
   faVuejs,
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons'
+import VueAnalytics from 'vue-ua'
+
+import router from '../router'
+import { version } from '../common/version'
 
 const thirdParty = {
   init() {
@@ -54,7 +58,14 @@ const thirdParty = {
 
     Vue.use(VueMasonryPlugin)
     Vue.use(require('vue-shortkey'))
-    Vue.use(InfiniteLoading);
+    Vue.use(InfiniteLoading)
+
+    Vue.use(VueAnalytics, {
+      appName: 'Fetlads',
+      appVersion: version.toString(),
+      trackingId: 'UA-76165327-8',
+      vueRouter: router
+    })
   }
 }
 
