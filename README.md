@@ -3,7 +3,7 @@
 </p>
 <h3 align="center">Fetlads</h3>
 <p align="center">
-  <a href="https://vuejs.org"><strong>VueJS</strong></a> website for <strong>Fetlads</strong>
+  <a href="https://vuejs.org"><strong>Vue</strong></a> website for <strong>Fetlads</strong>
 </p>
 <p align="center">
   <a href="https://github.com/electricduck/fetlads/actions?query=workflow%3ACI">
